@@ -3,7 +3,7 @@ from typing import Any
 from django.urls import path
 from django.views.generic import ListView, DetailView
 
-from .models.locations import SiteAddress, Parcel, District
+from ..models.locations import SiteAddress, Parcel, District
 
 
 class ParcelSearch(ListView):

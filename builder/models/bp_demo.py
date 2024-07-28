@@ -17,6 +17,7 @@ class Demolition(BP):
         "partial": "Partial", 
         "pool": "Pool",
     }
+    subtype = models.CharField(max_length = 55, choices=options)
 
     def __str__(self) -> str:
         return f"{self.number}-Demo"
@@ -35,3 +36,4 @@ class Demolition(BP):
         ordering = ["number"]
         verbose_name = "Demolition Permits"
         verbose_name_plural = "Demolition Permits"
+

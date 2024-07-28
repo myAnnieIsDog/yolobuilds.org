@@ -1,9 +1,9 @@
 from django.urls import path
 from django.views.generic import DetailView
 
-from .models.fees import Fee, TrakitFee, ClaritiFee
-from .models.fee_types import Account, FeeType
-from .models.fee_payments import PaymentMethod, Payment
+from ..models.fees import Fee, TrakitFee, ClaritiFee
+from ..models.fee_types import Account, FeeType
+from ..models.fee_payments import PaymentMethod, Payment
 
 
 class FiscalDetailView(DetailView):

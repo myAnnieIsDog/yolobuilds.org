@@ -18,8 +18,8 @@ class Status(models.Model):
     
     class Meta:
         ordering = ["status"]
-        verbose_name = "Status"
-        verbose_name_plural = "Statuses"
+        verbose_name = "Record Status"
+        verbose_name_plural = "Record Statuses"
 
     
 class Record(models.Model):

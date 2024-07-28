@@ -10,7 +10,8 @@ class ReviewGroup(models.Model):
     
     class Meta:
         ordering = ["group"]
-
+        verbose_name = "Review Group"
+        verbose_name_plural = "Review Groups"
         
 class ReviewType(models.Model): 
     default_reviewer = models.ForeignKey(

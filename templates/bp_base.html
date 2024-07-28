@@ -1,0 +1,186 @@
+{% extends "base.html" %}
+
+{% block heading %}{{ subject }} Permits{% endblock heading %}
+
+{% block main_content %}
+
+<details>
+    <summary>General Information</summary>
+    <section>
+        <h4>Regulations / Authority </h4>
+        <p>
+            Yolo County Building Standards Code adopts the {{ codes }}. All local amendments pertaining to {{ subject|lower }} are administrative. 
+        </p>
+    </section>
+
+    <section>
+        <h4>Owner-Builder</h4>
+        <p>
+            See the <a href="">Owner-Builder Form</a> for additional information. 
+        </p>
+    </section>
+    
+    <section>
+        <h4>Licensed Contractors</h4>
+        <p>
+            Except for owner-builders, the contractor for a {{ subject|lower }} permit must hold one of the following licenses issued by the <a href="https://www.cslb.ca.gov/about_us/library/licensing_classifications/">Constractors State License Board</a>:
+        </p>
+        <ul>
+            {% for lic in licenses %}
+                <li>{{ lic }}</li>
+            {% endfor %}
+        </ul>
+    </section>
+
+    <section>
+        <h4>Design Authority</h4>
+        {% block design_authority %}
+            <p>
+                Usually {{ subject|lower }} plans can be prepared by any person, but if the Chief Building Official determines that work poses hazards the {{ subject|lower }} plan must be prepared by a CA licensed design professional. 
+            </p>
+        {% endblock %}
+    </section>
+    
+    <section>
+        <h4>Timeline</h4>
+        <p>
+            Typical plan review time for a {{ subject|lower }} permit is {{ initial_review_time|default:"three weeks" }} for initial review. If the initial application is not approved, additional plan review will be completed within {{ additional_review_time|default:"one week" }} of receiving a response to the plan review comments.
+        </p>
+        <h4>Abandoned Applications</h4>
+        <p>
+            An application for a permit for any proposed work shall be deemed to have been abandoned 180 days after the date of filing, unless such application has been pursued in good faith. A permit holder may request in writing to extend an unexpired permit for up to 180 days if justifiable cause is demonstrated.
+        </p>
+        <h4>Expired Permits</h4>
+        <p>
+            Every issued permit remains valid if the work on the site authorized by that permit is commenced within 12 months after its issuance, unless the permittee has abandoned the work authorized by the permit. A permit holder may request in writing to extend an unexpired permit for up to 180 days if justifiable cause is demonstrated.
+        </p>
+        <h4>Reinstate Permit</h4>
+        <p>
+            If a permit is abandoned or expired, a new permit application must be submitted. The fees will be the hourly rates to review the application under the current regulations up to a maximum of one-half the fee for a new permit.
+        </p>
+    </section>
+    
+    <section>
+        <h4>Code Enforcement</h4>
+        <p>
+            If the permit is the result of a code enforcement case, then allowing a permit to be abandoned or expire is noncompliance and an administrative citation will be issued. Any timelines stated in a Courtesy Notice or Administrative Citation take precedence over the general timelines listed above.
+        </p>
+    </section>
+</details>
+
+<details>
+    <summary>Required Construction Documents</summary>
+    <section>
+        <p>
+            {{ subject|title }} Permit applications must be accompanied by the following documents. Additional documents may be required if the Chief Buiding Official determines the work requires them. The Chief Building Official may also determine certain documents may not be required if code compliance can still be determined without them. 
+        </p>
+        <ul>
+            {% block required_documents %}
+            <li>Plans must be submitted as both an electronic pdf and a single paper copy. The paper copy can be shippped or dropped off at our public counter during business hours. Sometimes staff may be available to print your electronic pdf, but contact <a href="mailto:building.division@yolocounty.org">building.division@yolocounty.org</a> to verify this option is available.</li>
+            <li>Paper plans must be clear and legible on {{ paper_size|default:"11x17" }} paper or larger.</li>
+            <li>Electronic plans must follow this <a href="">naming convention</a>.</li>
+            <li>Plans must include a written scope of work, describe the methods to be used, and provide both site information (address, APN) and owner information.</li>
+            <li>Include a site plan showing the entire parcel and all structures on the parcel, with the area of work shown at a scale of approximately 1&quot; = 20&apos;. If necessary, use two site maps at different scales to show the full parcel and the work area at the required scale. </li>
+            <li>Dimension all structure(s). Clearly indicate the structure(s) included in the scope of work. Whenever possible, label each structure on the parcel with the permit number(s) for it's initial construction.</li>
+            <li>Provide grading and drainage information.</li>
+            <li>Show Site access/driveway </li>
+            <li>Well, septic tank, and leach lines if applicable. </li>
+            <li>Clearance to utilities such as gas and electric service.</li>
+            {% endblock required_documents %}
+        </ul>
+    </section>
+    
+    {% block additional_requirements %}
+        <section>
+            <p>For <u>pool demolition</u>, also specify the following code requirements:</p>
+            <ul>
+                <li>If the pool is not completely removed, specify that a minimum of eight (8) holes with a minimum diameter of 8-inches will be drilled completely through the bottom so water will be able to drain.</li>
+
+                <li>If the pool is not completely removed the top must either remain above grade or remove the top 24 inches of the bond beam.</li>
+
+                <li>The pool shall be backfilled and compacted to a minimum of ninety percent (90%) maximum density. No organic or other reducible material shall be incorporated in fills. No rock or similar irreducible material with a maximum dimension greater than (8) inches shall be buried or placed within forty-eight (48) inches of finished grade. Field density shall be determined by a method acceptable to the Building Official.</li>       
+            </ul>
+        </section>
+    {% endblock additional_requirements %}
+</details>
+
+<details>
+    <summary>Reviews and Submittal Forms</summary>
+    <section>
+        <p>{{ subject }} permit application review requires the following forms:</p>
+        <ul>
+            <li> <a href="#application_form">Application for Building Permit</a>.</li>
+            <li><a href="https://www.yolocounty.org/home/showpublisheddocument/27617/637000984688570000">Owner-Builder Form</a> and/or <a href="https://www.yolocounty.org/home/showpublisheddocument/27601/636910905517730000">Owner&apos;s Authorization of Agent</a> if applicable. </li>
+
+            {% block standard_forms %}
+                <li>IWM Construction and Demolition Debris <a href="https://www.yolocounty.org/home/showpublisheddocument/3662/635773113395770000">Diversion Plan</a>. If the demolition is to remove fire damage, note this on your building permit application. Fire damaged materials cannot be recycled so a C&D form is not required.</li>
+                <li>Environmental Health review requires a <a href="https://www.yolocounty.org/home/showpublisheddocument/37440/636100534242470000">Land Use Review Survey</a>.</li>
+                <li>Public Works will contact the applicant if forms are required. </li>
+                <li>Yolo-Solano Air Quality Management District review requires their <a href="https://www.ysaqmd.org/wp-content/uploads/2022/02/Air-District-Questionnaire-2.9.2022-1.pdf">Asbestos Questionnaire</a>.</li>
+            {% endblock standard_forms %}
+
+            {% for form in additional_forms %}
+                <li>{{ form }}</li>
+            {% endfor %}
+        </ul>
+    </section>
+</details>
+
+<details>
+    <summary>Fee Examples</summary>
+    {% block fee_examples %}  {% endblock fee_examples %}
+</details>
+
+<details>
+    <summary>Plan Review Checklist</summary>
+    <section>
+        <p>The Building Division staff will review the following. Any other hazards identified by staff will also have to be adequately addressed by the applicant.</p>
+        <ul>
+            <li>Verify ownership of the property. </li>
+            <li>Verify the dimensions of the structure are shown on the plan and match any known data such as permit recordds, GIS images, or assessor&apos;s records. </li>
+            <li>Verify the area of the structure based on the dimensions. </li>
+            <li>Verify the correct area is used on fee calculations and impact fee forms.</li>
+
+            {% block review_requirements %}
+                <li>Verify the utilities are specified to be disconnected and properly terminated. </li>
+                <li>Verify all agencies have approved the demolition before stamping and signing the construction documents. </li>
+                <li>For pool demolition or other underground structures, verify the method of removal, backfill, and compaction meets all requirements. </li>
+                <li>For partial demolition, the plans must clearly indicate which portions of the structure will be demolished and which portions will remain. Detailed plans may be required. </li>
+            {% endblock review_requirements %}
+        </ul>
+    </section>
+</details>
+
+<details>
+    <summary>Inspection Checklist</summary>
+    {% block inspection_checklist %}
+    {% endblock inspection_checklist %}
+</details>
+
+<details>
+    <summary>Apply Now</summary>
+
+    
+    {% for i in subtypes %}
+        <section>
+            <h4>{{ i.title }}</h4>
+            <p>{{ i.description }}</p>
+        </section>
+    {% endfor %}
+
+    <section id="application_form">
+        <form action="{{ app_url }}" type="post">
+            <fieldset>
+                {% for i in subtypes %}
+                    <p>
+                        <input type="radio" id="{{ i.value }}" name="selectedSubtype" value="{{ i.value }}">
+                        <label for="{{ i.value }}">{{ i.title }}</label>
+                    </p>
+                {% endfor %}
+            </fieldset>
+            <input type="submit">Start Application</input>
+        </form>
+    </section>
+</details>
+
+{% endblock main_content %}

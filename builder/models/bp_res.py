@@ -4,7 +4,7 @@ from .bp import BP
 from .record_types import Type
 
 
-class Building(BP):
+class Dwelling(BP):
     record_type = models.ForeignKey(Type, on_delete=models.PROTECT, null=True, blank=True)
 
     accessory_utility_new_area = models.PositiveIntegerField(default=0)
@@ -19,8 +19,8 @@ class Building(BP):
     other_description = models.PositiveIntegerField(default=0)
 
     def __str__(self) -> str:
-        return f"{self.number}-New"
+        return f"{self.number}-NewRes"
     
     class Meta:
-        verbose_name = "New Building/Structure"
-        verbose_name_plural = "New Buildings/Structures"
+        verbose_name = "New Residential Dwelling"
+        verbose_name_plural = "New Residential Dwellings"

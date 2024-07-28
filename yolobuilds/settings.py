@@ -35,10 +35,13 @@ INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
+    'django.contrib.humanize',
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    "debug_toolbar",
+    # "debug_toolbar",
+    # 'django_extensions',
+    # 'django_recaptcha',
 
     'builder.apps.BuilderConfig',
 ]
@@ -51,7 +54,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    "debug_toolbar.middleware.DebugToolbarMiddleware",
+    # "debug_toolbar.middleware.DebugToolbarMiddleware",
+    # "django_htmx.middleware.HtmxMiddleware",
 ]
 
 ROOT_URLCONF = 'yolobuilds.urls'
@@ -59,7 +63,7 @@ ROOT_URLCONF = 'yolobuilds.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [ 'templates/' ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -72,7 +76,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'yolobuilds.wsgi.application'
+# WSGI_APPLICATION = 'yolobuilds.wsgi.application'
 
 
 # Database
@@ -88,6 +92,10 @@ DATABASES = {
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
+
+LOGIN_URL = ["profile/login/"]
+LOGIN_REDIRECT_URL = [""]
+LOGOUT_REDIRECT_URL = [""]
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -110,7 +118,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Los_Angeles'
 
 USE_I18N = True
 
@@ -122,12 +130,14 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+STATICFILES_DIRS = [ "static/", "static/css/", "static/images/", "static/js/"]
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-INTERNAL_IPS = [
-    "127.0.0.1",
-]
+# INTERNAL_IPS = [
+#     "127.0.0.1",
+# ]

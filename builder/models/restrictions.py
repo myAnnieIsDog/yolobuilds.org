@@ -12,8 +12,8 @@ class Tag(models.Model):
 
     class Meta:
         ordering = ["tag"]
-        verbose_name = "Tag"
-        verbose_name_plural = "Tags"
+        verbose_name = "Alert Type"
+        verbose_name_plural = "Alert Types"
 
 
 class Restriction(models.Model):
@@ -40,5 +40,5 @@ class Restriction(models.Model):
     class Meta:
         indexes = [models.Index(fields=["content_type", "object_id",],),]
         ordering = ["tag"]
-        verbose_name = "Restriction"
-        verbose_name_plural = "Restrictions"
+        verbose_name = "Alert"
+        verbose_name_plural = "Alerts"

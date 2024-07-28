@@ -35,7 +35,7 @@ class Review(models.Model):
         ordering = ["record", "type", "status"]
 
 
-class CycleResult(models.Model):
+class ReviewCycleResult(models.Model):
     result = models.CharField(max_length=55)
     description = models.CharField(max_length=255)
     causes_review_status = models.CharField(max_length=55)
@@ -45,8 +45,8 @@ class CycleResult(models.Model):
     
     class Meta():
         ordering = ["result"]
-        verbose_name = "Cycle Result Option"
-        verbose_name_plural = "Cycle Result Options"
+        verbose_name = "Review Cycle Result Option"
+        verbose_name_plural = "Review Cycle Result Options"
 
 
 class ReviewCycle(models.Model):
@@ -56,7 +56,7 @@ class ReviewCycle(models.Model):
     
     # Public fields
     cycle = models.PositiveSmallIntegerField(default=1)
-    result = models.ForeignKey(CycleResult, on_delete=models.PROTECT, default="In Progress")
+    result = models.ForeignKey(ReviewCycleResult, on_delete=models.PROTECT, default="In Progress")
     reviewer = models.CharField(max_length=100, null=True)
     completed_date = models.DateTimeField(null=True)
     due = models.DateTimeField(null=True)

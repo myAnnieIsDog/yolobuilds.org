@@ -4,7 +4,7 @@ from django.db.models.base import Model as Model
 from django.urls import path
 from django.views.generic import TemplateView, ListView, DetailView 
 
-from .models.reviews import Review, ReviewCycle
+from ..models.reviews import Review, ReviewCycle
 
 
 class ReviewList(ListView):

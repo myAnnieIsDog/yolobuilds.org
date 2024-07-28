@@ -13,8 +13,8 @@ class Department(models.Model):
     
     class Meta:
         ordering = ["dept_code"]
-        verbose_name = "Department"
-        verbose_name_plural = "Department Options"
+        verbose_name = "Yolo Department"
+        verbose_name_plural = "Yolo Department Options"
 
 
 class Division(models.Model): 
@@ -26,8 +26,8 @@ class Division(models.Model):
 
     class Meta:
         ordering = ["division"]
-        verbose_name = "Division"
-        verbose_name_plural = "Divisions"
+        verbose_name = "Yolo DCS Division"
+        verbose_name_plural = "Yolo DCS Divisions"
     
     def __str__(self) -> str:
         return self.prefix
@@ -60,5 +60,5 @@ class Staff(models.Model):
     
     class Meta():
         ordering = ["department", "division", "profile"]
-        verbose_name = "Staff Member"
-        verbose_name_plural = "Staff Members"
+        verbose_name = "Yolo DCS Employee"
+        verbose_name_plural = "Yolo DCS Employees"

@@ -21,5 +21,5 @@ class Type(models.Model):
     
     class Meta():
         ordering = ["type"]
-        verbose_name = "Type"
-        verbose_name_plural = "Types"
+        verbose_name = "Record Type"
+        verbose_name_plural = "Record Types"

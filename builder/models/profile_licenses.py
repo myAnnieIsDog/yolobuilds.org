@@ -12,8 +12,8 @@ class LicenseAgency(models.Model):
     
     class Meta:
         ordering = ["agency"]
-        verbose_name = "License Agency"
-        verbose_name_plural = "License Agencies"
+        verbose_name = "Certification Agency"
+        verbose_name_plural = "Certification Agencies"
 
 
 class LicenseType(models.Model):
@@ -26,8 +26,8 @@ class LicenseType(models.Model):
 
     class Meta:
         ordering = ["license_short"]
-        verbose_name = "License Type"
-        verbose_name_plural = "License Types"
+        verbose_name = "Certification Type"
+        verbose_name_plural = "Certification Types"
 
 
 class LicenseHolder(models.Model):
@@ -45,3 +45,5 @@ class LicenseHolder(models.Model):
     
     class Meta:
         ordering = ["license_holder", "license_type"]
+        verbose_name = "Certificate"
+        verbose_name_plural = "Certificates"

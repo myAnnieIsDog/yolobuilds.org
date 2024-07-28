@@ -12,8 +12,8 @@ class Agency(models.Model):
     
     class Meta:
         ordering = ["agency"]
-        verbose_name = "DCS Partner Agency"
-        verbose_name_plural = "DCS Partner Agencies"
+        verbose_name = "Yolo DCS Partner Agency"
+        verbose_name_plural = "Yolo DCS Partner Agencies"
 
 
 class YoloCountyPartners(models.Model):
@@ -30,5 +30,5 @@ class YoloCountyPartners(models.Model):
     
     class Meta():
         ordering = ["agency", "profile"]
-        verbose_name = "DCS Partner"
-        verbose_name_plural = "DCS Partners"
+        verbose_name = "Yolo DCS Partner"
+        verbose_name_plural = "Yolo DCS Partners"
