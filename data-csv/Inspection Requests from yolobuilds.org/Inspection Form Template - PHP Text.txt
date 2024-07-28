@@ -1,0 +1,1017 @@
+if ( class_exists( 'WPForms_Template', false ) ) :
+/**
+ * Inspection Request
+ * Template for WPForms.
+ */
+class WPForms_Template_inspection_request extends WPForms_Template {
+
+	/**
+	 * Primary class constructor.
+	 *
+	 * @since 1.0.0
+	 */
+	public function init() {
+
+		// Template name
+		$this->name = 'Inspection Request';
+
+		// Template slug
+		$this->slug = 'inspection_request';
+
+		// Template description
+		$this->description = '';
+
+		// Template field and settings
+		$this->data = array (
+	'fields' => array (
+		40 => array (
+			'id' => '40',
+			'type' => 'pagebreak',
+			'position' => 'top',
+			'indicator' => 'progress',
+			'indicator_color' => '#72b239',
+			'nav_align' => 'left',
+		),
+		56 => array (
+			'id' => '56',
+			'type' => 'hidden',
+			'label' => 'Unique Value',
+			'label_disable' => '1',
+			'default_value' => '{unique_value}',
+		),
+		55 => array (
+			'id' => '55',
+			'type' => 'hidden',
+			'label' => 'Inspection Request Date',
+			'label_disable' => '1',
+			'default_value' => '{entry_date format="d/m/Y"}',
+		),
+		9 => array (
+			'id' => '9',
+			'type' => 'text',
+			'label' => 'Permit Number',
+			'required' => '1',
+			'size' => 'medium',
+			'limit_count' => '1',
+			'limit_mode' => 'characters',
+		),
+		53 => array (
+			'id' => '53',
+			'type' => 'text',
+			'label' => 'Project Location',
+			'required' => '1',
+			'size' => 'medium',
+			'limit_count' => '1',
+			'limit_mode' => 'characters',
+		),
+		45 => array (
+			'id' => '45',
+			'type' => 'text',
+			'label' => 'Project Description',
+			'required' => '1',
+			'size' => 'medium',
+			'limit_count' => '1',
+			'limit_mode' => 'characters',
+		),
+		12 => array (
+			'id' => '12',
+			'type' => 'radio',
+			'label' => 'Type of Request',
+			'choices' => array (
+				3 => array (
+					'label' => 'Submit a new inspection request.',
+					'icon' => 'face-smile',
+					'icon_style' => 'regular',
+				),
+				2 => array (
+					'label' => 'Modify or reschedule an inspection request.',
+					'icon' => 'face-smile',
+					'icon_style' => 'regular',
+				),
+				1 => array (
+					'label' => 'Cancel an inspection request.',
+					'icon' => 'face-smile',
+					'icon_style' => 'regular',
+				),
+			),
+			'choices_images_style' => 'modern',
+			'choices_icons_color' => '#0399ed',
+			'choices_icons_size' => 'large',
+			'choices_icons_style' => 'default',
+			'description' => 'If the inspector arrives on site and you are not ready for inspection, a reinspection fee will be charged. If you will not be ready for an inspection, reschedule as soon as possible.',
+			'required' => '1',
+		),
+		13 => array (
+			'id' => '13',
+			'type' => 'text',
+			'label' => 'Modification Details',
+			'description' => 'Describe how you need to modify your request.',
+			'required' => '1',
+			'size' => 'medium',
+			'limit_count' => '1',
+			'limit_mode' => 'characters',
+			'conditional_logic' => '1',
+			'conditional_type' => 'show',
+			'conditionals' => array (
+				0 => array (
+					0 => array (
+						'field' => '12',
+						'operator' => '==',
+						'value' => '2',
+					),
+				),
+			),
+		),
+		14 => array (
+			'id' => '14',
+			'type' => 'text',
+			'label' => 'Cancellation Details',
+			'description' => 'If this section is left blank, all inspection requests for the listed permit will be cancelled.',
+			'size' => 'medium',
+			'limit_count' => '1',
+			'limit_mode' => 'characters',
+			'conditional_logic' => '1',
+			'conditional_type' => 'show',
+			'conditionals' => array (
+				0 => array (
+					0 => array (
+						'field' => '12',
+						'operator' => '==',
+						'value' => '1',
+					),
+				),
+			),
+		),
+		11 => array (
+			'id' => '11',
+			'type' => 'radio',
+			'label' => 'When do you want your inspection?',
+			'choices' => array (
+				1 => array (
+					'label' => 'Next available',
+					'icon' => 'face-smile',
+					'icon_style' => 'regular',
+				),
+				2 => array (
+					'label' => 'Future date',
+					'icon' => 'face-smile',
+					'icon_style' => 'regular',
+				),
+			),
+			'choices_images_style' => 'modern',
+			'choices_icons_color' => '#0399ed',
+			'choices_icons_size' => 'large',
+			'choices_icons_style' => 'default',
+			'required' => '1',
+			'conditional_logic' => '1',
+			'conditional_type' => 'show',
+			'conditionals' => array (
+				0 => array (
+					0 => array (
+						'field' => '12',
+						'operator' => '==',
+						'value' => '3',
+					),
+				),
+			),
+		),
+		52 => array (
+			'id' => '52',
+			'type' => 'content',
+			'content' => 'For requests submitted by 2:00 p.m. the next available date is typically the next business day. We will respond to confirm your date as quickly as we can.
+
+A few times per year the next available is 2-3 business days out due to high demand, so we encourage you to schedule early whenever possible.',
+			'label_disable' => '1',
+			'size' => 'medium',
+			'conditional_logic' => '1',
+			'conditional_type' => 'show',
+			'conditionals' => array (
+				0 => array (
+					0 => array (
+						'field' => '11',
+						'operator' => '==',
+						'value' => '1',
+					),
+				),
+			),
+		),
+		35 => array (
+			'id' => '35',
+			'type' => 'radio',
+			'label' => 'Is the work is ready for inspection?',
+			'choices' => array (
+				1 => array (
+					'label' => 'Yes, it is already complete at the time of this request.',
+					'icon' => 'face-smile',
+					'icon_style' => 'regular',
+				),
+				2 => array (
+					'label' => 'No, but it will be ready before the inspection time.',
+					'icon' => 'face-smile',
+					'icon_style' => 'regular',
+				),
+			),
+			'choices_images_style' => 'modern',
+			'choices_icons_color' => '#0399ed',
+			'choices_icons_size' => 'large',
+			'choices_icons_style' => 'default',
+			'required' => '1',
+			'conditional_logic' => '1',
+			'conditional_type' => 'show',
+			'conditionals' => array (
+				0 => array (
+					0 => array (
+						'field' => '11',
+						'operator' => '==',
+						'value' => '1',
+					),
+				),
+			),
+		),
+		38 => array (
+			'id' => '38',
+			'type' => 'content',
+			'content' => '<strong><span style="color: #0000ff;">A "next available" inspection request requires the work to be ready for inspection at the time of the request. This inspection request tool will allow you to submit the request for staff review, but they are typically rejected.</span></strong>
+
+<strong><span style="color: #0000ff;">A "future date" request may be submitted while work is in progress.</span></strong>',
+			'label_disable' => '1',
+			'size' => 'medium',
+			'conditional_logic' => '1',
+			'conditional_type' => 'show',
+			'conditionals' => array (
+				0 => array (
+					0 => array (
+						'field' => '35',
+						'operator' => '==',
+						'value' => '2',
+					),
+					1 => array (
+						'field' => '11',
+						'operator' => '==',
+						'value' => '1',
+					),
+				),
+			),
+		),
+		44 => array (
+			'id' => '44',
+			'type' => 'content',
+			'content' => '<span style="color: #000000;">The requested date should be 2 or more days ahead or else you should submit a "next available" request. If you request an inspection on a holiday then your request will be scheduled for the following business day. Yolo Builds observes the following holidays:</span>
+
+<span style="color: #000000;">New Year\'s Day</span>
+<span style="color: #000000;">Martin Luther King\'s Day</span>
+<span style="color: #000000;">President\'s Day</span>
+<span style="color: #000000;">Memorial&nbsp;Day</span>
+<span style="color: #000000;">Juneteenth</span>
+<span style="color: #000000;">Independence Day</span>
+<span style="color: #000000;">Labor Day</span>
+<span style="color: #000000;">Veteran\'s Day</span>
+<span style="color: #000000;">Thanksgiving Day</span>
+<span style="color: #000000;">Day after Thanksgiving</span>
+<span style="color: #000000;">Christmas Eve to New Year\'s Day</span>',
+			'label_disable' => '1',
+			'size' => 'medium',
+			'conditional_logic' => '1',
+			'conditional_type' => 'show',
+			'conditionals' => array (
+				0 => array (
+					0 => array (
+						'field' => '11',
+						'operator' => '==',
+						'value' => '2',
+					),
+				),
+			),
+		),
+		10 => array (
+			'id' => '10',
+			'type' => 'date-time',
+			'label' => 'Requested Date',
+			'format' => 'date',
+			'required' => '1',
+			'size' => 'medium',
+			'date_type' => 'datepicker',
+			'date_format' => 'm/d/Y',
+			'date_limit_days' => '1',
+			'date_limit_days_mon' => '1',
+			'date_limit_days_tue' => '1',
+			'date_limit_days_wed' => '1',
+			'date_limit_days_thu' => '1',
+			'date_limit_days_fri' => '1',
+			'date_disable_past_dates' => '1',
+			'time_interval' => '30',
+			'time_format' => 'g:i A',
+			'time_limit_hours_start_hour' => '09',
+			'time_limit_hours_start_min' => '00',
+			'time_limit_hours_start_ampm' => 'am',
+			'time_limit_hours_end_hour' => '06',
+			'time_limit_hours_end_min' => '00',
+			'time_limit_hours_end_ampm' => 'pm',
+			'conditional_logic' => '1',
+			'conditional_type' => 'show',
+			'conditionals' => array (
+				0 => array (
+					0 => array (
+						'field' => '11',
+						'operator' => '==',
+						'value' => '2',
+					),
+				),
+			),
+		),
+		28 => array (
+			'id' => '28',
+			'type' => 'checkbox',
+			'label' => 'Inspection Category (select all that apply)',
+			'choices' => array (
+				11 => array (
+					'label' => '** Permit Final **',
+					'icon' => 'face-smile',
+					'icon_style' => 'regular',
+				),
+				7 => array (
+					'label' => 'Building',
+					'icon' => 'face-smile',
+					'icon_style' => 'regular',
+				),
+				1 => array (
+					'label' => 'Demolition',
+					'icon' => 'face-smile',
+					'icon_style' => 'regular',
+				),
+				2 => array (
+					'label' => 'Electrical',
+					'icon' => 'face-smile',
+					'icon_style' => 'regular',
+				),
+				3 => array (
+					'label' => 'Grading',
+					'icon' => 'face-smile',
+					'icon_style' => 'regular',
+				),
+				4 => array (
+					'label' => 'Mechanical',
+					'icon' => 'face-smile',
+					'icon_style' => 'regular',
+				),
+				5 => array (
+					'label' => 'Plumbing (including Fuel Gas)',
+					'icon' => 'face-smile',
+					'icon_style' => 'regular',
+				),
+				6 => array (
+					'label' => 'Pool/Spa',
+					'icon' => 'face-smile',
+					'icon_style' => 'regular',
+				),
+			),
+			'choices_images_style' => 'modern',
+			'choices_icons_color' => '#0399ed',
+			'choices_icons_size' => 'large',
+			'choices_icons_style' => 'default',
+			'description' => 'Select the general category of inspection. If this inspection will close out the permit, select ** Permit Final ** AND the specific inspection category.',
+			'required' => '1',
+			'conditional_logic' => '1',
+			'conditional_type' => 'show',
+			'conditionals' => array (
+				0 => array (
+					0 => array (
+						'field' => '12',
+						'operator' => '==',
+						'value' => '3',
+					),
+				),
+			),
+		),
+		30 => array (
+			'id' => '30',
+			'type' => 'checkbox',
+			'label' => 'Building Inspection (select all that apply)',
+			'choices' => array (
+				1 => array (
+					'label' => 'Concrete Footings/Foundation',
+					'icon' => 'face-smile',
+					'icon_style' => 'regular',
+				),
+				3 => array (
+					'label' => 'Concrete Piers',
+					'icon' => 'face-smile',
+					'icon_style' => 'regular',
+				),
+				4 => array (
+					'label' => 'Concrete Slab on Grade',
+					'icon' => 'face-smile',
+					'icon_style' => 'regular',
+				),
+				18 => array (
+					'label' => 'Disabled Access',
+					'icon' => 'face-smile',
+					'icon_style' => 'regular',
+				),
+				19 => array (
+					'label' => 'Flood Lowest Floor Elevation',
+					'icon' => 'face-smile',
+					'icon_style' => 'regular',
+				),
+				20 => array (
+					'label' => 'Flood Final',
+					'icon' => 'face-smile',
+					'icon_style' => 'regular',
+				),
+				16 => array (
+					'label' => 'Insulation',
+					'icon' => 'face-smile',
+					'icon_style' => 'regular',
+				),
+				6 => array (
+					'label' => 'Masonry Walls - Lifts',
+					'icon' => 'face-smile',
+					'icon_style' => 'regular',
+				),
+				7 => array (
+					'label' => 'Masonry Walls - Cap',
+					'icon' => 'face-smile',
+					'icon_style' => 'regular',
+				),
+				9 => array (
+					'label' => 'Steel Frame',
+					'icon' => 'face-smile',
+					'icon_style' => 'regular',
+				),
+				15 => array (
+					'label' => 'Sheetrock Nailing',
+					'icon' => 'face-smile',
+					'icon_style' => 'regular',
+				),
+				17 => array (
+					'label' => 'Windows and Doors',
+					'icon' => 'face-smile',
+					'icon_style' => 'regular',
+				),
+				13 => array (
+					'label' => 'Wood Underfloor',
+					'icon' => 'face-smile',
+					'icon_style' => 'regular',
+				),
+				11 => array (
+					'label' => 'Wood Shear Walls',
+					'icon' => 'face-smile',
+					'icon_style' => 'regular',
+				),
+				12 => array (
+					'label' => 'Wood Roof Deck',
+					'icon' => 'face-smile',
+					'icon_style' => 'regular',
+				),
+				10 => array (
+					'label' => 'Wood Frame',
+					'icon' => 'face-smile',
+					'icon_style' => 'regular',
+				),
+				21 => array (
+					'label' => 'Wildland-Urban Interface (WUI)',
+					'icon' => 'face-smile',
+					'icon_style' => 'regular',
+				),
+				14 => array (
+					'label' => 'Other',
+					'icon' => 'face-smile',
+					'icon_style' => 'regular',
+				),
+			),
+			'choices_images_style' => 'modern',
+			'choices_icons_color' => '#0399ed',
+			'choices_icons_size' => 'large',
+			'choices_icons_style' => 'default',
+			'required' => '1',
+			'conditional_logic' => '1',
+			'conditional_type' => 'show',
+			'conditionals' => array (
+				0 => array (
+					0 => array (
+						'field' => '28',
+						'operator' => '==',
+						'value' => '7',
+					),
+				),
+			),
+		),
+		31 => array (
+			'id' => '31',
+			'type' => 'text',
+			'label' => 'Other Building Inspection',
+			'description' => 'This description must be clear and concise. A reinspection fee may be charged if the inspector is unable to perform the inspection due to an unclear or inaccurate description.',
+			'required' => '1',
+			'size' => 'medium',
+			'limit_count' => '1',
+			'limit_mode' => 'characters',
+			'conditional_logic' => '1',
+			'conditional_type' => 'show',
+			'conditionals' => array (
+				0 => array (
+					0 => array (
+						'field' => '30',
+						'operator' => '==',
+						'value' => '14',
+					),
+				),
+			),
+		),
+		24 => array (
+			'id' => '24',
+			'type' => 'radio',
+			'label' => 'Demolition Inspection',
+			'choices' => array (
+				1 => array (
+					'label' => 'Pre-Measure Utility Disconnect',
+					'icon' => 'face-smile',
+					'icon_style' => 'regular',
+				),
+				5 => array (
+					'label' => 'Final',
+					'icon' => 'face-smile',
+					'icon_style' => 'regular',
+				),
+			),
+			'choices_images_style' => 'modern',
+			'choices_icons_color' => '#0399ed',
+			'choices_icons_size' => 'large',
+			'choices_icons_style' => 'default',
+			'required' => '1',
+			'conditional_logic' => '1',
+			'conditional_type' => 'show',
+			'conditionals' => array (
+				0 => array (
+					0 => array (
+						'field' => '28',
+						'operator' => '==',
+						'value' => '1',
+					),
+				),
+			),
+		),
+		18 => array (
+			'id' => '18',
+			'type' => 'radio',
+			'label' => 'Electrical Inspection',
+			'choices' => array (
+				1 => array (
+					'label' => 'Underground',
+					'icon' => 'face-smile',
+					'icon_style' => 'regular',
+				),
+				5 => array (
+					'label' => 'Rough',
+					'icon' => 'face-smile',
+					'icon_style' => 'regular',
+				),
+				2 => array (
+					'label' => 'Meter Release',
+					'icon' => 'face-smile',
+					'icon_style' => 'regular',
+				),
+				3 => array (
+					'label' => 'General Lighting and Receptacles',
+					'icon' => 'face-smile',
+					'icon_style' => 'regular',
+				),
+				6 => array (
+					'label' => 'Final',
+					'icon' => 'face-smile',
+					'icon_style' => 'regular',
+				),
+				4 => array (
+					'label' => 'Other',
+					'icon' => 'face-smile',
+					'icon_style' => 'regular',
+				),
+			),
+			'choices_images_style' => 'modern',
+			'choices_icons_color' => '#0399ed',
+			'choices_icons_size' => 'large',
+			'choices_icons_style' => 'default',
+			'required' => '1',
+			'conditional_logic' => '1',
+			'conditional_type' => 'show',
+			'conditionals' => array (
+				0 => array (
+					0 => array (
+						'field' => '28',
+						'operator' => '==',
+						'value' => '2',
+					),
+				),
+			),
+		),
+		19 => array (
+			'id' => '19',
+			'type' => 'text',
+			'label' => 'Other Electrical Inspection',
+			'description' => 'This description must be clear and concise. A reinspection fee may be charged if the inspector is unable to perform the inspection due to an unclear or inaccurate description.',
+			'required' => '1',
+			'size' => 'medium',
+			'limit_count' => '1',
+			'limit_mode' => 'characters',
+			'conditional_logic' => '1',
+			'conditional_type' => 'show',
+			'conditionals' => array (
+				0 => array (
+					0 => array (
+						'field' => '18',
+						'operator' => '==',
+						'value' => '4',
+					),
+				),
+			),
+		),
+		37 => array (
+			'id' => '37',
+			'type' => 'radio',
+			'label' => 'Grading Inspection',
+			'choices' => array (
+				1 => array (
+					'label' => 'Site Preparation',
+					'icon' => 'face-smile',
+					'icon_style' => 'regular',
+				),
+				2 => array (
+					'label' => 'Lifts',
+					'icon' => 'face-smile',
+					'icon_style' => 'regular',
+				),
+				3 => array (
+					'label' => 'Final',
+					'icon' => 'face-smile',
+					'icon_style' => 'regular',
+				),
+			),
+			'choices_images_style' => 'modern',
+			'choices_icons_color' => '#0399ed',
+			'choices_icons_size' => 'large',
+			'choices_icons_style' => 'default',
+			'required' => '1',
+			'conditional_logic' => '1',
+			'conditional_type' => 'show',
+			'conditionals' => array (
+				0 => array (
+					0 => array (
+						'field' => '28',
+						'operator' => '==',
+						'value' => '3',
+					),
+				),
+			),
+		),
+		20 => array (
+			'id' => '20',
+			'type' => 'radio',
+			'label' => 'Mechanical Inspection',
+			'choices' => array (
+				3 => array (
+					'label' => 'HVAC',
+					'icon' => 'face-smile',
+					'icon_style' => 'regular',
+				),
+				5 => array (
+					'label' => 'Rough',
+					'icon' => 'face-smile',
+					'icon_style' => 'regular',
+				),
+				6 => array (
+					'label' => 'Final',
+					'icon' => 'face-smile',
+					'icon_style' => 'regular',
+				),
+				4 => array (
+					'label' => 'Other',
+					'icon' => 'face-smile',
+					'icon_style' => 'regular',
+				),
+			),
+			'choices_images_style' => 'modern',
+			'choices_icons_color' => '#0399ed',
+			'choices_icons_size' => 'large',
+			'choices_icons_style' => 'default',
+			'required' => '1',
+			'conditional_logic' => '1',
+			'conditional_type' => 'show',
+			'conditionals' => array (
+				0 => array (
+					0 => array (
+						'field' => '28',
+						'operator' => '==',
+						'value' => '4',
+					),
+				),
+			),
+		),
+		22 => array (
+			'id' => '22',
+			'type' => 'text',
+			'label' => 'Other Mechanical Inspection',
+			'description' => 'This description must be clear and concise. A reinspection fee may be charged if the inspector is unable to perform the inspection due to an unclear or inaccurate description.',
+			'required' => '1',
+			'size' => 'medium',
+			'limit_count' => '1',
+			'limit_mode' => 'characters',
+			'conditional_logic' => '1',
+			'conditional_type' => 'show',
+			'conditionals' => array (
+				0 => array (
+					0 => array (
+						'field' => '20',
+						'operator' => '==',
+						'value' => '4',
+					),
+				),
+			),
+		),
+		46 => array (
+			'id' => '46',
+			'type' => 'checkbox',
+			'label' => 'Plumbing Inspection',
+			'choices' => array (
+				1 => array (
+					'label' => 'Gas Pressure Test',
+					'icon' => 'face-smile',
+					'icon_style' => 'regular',
+				),
+				2 => array (
+					'label' => 'Gas Meter Release',
+					'icon' => 'face-smile',
+					'icon_style' => 'regular',
+				),
+				3 => array (
+					'label' => 'Water Heater',
+					'icon' => 'face-smile',
+					'icon_style' => 'regular',
+				),
+				7 => array (
+					'label' => 'Underground',
+					'icon' => 'face-smile',
+					'icon_style' => 'regular',
+				),
+				6 => array (
+					'label' => 'Rough',
+					'icon' => 'face-smile',
+					'icon_style' => 'regular',
+				),
+				5 => array (
+					'label' => 'Final',
+					'icon' => 'face-smile',
+					'icon_style' => 'regular',
+				),
+				4 => array (
+					'label' => 'Other',
+					'icon' => 'face-smile',
+					'icon_style' => 'regular',
+				),
+			),
+			'choices_images_style' => 'modern',
+			'choices_icons_color' => '#0399ed',
+			'choices_icons_size' => 'large',
+			'choices_icons_style' => 'default',
+			'required' => '1',
+			'conditional_logic' => '1',
+			'conditional_type' => 'show',
+			'conditionals' => array (
+				0 => array (
+					0 => array (
+						'field' => '28',
+						'operator' => '==',
+						'value' => '5',
+					),
+				),
+			),
+		),
+		23 => array (
+			'id' => '23',
+			'type' => 'text',
+			'label' => 'Other Plumbing Inspection',
+			'description' => 'This description must be clear and concise. A reinspection fee may be charged if the inspector is unable to perform the inspection due to an unclear or inaccurate description.',
+			'required' => '1',
+			'size' => 'medium',
+			'limit_count' => '1',
+			'limit_mode' => 'characters',
+			'conditional_logic' => '1',
+			'conditional_type' => 'show',
+			'conditionals' => array (
+				0 => array (
+					0 => array (
+						'field' => '46',
+						'operator' => '==',
+						'value' => '4',
+					),
+				),
+			),
+		),
+		26 => array (
+			'id' => '26',
+			'type' => 'radio',
+			'label' => 'Pool/Spa Inspection',
+			'choices' => array (
+				5 => array (
+					'label' => 'Pre-Gunite',
+					'icon' => 'face-smile',
+					'icon_style' => 'regular',
+				),
+				7 => array (
+					'label' => 'Pre-Deck',
+					'icon' => 'face-smile',
+					'icon_style' => 'regular',
+				),
+				3 => array (
+					'label' => 'Pre-Plaster and Safety Devices',
+					'icon' => 'face-smile',
+					'icon_style' => 'regular',
+				),
+				6 => array (
+					'label' => 'Hot Tub',
+					'icon' => 'face-smile',
+					'icon_style' => 'regular',
+				),
+				8 => array (
+					'label' => 'Other',
+					'icon' => 'face-smile',
+					'icon_style' => 'regular',
+				),
+			),
+			'choices_images_style' => 'modern',
+			'choices_icons_color' => '#0399ed',
+			'choices_icons_size' => 'large',
+			'choices_icons_style' => 'default',
+			'required' => '1',
+			'conditional_logic' => '1',
+			'conditional_type' => 'show',
+			'conditionals' => array (
+				0 => array (
+					0 => array (
+						'field' => '28',
+						'operator' => '==',
+						'value' => '6',
+					),
+				),
+			),
+		),
+		27 => array (
+			'id' => '27',
+			'type' => 'text',
+			'label' => 'Other Pool/Spa Inspection',
+			'description' => 'This description must be clear and concise. A reinspection fee may be charged if the inspector is unable to perform the inspection due to an unclear or inaccurate description.',
+			'required' => '1',
+			'size' => 'medium',
+			'limit_count' => '1',
+			'limit_mode' => 'characters',
+			'conditional_logic' => '1',
+			'conditional_type' => 'show',
+			'conditionals' => array (
+				0 => array (
+					0 => array (
+						'field' => '26',
+						'operator' => '==',
+						'value' => '8',
+					),
+				),
+			),
+		),
+		48 => array (
+			'id' => '48',
+			'type' => 'name',
+			'label' => 'On-Site Contact Name',
+			'format' => 'first-last',
+			'required' => '1',
+			'size' => 'medium',
+			'conditional_logic' => '1',
+			'conditional_type' => 'show',
+			'conditionals' => array (
+				0 => array (
+					0 => array (
+						'field' => '12',
+						'operator' => '==',
+						'value' => '3',
+					),
+				),
+			),
+		),
+		49 => array (
+			'id' => '49',
+			'type' => 'phone',
+			'label' => 'On-Site Contact Phone',
+			'format' => 'smart',
+			'required' => '1',
+			'size' => 'medium',
+			'conditional_logic' => '1',
+			'conditional_type' => 'show',
+			'conditionals' => array (
+				0 => array (
+					0 => array (
+						'field' => '12',
+						'operator' => '==',
+						'value' => '3',
+					),
+				),
+			),
+		),
+		54 => array (
+			'id' => '54',
+			'type' => 'text',
+			'label' => 'Inspection Notes',
+			'description' => 'Notes such as gates codes, etc.',
+			'size' => 'medium',
+			'limit_count' => '1',
+			'limit_mode' => 'characters',
+			'conditional_logic' => '1',
+			'conditional_type' => 'show',
+			'conditionals' => array (
+				0 => array (
+					0 => array (
+						'field' => '12',
+						'operator' => '==',
+						'value' => '3',
+					),
+				),
+			),
+		),
+		39 => array (
+			'id' => '39',
+			'type' => 'pagebreak',
+			'next' => 'Next',
+			'prev_toggle' => '1',
+			'prev' => 'Previous',
+		),
+		42 => array (
+			'id' => '42',
+			'type' => 'entry-preview',
+			'preview-notice-enable' => '1',
+			'preview-notice' => '<strong>This is a preview of your submission. It has not been submitted yet!</strong>
+Please take a moment to verify your information. You can also go back to make changes.',
+			'style' => 'basic',
+		),
+		41 => array (
+			'id' => '41',
+			'type' => 'pagebreak',
+			'position' => 'bottom',
+			'prev_toggle' => '1',
+			'prev' => 'Previous',
+		),
+	),
+	'field_id' => 57,
+	'settings' => array (
+		'form_title' => 'Inspection Request',
+		'submit_text' => 'Submit',
+		'submit_text_processing' => 'Sending...',
+		'ajax_submit' => '1',
+		'notification_enable' => '1',
+		'notifications' => array (
+			1 => array (
+				'notification_name' => 'Default Notification',
+				'email' => '{admin_email}',
+				'subject' => '{field_id="11"} {field_id="10"} {field_id="9"} {field_id="12"}',
+				'sender_name' => 'Yolo Builds Inspection Request',
+				'sender_address' => 'no-reply@yolobuilds.org',
+				'message' => '{all_fields}',
+				'file_upload_attachment_fields' => array (
+				),
+				'entry_csv_attachment_enable' => '1',
+				'entry_csv_attachment_entry_information' => array (
+					0 => 'all_fields',
+				),
+				'entry_csv_attachment_file_name' => 'Inspection-Request',
+			),
+		),
+		'confirmations' => array (
+			1 => array (
+				'name' => 'Default Confirmation',
+				'type' => 'message',
+				'message' => '<p>Thank you. Staff will review your request and let you know if the requested date is available. The inspector will set a 2-hour window for your inspection by 8:00 a.m. the day of the inspection.</p>',
+				'message_scroll' => '1',
+				'page' => '2120',
+				'message_entry_preview_style' => 'basic',
+			),
+		),
+		'antispam' => '1',
+		'anti_spam' => array (
+			'time_limit' => array (
+				'duration' => '3',
+			),
+			'country_filter' => array (
+				'action' => 'allow',
+				'country_codes' => array (
+				),
+				'message' => 'Sorry, this form does not accept submissions from your country.',
+			),
+			'keyword_filter' => array (
+				'message' => 'Sorry, your message can\'t be submitted because it contains prohibited words.',
+			),
+		),
+		'form_tags' => array (
+		),
+	),
+	'meta' => array (
+		'template' => 'inspection_request',
+	),
+);
+	}
+}
+new WPForms_Template_inspection_request();
+endif;

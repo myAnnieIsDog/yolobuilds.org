@@ -1,0 +1,23 @@
+<section>
+    <table>
+        <tr>
+            <th> ID </th>
+            <th> Date </th>
+            <th> Number </th>
+            <th> Type </th>
+            <th> Subtype </th>
+            <th> Description </th>
+        </tr>
+        
+        {% for permit in permit_list %}
+        <tr>
+            <td> {{ permit.id }} </td>
+            <td> {{ permit.date|truncatechars:7 }} </td>
+            <td> {{ permit.number }} </td>
+            <td> {{ permit.type }} </td>
+            <td> {{ permit.subtype }} </td>
+            <td> {{ permit.description }} </td>
+        </tr>
+        {% endfor %}
+    </table>    
+</section>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> {{ title }} </title>
+    
+    <link   rel="stylesheet" href="//css/base.css"/>
+    <link   rel="stylesheet" href="//css/forms.css"/>
+
+    <script src="//js/script.js" defer></script>
+    <script src="//js/htmx.min.js" defer></script>
+    <script src="//js/alpine.js" defer></script>
+    
+    <meta   charset="UTF-8"/>
+    <meta   name="viewport"
+            content="width=device-width, initial-scale=1.0"/>
+    <meta   name="author" 
+            content="Scott Doolittle"/>
+    <meta   name="description" 
+            content="Yolo Builds v0.24.0."/>
+</head>
+
+<body x-data="{ bp: @js($'data/BP24-0000') }">
+    <header>
+        <h1> {{ header }} </h1>
+        <p> {{ headDescription}} </p>       
+    </header>
+    
+    <main>    
+        {% block main %}   
+        {% end block main %} 
+    </main>
+    
+    <footer x-data="{ verified: false, admin: false, open: false }">
+        <!-- On this tite the footer is the location of the main menu and similar links/buttons. 
+        It is placed here to promote ease of use for smartpphone users with one hand. -->
+        
+        <button id="MainMenu" @click="open = ! open" x-show="! open"> Menu </button>
+        <button id="MainMenu" @click="open = ! open" x-show="open"> Close Menu </button>
+        
+        <!-- Get Main Menu Partial -->
+        <!-- In this file 'Partial' means the template partial that is used for each section. -->
+        <div 
+            id="MainDropdown"
+            x-show="open" 
+            @click.outside="open = false"
+            hx-get="html/menu.html"
+            hx-trigger="load"
+        ></div>
+
+        <button x-show="! verified">Login</button>
+        <button x-show="! verified">Register</button>
+        <button x-show="verified">Logout</button>
+        <button x-show="verified">Profile</button>
+        <button x-show="admin * verified">Configuration</button>
+
+        <!-- Get Search Modal Dialog Partial -->
+        <div 
+            id = "search"
+            hx-get="html/search.html"
+            hx-trigger="load"
+        ></div>
+    </footer>
+</body>
+</html>

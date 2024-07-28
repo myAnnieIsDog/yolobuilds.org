@@ -1,0 +1,58 @@
+
+{% extends base %}
+<section>
+    <!-- Get Location Partial -->
+    <!-- In this file 'Partial' means the template partial that is used for each section. -->
+    <div
+        hx-get="html/location.html"
+        hx-trigger="load">
+    </div>
+</section>
+
+<section>
+    <!-- Get Contacts Partial -->
+    <div
+        hx-get="html/contacts.html"
+        hx-trigger="load">
+    </div>
+</section>
+
+<section>
+    <!-- Get Demolition Partial -->
+    <div
+        hx-get="html/details-demo.html"
+        hx-trigger="load">
+    </div>
+</section>
+
+
+<!-- Get Reviews Partial -->
+<section
+    id="reviews"
+    hx-get="html/reviews.html"
+    hx-trigger="load"
+></section>
+
+
+<!-- Get Inspections Partial -->
+<section 
+    id="inspections"
+    hx-get="html/inspections.html"
+    hx-trigger="load"
+></section>
+
+
+<!-- Get Fiscal Partial -->
+<section 
+    id="fees"
+    hx-get="html/fiscal.html"
+    hx-trigger="load"
+></section>
+
+
+<!-- Get Documents Partial -->
+<section 
+    id = "documents"
+    hx-get="html/documents.html"
+    hx-trigger="load"
+></section>
