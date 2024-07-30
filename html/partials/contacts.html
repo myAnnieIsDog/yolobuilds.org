@@ -1,0 +1,17 @@
+<h2>Contacts</h2>
+<div class="header">
+    {% for contact in contacts %}
+        <div class="head-item">
+            <h3> {{ type }} </h3>
+            <p> {{ company }} </p>
+            <p> {{ name }} </p>
+            <p> {{ address }} </p>
+            <p> {{ city }}, CA {{ zip }} </p>
+            <p></p> <hr>
+            <p> {{ phone }} </p>
+            <p> {{ email }} </p>
+            <p> Alerts: {% if alerts %} </p>
+            <p> {{ license }} </p>
+        </div>
+    {% endfor %}
+</div>

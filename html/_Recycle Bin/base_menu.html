@@ -1,0 +1,108 @@
+{% block menu %}
+    <style>
+        #MainMenu {
+            background-color: var(--HEADING-1);
+            position: fixed;
+            top: 0;
+            right: 0;
+            min-width: 120px;
+            height: 40px
+        }
+        #MainMenuButton {
+            background-color: var(--HEADING-1);
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 120px;
+            height: 40px;         
+            text-align: center;
+            font: center;
+            font-weight: 400;
+            list-style: none;
+        }
+        #MainMenuContent {
+            position: fixed;
+            top: 0px;
+            right: 0;
+            z-index: 1.0;
+        }
+        #MainMenuContent button {
+            color: white;
+            font-weight: 400;
+            list-style: none;
+            min-height: 40px;
+            min-width: 240px;
+        }
+        #MainMenuContent button:hover {
+            background-color: white;
+            color: black;
+        }
+    </style>
+    <details id="MainMenu">
+        <summary onclick="dropdown_toggle()" id="MainMenuButton"> Menu </summary>
+
+        <div id="MainMenuContent">
+            <button onclick="dropdown_toggle()" style="width: 120px; text-align: right;">x&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button><br>
+
+            {% if user.is_authenticated %}
+                <a target="_blank" href="profile/">
+                    <button id="settings">Profile</button></a><br>
+
+                <a target="_blank" href="profile/logout/">
+                    <button id="settings">Logout</button></a><br>
+
+                <a target="_blank" href="https://google.com">
+                    <button id="recent">Recent</button></a><br>
+            {% else %}
+                <a target="_blank" href="profile/register/">
+                    <button id="settings">Register</button></a><br>
+
+                <a target="_blank" href="profile/login/">
+                    <button id="settings">Login</button></a><br>
+            {% endif %}
+            
+            <a target="_blank" href="https://google.com">
+                <button id="search">Search</button></a><br>
+
+            <a target="_blank" href="https://yolo.maps.arcgis.com/apps/View/index.html?appid=a36499d6ec8f494ba6974de0ca9b95d0">
+                <button id="gis_link">GIS</button></a><br>
+            
+            <a target="_blank" href="https://google.com">
+                <button id="sire">Business Licensing</button></a><br>
+
+            <a target="_blank" href="https://google.com">
+                <button id="sire">Building Permits</button></a><br>
+
+            <a target="_blank" href="https://google.com">
+                <button id="sire">Code Enforcement</button></a><br>
+
+            <a target="_blank" href="https://google.com">
+                <button id="sire">Planning</button></a><br>
+
+            <a target="_blank" href="https://google.com">
+                <button id="sire">Public Works</button></a><br>
+            
+            {% if user.is_staff %}
+                <a target="_blank" href="admin/">
+                <button id="config">Config</button></a><br>
+            {% endif %}
+        </div>
+    </details>
+
+<script>
+    function dropdown_toggle() {
+        document.getElementById("MainMenuContent").classList.toggle("show");
+    }
+    
+    var menu = document.getElementById("MainMenu")
+    var content = document.getElementById("MainMenuContent")
+    window.onclick = function(event) {
+        if (event.target == menu) {
+            menu.open = false;
+        }
+        else if (event.target != content) {
+            menu.open = false;
+        }
+    }
+</script>
+{% endblock menu %}

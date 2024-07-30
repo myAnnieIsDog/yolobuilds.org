@@ -1,0 +1,124 @@
+button {
+    width: 120px;
+    padding: 2px 0 2px 0;
+    margin: 0;
+    font-family: 'Calibri', 'Trebuchet MS', sans-serif;
+    font-weight: 500;
+    font-size: 1.35rem;
+    line-height: 1.3;
+    letter-spacing: 0.02em;
+    color: white;
+    background-color: var(--HEADING-1);
+}
+button:hover {
+    background-color: white;
+    color: black;
+}
+main button { width: 300px;}
+
+/* Input Formatting */
+input, select {
+    font-family:inherit;
+    font-size: inherit;
+    font-weight: 500; 
+    background-color: VAR(--INPUT);
+}
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"] {
+    padding: 1px 10px 1px 10px;
+    width: 300px;
+    box-shadow: var(--BOXSHADOW);
+}
+table input[type="text"],
+table button {
+    width: 150px;
+}
+
+/* Fieldset Formatting */
+fieldset {
+    margin: 5px 0 5px 10px;
+    border-style: hidden;
+}
+
+input[type="checkbox"]:checked,
+input[type="checkbox"]:checked+label,
+input[type="radio"]:checked,
+input[type="radio"]:checked+label {
+    padding: 5px 20px 5px 20px;
+    background-color: var(--SELECTED);
+    color: black;
+    box-shadow: var(--BOXSHADOW);
+    font-weight: 800;
+}
+
+details summary {
+    padding: 10px 10px 10px 15px;
+    background-color: var(--INPUT);
+    border: none;
+    box-shadow: var(--BOXSHADOW);
+    cursor: pointer;
+}
+details[open] > summary {
+    /* margin: 5px 0 20px 0; */
+    background-color: var(--INPUT);
+    color: black;
+}
+
+section table tr td {
+    border-top: 1px dashed gray;
+    padding: 10px 0;
+    vertical-align: top;
+}
+
+
+.name {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 320px;}
+.first {max-width: 150px;}
+.last {max-width: 150px;}
+
+
+.address {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 300px;}
+.number {max-width: 110px;}
+.street {max-width: 190px;}
+.city {max-width: 160px;}
+.state {max-width: 50px;}
+.zip {max-width: 90px;}
+
+
+.phone {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 200px;}
+.area_code {max-width: 55px;}
+.prefix {max-width: 55px;}
+.four {max-width: 70px;}
+
+
+.email {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 400px;}
+.user  {max-width: 150px;}
+.subdomain  {max-width: 132px;}
+.domain {max-width: 60px;}
+
+.license {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 320px;}
+.lic_type  {max-width: 190px;}
+.lic_number  {max-width: 110px;}
+
+.bus_lic {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 420px;}
+.bl_name  {max-width: 190px;}
+.bl_number  {max-width: 110px;}

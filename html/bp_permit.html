@@ -1,0 +1,36 @@
+{% extends base %}
+
+
+{% block main %}
+<section>
+    <h2> Location </h2>
+    {{ include 'partials/location.html' }}
+</section>
+
+<section>
+    <h2> Contacts </h2>
+    {{ include 'partials/contacts.html' }}
+</section>
+
+{% block permit_details %}
+{% endblock permit_details %}
+
+<section>
+    <h2> Reviews </h2>
+    {{ include 'partials/reviews.html' }}
+</section>
+
+<section>
+    <h2> Inspections </h2>
+    {{ include 'partials/inspections.html' }}
+</section>
+
+<section> Fiscal </h2>
+    {{ include 'partials/fiscal.html' }}
+</section>
+
+<section>
+    <h2> Documents </h2>
+    {{ include 'partials/documents.html' }}
+</section>
+{% endblock main %}

@@ -1,0 +1,165 @@
+* {padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+} 
+html { scroll-behavior: smooth; }
+
+
+/* Variables. */
+:root {
+    --BACKGROUND-1: hsl(0, 0%, 90%);
+    --BACKGROUND-2: hsl(0, 0%, 80%);
+    --BACKGROUND-3: hsl(0, 0%, 10%);
+    --TEXT: black;
+    --TEXT-ALT: white;
+
+    --BLUE-DARK: hsl(202, 45%, 30%);
+    --BLUE-LIGHT: hsl(195, 82%, 60%);
+    --RED: hsl(337, 78%, 38%);
+    --YELLOW: hsl(42, 86%, 60%);
+    --GREEN-DARK: hsl(176, 48%, 24%);
+    --GREEN-MID: hsl(76, 43%, 54%);
+    --GREEN-LIGHT: hsl(64, 68%, 72%);}
+
+
+/* Body. */
+body {color: white;
+    background: black;
+    font-family: sans-serif; 
+    font-weight: 350;
+    font-size: 1.0rem;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    text-align: left;
+}
+
+/* Main. */
+section {
+    padding: 10px;
+    margin: 5px;
+    background-color: var(--BLUE-DARK);
+}
+h1, h2, h3, h4, h5, h6 {
+    color: var(--GREEN-LIGHT);
+    padding-top: 7px;
+}
+h3 {color: var(--BLUE-LIGHT);}
+p {
+    padding-top: 5px;
+    padding-left: 5px;
+}
+::selection {background-color: var(--BACKGROUND-2);}
+
+/* Headers and Footers. */
+header, footer {
+    background-color: var(--GREEN-DARK);
+    left:0;
+    padding: 5px;
+    position: sticky;
+    right: 0;
+}
+header {
+    top: 0;
+}
+footer {bottom: 0;}
+button {
+    align-content: center;
+    font-size: 1.1rem;
+    height: 30px;
+    justify-content: center;
+    min-width: 110px;
+}
+
+.header {
+    display: flex;
+}
+.head-item {
+    margin-right: 20px;
+}
+
+#MainMenu {text-align: center;}
+#MainDropdown {
+    position: fixed;
+    bottom: 40px;
+    left: 5px;
+}
+
+
+/* Links. */
+a {
+    color: hsl(240, 100%, 50%);
+    background: black;
+    border: 1px dashed;
+}
+a:visited {color: purple;}
+a:active {color: red;}
+a:active {text-decoration: underline;}
+a:hover, a:focus {color: hsl(220, 90%, 60%);}
+a:hover, a:focus {text-decoration: underline;}
+
+
+/* Tables */
+table, td, th {
+    border: 1px solid;
+    border-collapse: collapse;
+    border-color: darkgray;
+    padding: 5px;
+    margin: 10px;
+    text-align: center;
+
+}
+th {
+    color: var(--BLUE-LIGHT);
+}
+.left td, .left th {text-align: left;}
+
+/* Lists */
+li {margin-top: 10px;}
+ol, ul {
+    list-style-position: outside;
+    margin-left: 25px;
+    padding-left: 12px;
+}
+
+ul, ul ul ul {list-style: circle;}
+ul ul, ul ul ul ul {list-style: disc;}
+
+ol, ol ol ol ol {list-style: decimal;}
+ol ol {list-style:lower-alpha;}
+ol ol ol {list-style:lower-roman;}
+ 
+
+/* Detailed List */
+dt {
+    color: var(--BLUE-LIGHT);
+    font-weight: 600;
+    padding: 5px;
+}
+dd {
+    padding-left: 10px;
+}
+dd ul {padding-left: 50px;}
+
+
+/* Accordian Style (Details - Summary) */
+
+details summary {
+    color: var(--BLUE-LIGHT);
+    padding: 10px 10px 10px 15px;
+    font-weight: 600;
+    font-size: 1.1rem;
+
+}
+.search, .search td, .search th { border-style: none; }
+.searchType { min-width: 150px; }
+.searchTerm { min-width: 250px; }
+
+dialog {
+    background-color: var(--BLUE-DARK);
+    border-color: var(--GREEN-MID);
+    color: white;
+    left: 50px;
+    padding: 15px;
+    position: fixed;
+    top: 100px;
+}
