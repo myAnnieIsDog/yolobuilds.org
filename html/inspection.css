@@ -1,0 +1,37 @@
+
+body {
+    background-color: hsla(200, 50%, 10%, 1.0);
+    color : whitesmoke; 
+    font-size: 1.3rem;
+    line-height: 1.7rem;
+    
+}
+
+::selection {
+    background-color: hsla(150, 50%, 40%, 0.6);
+}
+
+header, footer {
+    background-color: hsla(200, 50%, 20%, 1.0);
+    border-width: 2px;
+    border-color:  hsla(180, 50%, 70%, 1.0);
+    border-style: hidden;
+    border-radius: 30px;
+    padding: 30px;
+    margin: 30px;
+}
+
+Main {
+    background-color: hsla(200, 50%, 20%, 1.0);
+    color: white;
+    padding: 30px;
+    margin: 30px;
+    border-style: hidden;
+    border-color: hsla(180, 50%, 70%, 1.0);
+    border-radius: 30px;
+    border-width: 2px;
+}
+
+a {
+    color: skyblue;
+}

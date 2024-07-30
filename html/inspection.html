@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Scott Doolittle">
+    <meta name="description" content="This is the html coding lessons version of Yolo Builds.">
+    <link rel="stylesheet" href="inspection.css" type="text/css">
+    <link rel="icon" href="2023-10-03\YoloBuilds_BlueTrans.png" type="image/png">
+    <title>Inspection</title>
+</head>
+<body>
+    <header>
+        <h1>Yolo Builds</h1>
+        
+        <p>This is the tool for all building permit inspection requests. If the inspector arrives on site and you are not ready for inspection, a reinspection fee will be charged. If you will not be ready for an inspection, reschedule as soon as possible.</p>
+        <p><a href="https://www.yolocounty.org/government/general-government-departments/community-services/building-inspection-services/inspections">Are you ready to request an inspection?</a></p>
+    </header>
+
+    <main>
+        <h2>Inspection Requests</h2>
+        <form>
+            <!-- General permit information  -->
+            <p><label for="IrPermitNo">Permit Number</label><br>
+            <input type="text" id="IrPermitNo" name="IrPermitNo"></p>
+
+            <p><label for="IrPermitLocation">Permit Location (address or APN)</label><br>
+            <input type="text" id="IrPermitLocation" name="IrPermitLocation"></p>
+
+            <p><label for="IrPermitDescription">Permit Description</label><br>
+            <input type="text" id="IrPermitDescription" name="IrPermitDescription"></p>
+
+            <!-- New, Modification, or Cancellation  -->
+            <p><label for="IrType">Select all that apply:</label><br>
+                <input type="checkbox" id="IrNew" name="IrInspCategory">
+                <label for="IrNew">I am making a new inspection request.</label><br>
+            
+                <input type="checkbox" id="IrModify" name="inspCategory">
+                <label for="IrModify">I am request a modification to an existing inspection request.</label><br>
+            
+                <input type="checkbox" id="IrCancel" name="inspCategory">
+                <label for="IrCancel">I am cancelling an inspection request.</label></p>
+
+            <!-- Modification  -->
+            <p><label for="IrProjDescription">Modification Details. Describe how you want your request modified.</label><br>
+            <input type="text" id="IrProjDescription" name="projDescription"></p>
+
+            <!-- Cancellation  -->
+            <p><label for="IRprojDescription">Cancellation Details. If this selection is left blank, all inspection requests for the listed permit will be cancelled.</label><br>
+            <input type="text" id="IrProjDescription" name="projDescription"></p>
+
+            <!-- New, When?  -->
+            <p><label for="IrWhen">When do you want your inspection?</label></p>
+                <input type="radio" id="NextAvailable" name="IrWhen">
+                <label for="NextAvailable">Next Available</label><br>
+
+                <input type="radio" id="future" name="IrWhen">
+                <label for="future">A Future Date</label><br>
+
+                <p>The requested date should be 2 or more days ahead or else you should submit a “next available” request. If you request an inspection on a holiday then your request will be scheduled for the following business day. Yolo Builds observes the following holidays:</p>
+                    <p>New Year's Day
+                    <br>Martin Luther King's Day
+                    <br>President's Day
+                    <br>Memorial Day
+                    <br>Juneteenth
+                    <br>Independence Day
+                    <br>Labor Day
+                    <br>Veteran's Day
+                    <br>Thanksgiving Day
+                    <br>Day after Thanksgiving
+                    <br>Christmas Eve to New Year's Day</p>
+
+                    <label for="futureDate">Requested Date</label><br>
+                    <input type="date" id="futureDate" name="futureDate">
+                        
+            <!-- New, Category -->
+            <p><label for="IRpermitNo">New Inspection Category (select all that apply)</label><br>
+                <input type="checkbox" id="Building" name="IRinspCategory">
+                <label for="Building">Building</label><br>
+
+                <input type="checkbox" id="Demolition" name="IRinspCategory">
+                <label for="Demolition">Demolition</label><br>
+
+                <input type="checkbox" id="Electrical" name="IRinspCategory">
+                <label for="Electrical">Electrical</label><br>
+
+                <input type="checkbox" id="Grading" name="IRinspCategory">
+                <label for="Grading">Grading</label><br>
+
+                <input type="checkbox" id="Mechanical" name="IRinspCategory">
+                <label for="Mechanical">Electrical</label><br>
+
+                <input type="checkbox" id="Plumbing" name="IRinspCategory">
+                <label for="Plumbing">Plumbing</label><br>
+
+                <input type="checkbox" id="Pool/Spa" name="IRinspCategory">
+                <label for="Pool/Spa">Pool/Spa</label><br>
+            
+                <input type="checkbox" id="** Permit Final **" name="IRinspCategory">
+                <label for="** Permit Final **">** Permit Final **</label></p>
+            
+            <!-- Site Contact -->
+            <input type="tel" id="onSitePhone" name="onSitePhone">
+
+            <!-- Back, Save, or Submit Form -->
+            <p><input type="button" onclick="alert(formBack)" value="Back"> &nbsp; <input type="button" onclick="alert(formSave)" value="Save"> &nbsp; <input type="button" onclick="alert(formNext)" value="Next"></p>
+        </form>
+    </main>
+
+    <footer>
+        &copy; 2023 Scott Doolittle
+    </footer>
+</body>
+</html>
