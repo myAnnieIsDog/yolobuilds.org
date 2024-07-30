@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block main %}
+<section>
+    <h5>Name:</h5>
+    <div>
+        <input class="name" type="text" name="name">
+    </div>
+
+    <h5>Address:</h5>
+    <div style="display:flex; flex-wrap:wrap; max-width:300px;">
+        <input style="max-width: 100px;" type="text" name="number">
+        <input style="max-width: 200px;" type="text" name="street">
+        <input style="max-width: 170px;" type="text" name="city">
+        <input style="max-width: 50px;" type="text" name="state">
+        <input style="max-width: 80px;" type="text" name="zip">
+    </div>
+</section>
+{% endblock main %}

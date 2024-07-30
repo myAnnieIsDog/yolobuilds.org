@@ -4,15 +4,8 @@
 } 
 html { scroll-behavior: smooth; }
 
-
 /* Variables. */
 :root {
-    --BACKGROUND-1: hsl(0, 0%, 90%);
-    --BACKGROUND-2: hsl(0, 0%, 80%);
-    --BACKGROUND-3: hsl(0, 0%, 10%);
-    --TEXT: black;
-    --TEXT-ALT: white;
-
     --BLUE-DARK: hsl(202, 45%, 30%);
     --BLUE-LIGHT: hsl(195, 82%, 60%);
     --RED: hsl(337, 78%, 38%);
@@ -34,23 +27,6 @@ body {color: white;
     padding-bottom: 40px;
     text-align: left;
 }
-
-/* Main. */
-section {
-    padding: 10px;
-    margin: 5px;
-    background-color: var(--BLUE-DARK);
-}
-h1, h2, h3, h4, h5, h6 {
-    color: var(--GREEN-LIGHT);
-    padding-top: 7px;
-}
-h3 {color: var(--BLUE-LIGHT);}
-p {
-    padding-top: 5px;
-    padding-left: 5px;
-}
-::selection {background-color: var(--BACKGROUND-2);}
 
 /* Headers and Footers. */
 header, footer {
@@ -80,9 +56,7 @@ button {
 .head-item {
     margin-right: 20px;
 }
-.inline {
-    display: inline;
-}
+
 #MainLogo {
     position: fixed;
     top: 0;
@@ -95,6 +69,22 @@ button {
     left: 5px;
 }
 
+/* Main. */
+section {
+    padding: 10px;
+    margin: 5px;
+    background-color: var(--BLUE-DARK);
+}
+h1, h2, h3, h4, h5, h6 {
+    color: var(--GREEN-LIGHT);
+    padding-top: 7px;
+}
+h3 {color: var(--BLUE-LIGHT);}
+p {
+    padding-top: 5px;
+    padding-left: 5px;
+}
+::selection {background-color: hsl(0, 0%, 80%);}
 
 /* Links. */
 a {
@@ -172,4 +162,33 @@ dialog {
     padding: 15px;
     position: fixed;
     top: 100px;
+}
+
+/* Input */
+input, select {
+    font-weight: 500; 
+    background-color: white;
+}
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"] {
+    padding: 3px 10px 3px 10px;
+    width: 300px;
+}
+
+/* Fieldset */
+fieldset {
+    margin: 5px 0 5px 10px;
+    border-style: hidden;
+}
+
+input[type="checkbox"]:checked,
+input[type="checkbox"]:checked+label,
+input[type="radio"]:checked,
+input[type="radio"]:checked+label {
+    padding: 5px 20px 5px 20px;
+    background-color: var(--SELECTED);
+    color: black;
+    font-weight: 800;
 }
