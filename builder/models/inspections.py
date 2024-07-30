@@ -6,14 +6,15 @@ from .inspection_types import InspectionType
 
 class InspectionStatus(models.Model): 
     status = models.CharField(max_length=55, unique=True)
+    active = models.BooleanField(default=True) # set to False instead of deleting if a status will no longer be used. 
 
     def __str__(self) -> str:
-        return self.result
+        return self.status
 
     class Meta():
         ordering = ["status"]
-        verbose_name = "Inspection Result Option"
-        verbose_name_plural = "Inspection Result Options"
+        verbose_name = "Inspection Status Option"
+        verbose_name_plural = "Inspection Status Options"
 
 
 class Inspection(models.Model):
