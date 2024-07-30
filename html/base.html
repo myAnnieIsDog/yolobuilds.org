@@ -4,27 +4,24 @@
 
 <head>
     <title> {{ title }} </title>
-    
+
     <link rel="stylesheet" href="{% static 'base.css' %}">
     <link rel="stylesheet" href="{% static 'forms.css' %}">
-    {% block extra_css %}       {% endblock extra_css %}
-    {% block dark-mode-vars %}  {% endblock dark-mode-vars %}
+    {% block extra_css %} {% endblock extra_css %}
+    {% block dark-mode-vars %} {% endblock dark-mode-vars %}
 
     <script defer src="{% static 'alpine.min.js' %}"></script>
     <script defer src="{% static 'htmx.min.js' %}"></script>
-    
+
     {% block extrahead %}{% endblock %}
 
-    <meta   charset="UTF-8"/>
-    <meta   name="viewport"
-            content="width=device-width, initial-scale=1.0"/>
-    <meta   name="author" 
-            content="Scott Doolittle"/>
-    <meta   name="description" 
-            content="Yolo Builds v0.24.0."/>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Scott Doolittle" />
+    <meta name="description" content="Yolo Builds v0.24.0." />
 
     {% block blockbots %}
-        <meta   name="robots" content="NONE,NOARCHIVE">
+    <meta name="robots" content="NONE,NOARCHIVE">
     {% endblock %}
     <!-- {% if debug %}
         if (typeof window.htmx !== "undefined") {
@@ -41,62 +38,48 @@
 </head>
 
 {% block messages %}
-    {% if messages %}
-        <ul class="messages">
-            {% for message in messages %}
-                <li {% if message.tags %} 
-                    class="{{ message.tags }}"
-                    {% endif %}>
-                    {{ message|capfirst }}
-                </li>
-            {% endfor %}
-        </ul>
-    {% endif %}
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>
+        {{ message|capfirst }}
+    </li>
+    {% endfor %}
+</ul>
+{% endif %}
 {% endblock messages %}
 
 {% block sidebar %}{% endblock %}
 
-<body {% if bodyclass %} class="{{ bodyclass }}" {% endif %}
-    data-admin-utc-offset="{% now 'Z' %}"
-    hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'
-    x-data="{ bp: @js($'data/BP24-0000') }"
->
-    <header style="display: flex">
-        <div>
+<body {% if bodyclass %} class="{{ bodyclass }}" {% endif %} data-admin-utc-offset="{% now 'Z' %}"
+    hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}' x-data="{ bp: @js($'data/BP24-0000') }">
+    <header class="grid">
+        <div style="margin-right:120px">
             <h1> {{ header }} </h1>
             <p> {{ headDescription}} </p>
         </div>
-        <a  id="MainLogo" 
-            href="/"
-            >
-            <img 
-                style="width:120px;height:80px;" 
-                src="{% static 'yolobuilds_blue.png' %}" 
-                alt="Yolo Builds logo and link to home">
-        </a> 
-
+        <a id="MainLogo" href="/">
+            <img style="width:120px;height:80px; position:fixed; top:0; right:0"
+                src="{% static 'white_logo_transparent_background.png' %}" alt="Yolo Builds logo and link to home">
+        </a>
     </header>
-    
-    <main>    
-        {% block main %}   
-            <section> This is the base.html text. Define a block "main" to overwrite this placeholder text. </section>
-        {% endblock main %} 
+
+    <main>
+        {% block main %}
+        <section> This is the base.html text. Define a block "main" to overwrite this placeholder text. </section>
+        {% endblock main %}
     </main>
-    
+
     <footer x-data="{ verified: false, admin: false, open: false }">
         <!-- On this tite the footer is the location of the main menu and similar links/buttons. 
         It is placed here to promote ease of use for smartpphone users with one hand. -->
-        
+
         <button id="MainMenu" @click="open = ! open" x-show="! open"> Menu </button>
         <button id="MainMenu" @click="open = ! open" x-show="open"> Close Menu </button>
-        
+
         <!-- Get Main Menu Partial -->
         <!-- In this file 'Partial' means the template partial that is used for each section. -->
-        <div 
-            id="MainDropdown"
-            x-show="open" 
-            @click.outside="open = false"
-        > {% include 'base_menu.html' %} </div>
+        <div id="MainDropdown" x-show="open" @click.outside="open = false"> {% include 'base_menu.html' %} </div>
 
         <button x-show="! verified">Login</button>
         <button x-show="! verified">Register</button>
@@ -104,7 +87,8 @@
         <button x-show="verified">Profile</button>
         <button x-show="admin * verified">Configuration</button>
 
-        <div id = "search">  {% include 'base_search.html' %} </div>
+        <div id="search"> {% include 'base_search.html' %} </div>
     </footer>
 </body>
+
 </html>

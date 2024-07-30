@@ -17,7 +17,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '_F6wfUuOwIvalGNhgUs2Q2fDeBAQNXm3lTVtOTXj2btC37dpvO0F8lhXLOBCF4wtj3hZLU65_Gmz3peW1dBKdg'
+SECRET_KEY = "_F6wfUuOwIvalGNhgUs2Q2fDeBAQNXm3lTVtOTXj2btC37dpvO0F8lhXLOBCF4wtj3hZLU65_Gmz3peW1dBKdg"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -25,44 +25,44 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.humanize',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
+    "django.contrib.admin",
+    "django.contrib.auth",
+    "django.contrib.contenttypes",
+    "django.contrib.sessions",
+    "django.contrib.humanize",
+    "django.contrib.messages",
+    "django.contrib.staticfiles",
     # "debug_toolbar",
     # 'django_extensions',
     # 'django_recaptcha',
-    '_bp.apps.BuildingPermitsConfig',
+    # '_bp.apps.BuildingPermitsConfig',
 ]
 
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "django.middleware.security.SecurityMiddleware",
+    "django.contrib.sessions.middleware.SessionMiddleware",
+    "django.middleware.common.CommonMiddleware",
+    "django.middleware.csrf.CsrfViewMiddleware",
+    "django.contrib.auth.middleware.AuthenticationMiddleware",
+    "django.contrib.messages.middleware.MessageMiddleware",
+    "django.middleware.clickjacking.XFrameOptionsMiddleware",
     # "debug_toolbar.middleware.DebugToolbarMiddleware",
     # "django_htmx.middleware.HtmxMiddleware",
 ]
 
-ROOT_URLCONF = 'yolobuilds.urls'
+ROOT_URLCONF = "yolobuilds.urls"
 
 TEMPLATES = [
     {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [ 'html/' ],
-        'APP_DIRS': True,
-        'OPTIONS': {
-            'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
+        "BACKEND": "django.template.backends.django.DjangoTemplates",
+        "DIRS": ["html/"],
+        "APP_DIRS": True,
+        "OPTIONS": {
+            "context_processors": [
+                "django.template.context_processors.debug",
+                "django.template.context_processors.request",
+                "django.contrib.auth.context_processors.auth",
+                "django.contrib.messages.context_processors.messages",
             ],
         },
     },
@@ -71,9 +71,9 @@ TEMPLATES = [
 # WSGI_APPLICATION = 'yolobuilds.wsgi.application'
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'data-sql/db.sqlite3',
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "data-sql/db.sqlite3",
     }
 }
 
@@ -82,25 +82,25 @@ LOGIN_REDIRECT_URL = [""]
 LOGOUT_REDIRECT_URL = [""]
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
     },
 ]
 
-LANGUAGE_CODE = 'en-us'
-TIME_ZONE = 'America/Los_Angeles'
+LANGUAGE_CODE = "en-us"
+TIME_ZONE = "America/Los_Angeles"
 USE_I18N = True
 USE_TZ = True
 
-STATIC_URL = 'css/'
-STATICFILES_DIRS = [ "css/", "img/", "js/"]
+STATIC_URL = "css/"
+STATICFILES_DIRS = ["css/", "img/", "js/"]
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
