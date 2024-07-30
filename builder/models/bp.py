@@ -105,6 +105,7 @@ class BP(models.Model):
         self.save()
 
     def extend_expiration(self, request, extra_days=180):
+        # Modify to shrink timeline when permit is to correct an ongoing violation.
         a = self.expiration_date + timezone.timedelta(extra_days)
         b = self.issued + timezone.timedelta(days=1095)
         self.expiration_date = min(a, b)
