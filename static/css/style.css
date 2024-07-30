@@ -1,7 +1,8 @@
-* {padding: 0;
+/* No inhertiance from the universal selector.*/
+* {padding: 0; 
     margin: 0;
     box-sizing: border-box;
-} /* No inhertiance from the universal selector.*/
+} 
 
 html { scroll-behavior: smooth; }
 
@@ -20,11 +21,19 @@ html { scroll-behavior: smooth; }
     --INPUT: hsl(230, 30%, 30%);
     --BACK: hsl(90, 2%, 9%); 
     --HEADER: hsl(120, 4%, 7%);
+
+    --BLUE-DARK: #2A566F;
+    --BLUE-LIGHT: #46c2ed;
+    --RED: #AD1550;
+    --YELLOW: #F1BC41;
+    --GREEN-DARK: #205b57;
+    --GREEN-MID: #A2bc58;
+    --GREEN-LIGHT: #e2e886;
 }
 
 body { 
-    color : white;
-    background: var(--BACK); 
+    color : var(--BLUE-DARK);
+    background: var(WHITE); 
     font-family: sans-serif; 
     /* 'Calibri', 'Trebuchet MS',  */
     font-weight: 350;
@@ -139,7 +148,7 @@ dt {font-size: 1.5rem; font-weight: 600;}
 dd ul {
     padding-left: 50px;
 }
-h3 {color: var(--HEADING-2)}
+h3 {color: var(--YELLOW)}
 
 /* Input Formatting */
 input, select {
