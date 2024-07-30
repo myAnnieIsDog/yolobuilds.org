@@ -24,11 +24,13 @@ class District(models.Model):
 class FloodZones(models.Model):
     zone_code = models.CharField("Flood Zone Code", max_length=7)
     zone_description = models.CharField("Flood Zone Description", max_length=255)
-    # FLOOD_ZONE_A = "A", "Approximate A Zone"
-    # FLOOD_ZONE_AE = "AE", "Detailed AE Zone"
-    # FLOOD_ZONE_AO = "AO", "Shallow Flooding"
-    # FLOOD_ZONE_A_FLOODWAY = "A/F", "No-Rise Floodway"
-    # FLOOD_ZONE_X = "X", "Not Regulated"
+    A =  "Approximate A Zone"
+    AE = "Detailed AE Zone"
+    AO = "Shallow Flooding"
+    AF = "No-Rise Floodway or AE Zone without a Defined Floodway."
+    D = "No Information"
+    X = "Not Regulated"
+    SFHA = [A, AE, AO, AF, D]
 
     def __str__(self) -> str:
         return self.zone_code
