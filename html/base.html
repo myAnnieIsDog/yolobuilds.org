@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+{% load i18n static humanize %}
+
 <head>
     <title> {{ title }} </title>
     
-    <link   rel="stylesheet" href="//css/base.css"/>
-    <link   rel="stylesheet" href="//css/forms.css"/>
+    <link rel="stylesheet" href="{% static 'base.css' %}">
+    <link rel="stylesheet" href="{% static 'forms.css' %}">
+    {% block extra_css %}       {% endblock extra_css %}
+    {% block dark-mode-vars %}  {% endblock dark-mode-vars %}
 
-    <script src="//js/script.js" defer></script>
-    <script src="//js/htmx.min.js" defer></script>
-    <script src="//js/alpine.js" defer></script>
+    <script defer src="{% static 'alpine.min.js' %}"></script>
+    <script defer src="{% static 'htmx.min.js' %}"></script>
     
+    {% block extrahead %}{% endblock %}
+
     <meta   charset="UTF-8"/>
     <meta   name="viewport"
             content="width=device-width, initial-scale=1.0"/>
@@ -17,17 +22,65 @@
             content="Scott Doolittle"/>
     <meta   name="description" 
             content="Yolo Builds v0.24.0."/>
+
+    {% block blockbots %}
+        <meta   name="robots" content="NONE,NOARCHIVE">
+    {% endblock %}
+    <!-- {% if debug %}
+        if (typeof window.htmx !== "undefined") {
+            htmx.on("htmx:afterSettle", function(detail) {
+                if (
+                    typeof window.djdt !== "undefined"
+                    && detail.target instanceof HTMLBodyElement
+                ) {
+                    djdt.show_toolbar();
+                }
+            });
+        }
+    {% endif %} -->
 </head>
 
-<body x-data="{ bp: @js($'data/BP24-0000') }">
-    <header>
-        <h1> {{ header }} </h1>
-        <p> {{ headDescription}} </p>       
+{% block messages %}
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li {% if message.tags %} 
+                    class="{{ message.tags }}"
+                    {% endif %}>
+                    {{ message|capfirst }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endblock messages %}
+
+{% block sidebar %}{% endblock %}
+
+<body {% if bodyclass %} class="{{ bodyclass }}" {% endif %}
+    data-admin-utc-offset="{% now 'Z' %}"
+    hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'
+    x-data="{ bp: @js($'data/BP24-0000') }"
+>
+    <header style="display: flex">
+        <div>
+            <h1> {{ header }} </h1>
+            <p> {{ headDescription}} </p>
+        </div>
+        <a  id="MainLogo" 
+            href="/"
+            >
+            <img 
+                style="width:120px;height:80px;" 
+                src="{% static 'yolobuilds_blue.png' %}" 
+                alt="Yolo Builds logo and link to home">
+        </a> 
+
     </header>
     
     <main>    
         {% block main %}   
-        {% end block main %} 
+            <section> This is the base.html text. Define a block "main" to overwrite this placeholder text. </section>
+        {% endblock main %} 
     </main>
     
     <footer x-data="{ verified: false, admin: false, open: false }">
@@ -43,9 +96,7 @@
             id="MainDropdown"
             x-show="open" 
             @click.outside="open = false"
-            hx-get="html/menu.html"
-            hx-trigger="load"
-        ></div>
+        > {% include 'base_menu.html' %} </div>
 
         <button x-show="! verified">Login</button>
         <button x-show="! verified">Register</button>
@@ -53,12 +104,7 @@
         <button x-show="verified">Profile</button>
         <button x-show="admin * verified">Configuration</button>
 
-        <!-- Get Search Modal Dialog Partial -->
-        <div 
-            id = "search"
-            hx-get="html/search.html"
-            hx-trigger="load"
-        ></div>
+        <div id = "search">  {% include 'base_search.html' %} </div>
     </footer>
 </body>
 </html>

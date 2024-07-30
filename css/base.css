@@ -58,7 +58,9 @@ header, footer {
     position: sticky;
     right: 0;
 }
-header {top: 0;}
+header {
+    top: 0;
+}
 footer {bottom: 0;}
 button {
     align-content: center;
@@ -84,7 +86,11 @@ button {
 
 
 /* Links. */
-a {color: hsl(240, 100%, 50%)}
+a {
+    color: hsl(240, 100%, 50%);
+    background: black;
+    border: 1px dashed;
+}
 a:visited {color: purple;}
 a:active {color: red;}
 a:active {text-decoration: underline;}

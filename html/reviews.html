@@ -9,6 +9,17 @@
         <th> Completed </th>
         <th> Notes </th>
     </thead>
+    {% for review in reviews %}
+        <tr>
+            <td> {{ type }} </td>
+            <td> {{ cycle }} </td>
+            <td> {{ status }} </td>
+            <td> {{ reviewer }} </td>
+            <td> {{ due }} </td>
+            <td> {{ completed }} </td>
+            <td> {{ notes }} </td>
+        </tr>
+    {% endfor %}
     <tr>
         <td> Building Demolition </td>
         <td> 1 </td>
