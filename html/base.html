@@ -75,115 +75,13 @@
 
         <button id="MainMenu" @click="open = ! open" x-show="! open"> Menu </button>
         <button id="MainMenu" @click="open = ! open" x-show="open"> Close Menu </button>
-
-        <!-- Get Main Menu Partial -->
-        <!-- In this file 'Partial' means the template partial that is used for each section. -->
-        <div id="MainDropdown" x-show="open" @click.outside="open = false">
-            <a target="_blank" href="html/building.html">
-                <button id="settings"> Building </button></a><br>
-
-            <a target="_blank" href="html/contacts.html">
-                <button id="settings"> Contacts </button></a><br>
-
-            <a target="_blank" href="html/fiscal.html">
-                <button id="settings"> Fiscal </button></a><br>
-
-            <a target="_blank" href="html/inspections.html">
-                <button id="settings"> Inspections </button></a><br>
-
-            <a target="_blank" href="html/land.html">
-                <button id="settings"> Addresses </button></a><br>
-
-            <a target="_blank" href="html/licenses.html">
-                <button id="settings"> Licenses </button></a><br>
-
-            <a target="_blank" href="html/parcels">
-                <button id="settings"> Parcels </button></a><br>
-
-            <a target="_blank" href="html/plan.html">
-                <button id="settings"> Planning </button></a><br>
-
-            <a target="_blank" href="html/pw.html">
-                <button id="settings"> Public Works </button></a><br>
-
-            <a target="_blank" href="html/reviews.html">
-                <button id="settings"> Reviews </button></a><br>
-
-            <button @click="searchDialog.showModal(); 
-                open = false">
-                Search
-            </button>
-        </div>
-
         <button x-show="! verified">Login</button>
         <button x-show="! verified">Register</button>
         <button x-show="verified">Logout</button>
         <button x-show="verified">Profile</button>
         <button x-show="admin * verified">Configuration</button>
-
-        <div id="search">
-            <dialog id="searchDialog">
-                <h2> Search </h2>
-                <form action="" method="dialog">
-                    <table class="search">
-                        <colgroup>
-                            <col class="searchType">
-                            <col class="searchTerm">
-                        </colgroup>
-
-                        <tr>
-                            <th> Search Type </th>
-                            <th> Search Term </th>
-                        </tr>
-                        <tr>
-                            <td> APN </td>
-                            <td> <input type="text"> </td>
-                        </tr>
-                        <tr>
-                            <td> Address # </td>
-                            <td> <input type="text"> </td>
-                        </tr>
-                        <tr>
-                            <td> Street </td>
-                            <td> <input type="text"> </td>
-                        </tr>
-                        <tr>
-                            <td> Town </td>
-                            <td> <input type="text"> </td>
-                        </tr>
-                    </table>
-                    <hr>
-                    <table class="search">
-                        <colgroup>
-                            <col class="searchType">
-                            <col class="searchTerm">
-                        </colgroup>
-                        <tr>
-                            <td> Bldg Permit </td>
-                            <td> <input type="text"> </td>
-                        </tr>
-                        <tr>
-                            <td> Contact </td>
-                            <td> <input type="text"> </td>
-                        </tr>
-                        <tr>
-                            <td> License </td>
-                            <td> <input type="text"> </td>
-                        </tr>
-                        <tr>
-                            <td> PW Permit </td>
-                            <td> <input type="text"> </td>
-                        </tr>
-
-                        <tr>
-                            <td> Zone File </td>
-                            <td> <input type="text"> </td>
-                        </tr>
-                    </table>
-                    <button type="submit"> Search </button>
-                </form>
-            </dialog>
-        </div>
+        
+        {% include 'base_menu.html' %}
     </footer>
 </body>
 

@@ -36,6 +36,8 @@ INSTALLED_APPS = [
     # 'django_extensions',
     # 'django_recaptcha',
     # '_bp.apps.BuildingPermitsConfig',
+    # '_land.apps.LandConfig',
+    # '_profiles.apps.LandConfig',
 ]
 
 MIDDLEWARE = [
