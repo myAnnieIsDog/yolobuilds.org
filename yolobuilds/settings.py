@@ -35,8 +35,15 @@ INSTALLED_APPS = [
     # "debug_toolbar",
     # 'django_extensions',
     # 'django_recaptcha',
-    # '_bp.apps.BuildingPermitsConfig',
-    # '_land.apps.LandConfig',
+    "_base.apps.BaseConfig",
+    "_bl.apps.LicenseConfig",
+    "_bp.apps.BuildingPermitsConfig",
+    "_ce.apps.EnforcementConfig",
+    "_fiscal.apps.FiscalConfig",
+    "_land.apps.LandConfig",
+    "_profiles.apps.ProfilesConfig",
+    "_pw.apps.PublicWorksConfig",
+    "_zf.apps.PlanningConfig",
     # '_profiles.apps.LandConfig',
 ]
 
@@ -75,7 +82,7 @@ TEMPLATES = [
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "data-sql/db.sqlite3",
+        "NAME": BASE_DIR / "data/sql/db.sqlite3",
     }
 }
 

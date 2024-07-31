@@ -5,7 +5,7 @@ from django.http import HttpRequest, HttpResponse
 from django.urls import path
 from django.views.generic import TemplateView, CreateView
 
-from _bp.NewCommercial.models import Commercial
+from _bp.NewCommercial.newCom import Commercial
 
 
 class CommercialApp(CreateView):

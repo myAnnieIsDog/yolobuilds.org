@@ -1,7 +1,7 @@
 from django.db import models
 
 from _bp.bp import BP
-from __shared.record_types import Type
+from _base.record_types import Type
 
 
 class Demolition(BP):

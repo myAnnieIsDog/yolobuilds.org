@@ -1,9 +1,15 @@
 from typing import Any
 
+from django.http import HttpResponse
+from django.shortcuts import render
 from django.urls import path
 from django.views.generic import ListView, DetailView
 
-from ..models.locations import SiteAddress, Parcel, District
+from .models import SiteAddress, Parcel, District
+
+
+def index(request):
+    return HttpResponse("Land Base is under construction.")
 
 
 class ParcelSearch(ListView):
@@ -39,11 +45,3 @@ class AddressList(ListView):
 class AddressDetail(DetailView):
     model = SiteAddress
     template_name = "location/address_detail.html"
-
-
-urlpatterns = [
-    path("apn/", ParcelSearch.as_view()),
-    path("apn/<slug:parcel>/", ParcelDetail.as_view()),
-    path("address/", AddressSearch.as_view()),
-    path("address/<slug:address>/", AddressDetail.as_view()),
-]

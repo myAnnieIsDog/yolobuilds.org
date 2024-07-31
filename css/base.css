@@ -50,13 +50,6 @@ button {
     min-width: 110px;
 }
 
-.header {
-    display: flex;
-}
-.head-item {
-    margin-right: 20px;
-}
-
 #MainLogo {
     position: fixed;
     top: 0;

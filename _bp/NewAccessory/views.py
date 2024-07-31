@@ -6,7 +6,7 @@ from django.urls import path
 from django.views.generic import TemplateView, CreateView
 
 from _bp.Demolition.models import Demolition
-from _bp.Demolition import subtypes
+from _bp.Demolition import config
 
 
 class DemoInfo(TemplateView):
@@ -28,7 +28,7 @@ class DemoInfo(TemplateView):
                 "review-add": "one week",
                 "additional_forms": [],
                 "app_url": "app/",
-                "subtypes": subtypes,
+                "subtypes": config.subtypes,
             }
         )
         return context

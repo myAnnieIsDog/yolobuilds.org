@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+
+{% block main %}
+<section>
+    <p> Parcel Search: <input type="text"> </p>
+</section>
+
+<section>
+    
+
+    <div style="display:flex; flex-wrap:wrap; align-items:start; justify-content: start;">
+        <div style="flex:1 200px">
+            <h3> Parcels </h3>
+            <p> APN 000-000-000 </p>
+            <p> APN 000-000-001 </p>
+            {% for apn in parcels %}
+                <p> {{ apn }} </p>
+            {% endfor %}
+        </div>
+        <div style="flex:1 200px">
+            <h3> Addresses </h3>
+            {% for add in addresses %}
+                <p> {{ add }} </p>
+            {% endfor %}
+        </div>
+        <div style="flex:1 200px">
+            <h3> Zones </h3>
+            <p> Land Use Zone: {{ zf_zone }} </p>
+            <p> Flood Zone: {{ flood_zone }} </p>
+            <p> Soils: {{ soils }} </p>
+            <p> WUI: {{ wui }} </p>
+        </div>
+
+        <div style="flex:1 200px">
+            <h3> Districts </h3>
+            <p> Fire District: {{ fire_district }} </p>
+            <p> School District: {{ school_district }} </p>
+            <p> Service District: {{ service_district }} </p>
+
+        </div>
+    </div>
+</section>
+
+<section>
+    <table>
+        <thead>
+            <tr>
+                <th> Parcel </th>
+                <th> Owner </th>
+                <th> Addresses </th>
+                <th> Area </th>
+                <th> Land Use Zone </th>
+                <th> Flood Zone </th>
+                <th> Soils </th>
+                <th> WUI </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for apn in apns %}
+                <tr>
+                    <td> {{ apn.number }} </td>
+                    <td> {{ apn.owner }} </td>
+                    <td> {{ apn.addresses }} </td>
+                    <td> {{ apn.area }} </td>
+                    <td> {{ apn.zone }} </td>
+                    <td> {{ apn.flood }} </td>
+                    <td> {{ apn.soil }} </td>
+                    <td> {{ apn.wui }} </td>
+                </tr>
+            {% endfor %}
+            <tr>
+                <td> 001-123-456 </td>
+                <td> MC Hammer </td>
+                <td> 10001 CR 1 <br> 20002 CR 2 </td>
+                <td> 12.2</td>
+                <td> A-N, A-X </td>
+                <td> AE, X </td>
+                <td> High </td>
+                <td> Yes </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+{% endblock main %}
