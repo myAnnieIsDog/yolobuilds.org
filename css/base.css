@@ -58,8 +58,8 @@ button {
 #MainMenu {text-align: center;}
 #MainDropdown {
     position: fixed;
-    bottom: 40px;
-    left: 5px;
+    bottom: 55px;
+    left: 12px;
 }
 
 /* Main. */
@@ -184,4 +184,10 @@ input[type="radio"]:checked+label {
     background-color: var(--SELECTED);
     color: black;
     font-weight: 800;
+}
+
+.closeX {
+    position: absolute;
+    right: 10px;
+    top: 5px;
 }

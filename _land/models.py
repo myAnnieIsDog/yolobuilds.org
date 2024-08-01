@@ -2,7 +2,7 @@ from django.db import models
 
 
 class District(models.Model): 
-    dist_type = models.CharField(max_length=100)
+    dist_type = models.CharField(max_length=100, null=True, blank=True)
     district = models.CharField(max_length=55)
     description = models.CharField(max_length=255, null=True, blank=True)
 
@@ -24,14 +24,28 @@ class District(models.Model):
 class FloodZones(models.Model):
     zone_code = models.CharField("Flood Zone Code", max_length=7)
     zone_description = models.CharField("Flood Zone Description", max_length=255)
-    # FLOOD_ZONE_A = "A", "Approximate A Zone"
-    # FLOOD_ZONE_AE = "AE", "Detailed AE Zone"
-    # FLOOD_ZONE_AO = "AO", "Shallow Flooding"
-    # FLOOD_ZONE_A_FLOODWAY = "A/F", "No-Rise Floodway"
-    # FLOOD_ZONE_X = "X", "Not Regulated"
+    active = models.BooleanField(default=True)
 
     def __str__(self) -> str:
         return self.zone_code
+    
+    def define_flood_zones():
+        li = {
+            "A": "Approximate A Zone",
+            "AE": "Detailed AE Zone (Regulated)",
+            "AO": "Shallow Flooding (Regulated)",
+            "X": "Not Regulated",
+        }
+        for key, value in li:
+            zone = FloodZones(zone_code=key, zone_description=value)
+            zone.save()
+            
+    def list():
+        list = {}
+        zones = FloodZones.objects.all()
+        for zone in zones:
+            list[zone.zone_code] = zone.zone_description
+        return list
     
     class Meta:
         verbose_name = "Flood Zone"
