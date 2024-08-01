@@ -1,6 +1,6 @@
 from django.db import models
 
-from _fiscal.fee_types import FeeType
+from _fiscal.models import FeeType
 from _base.inspection_types import InspectionType
 from _base.review_types import ReviewType
 from _profiles.profile_staff import Division

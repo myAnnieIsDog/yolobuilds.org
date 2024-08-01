@@ -1,7 +1,10 @@
 {% extends "base.html" %}
 
-{% block main %}
+{% block header %} Building Permits {% endblock header %}
 
+{% block headDescription %} This is Yolo Builds, the permit application and tracking tool for Yolo County Building Division. {% endblock headDescription %}
+
+{% block main %}
 <section>
     <p>
         If your permit is for activities entirely within 
@@ -17,6 +20,13 @@
         > Winters</a>  |  
         <a href="https://www.google.com/search?q=city+of+woodland+CA"
         > Woodland</a>
+    </p>
+</section>
+
+<section>
+    <p>
+        Monitor the progress of a <a href="/bp/permit" aria-disabled="true">
+            permit, review, or inspection.</a>
     </p>
 </section>
 
@@ -85,39 +95,33 @@
     </table>
 </section>
 
-<section>
-    <p>
-        Monitor the progress of a <a href="/bp/permit" aria-disabled="true">
-            permit, review, or inspection.</a>
-    </p>
-</section>
 
 <section>
     <h3>Service Requests</h3>
     <table>
         <tr>
             <td><a href="/bp/insp_req">Address</a></td>
-            <td>To request that an address be assigned to your property.</td>
+            <td> Assign an address to your property. </td>
         </tr>
         <tr>
             <td><a href="/bp/insp_req">Appeal</a></td>
-            <td>To request an appeal of a staff decision.</td>
+            <td> Appeal of a staff decision. </td>
         </tr>
         <tr>
             <td><a href="/bp/insp_req">Certicate of Occupancy</a></td>
-            <td> To request your certificate of occupancy (including temporary). </td>
+            <td> Request final or temporary occupancy. </td>
         </tr>
         <tr>
             <td><a href="/bp/insp_req"> Inspection </a></td>
-            <td> To request an inspection. </td>
+            <td> Request an inspection. </td>
         </tr>
         <tr>
             <td><a href="/bp/insp_req"> Permit Cancellation </a></td>
-            <td> To cancel a permit. </td>
+            <td> Cancel a permit. </td>
         </tr>
         <tr>
             <td><a href="/bp/insp_req"> Permit Extension </a></td>
-            <td>To request a permit extension. </td>
+            <td> Request a permit or application extension. </td>
         </tr>
         <tr>
             <td><a href="/bp/insp_req"> Permit Refund </a></td>
@@ -130,8 +134,31 @@
     <h3> Information </h3>
     <table>
         <tr>
-            <td><a href="/bp/structural"> Structural </a></td>
+            <td><a href="/bp/structural"> ADA </a></td>
+            <td>
+                <p> More to come... </p>
+            </td>
+        </tr><tr>
+            <td><a href="/bp/structural"> Fire </a></td>
             <td><p> More to come... </p></td>
+        </tr>
+        <tr>
+            <td><a href="/bp/structural"> Flood </a></td>
+            <td>
+                <p> More to come... </p>
+            </td>
+        </tr>
+        <tr>
+            <td><a href="/bp/structural"> Seismic </a></td>
+            <td>
+                <p> More to come... </p>
+            </td>
+        </tr>
+        <tr>
+            <td><a href="/bp/structural"> Structural </a></td>
+            <td>
+                <p> More to come... </p>
+            </td>
         </tr>
     </table>
 </section>

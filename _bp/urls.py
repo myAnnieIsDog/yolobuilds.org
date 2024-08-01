@@ -17,16 +17,10 @@ from _bp.Demolition import views as demo
 
 
 urlpatterns = [
-    path(
-        "",
-        TemplateView.as_view(
-            template_name="bp_base_home.html",
-            extra_context={
-                "header": "Building Permits",
-                "headDescription": "This is Yolo Builds, the permit application and tracking tool for Yolo County Building Division.",
-            },
-        ),
-    ),
+    path("", TemplateView.as_view(template_name="bp.html")),
+    path("all/", TemplateView.as_view(template_name="bp_all.html")),
+    path("<int:yr>/", TemplateView.as_view(template_name="bp_year.html")),
+    path("<int:yr>/<str:numb>/", TemplateView.as_view(template_name="bp_permit.html")),
     # path('accessory', ),
     # path('accessory/app', ),
     # path('com', ),

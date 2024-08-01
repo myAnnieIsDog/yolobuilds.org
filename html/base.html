@@ -54,8 +54,8 @@
     hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}' x-data="{ bp: @js($'data/BP24-0000') }">
     <header class="grid">
         <div style="margin-right:120px">
-            <h1> {{ header }} </h1>
-            <p> {{ headDescription}} </p>
+            <h1> {% block header %} Add a Header {% endblock %}</h1>
+            <p> {% block headDescription %} Add a headDescription to replace this text. {% endblock %}</p>
         </div>
         <a id="MainLogo" href="/">
             <img style="width:120px;height:80px; position:fixed; top:0; right:0"
@@ -84,10 +84,11 @@
 
         <button id="MainMenu" @click="open = ! open" x-show="! open"> Menu </button>
         <button id="MainMenu" @click="open = ! open" x-show="open"> Close Menu </button>
-        <button x-show="! verified" @click="loginDialog.showModal()">Login</button>
-        <button x-show="! verified" @click="registerDialog.showModal()">Register</button>
-        <button x-show="verified" @click="logout = ! logout">Logout</button>
-        <button x-show="verified" @click="profile = ! profile">Profile</button>
+        <button x-cloak x-show="! verified" @click="loginDialog.showModal()">Login</button>
+        <button x-cloak x-show="! verified" @click="registerDialog.showModal()">Register</button>
+        <button x-cloak x-show="verified" @click="logoutDialog.showModal()">Logout</button>
+        <button x-cloak x-show="verified" @click="profileDialog.showModal()">Profile</button>
+        <button x-cloak x-show="admin * verified" @click="configDialog.showModal()"> Configuration </button></a><br>
         <span> {% include 'base_menu.html' %} </span>
         <span> {% include 'base_search.html' %} </span>
         <span> {% include 'base_login.html' %} </span>

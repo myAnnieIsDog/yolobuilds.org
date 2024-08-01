@@ -1,0 +1,9 @@
+<dialog id="logoutDialog">
+    <p class="closeX" @click="logoutDialog.close()"> X </p>
+    <h2> Logout </h2>
+    <form action="" method="dialog">
+        <p> Are you sure you want to log out? </p><br>
+        <button type="button" @click="logoutDialog.close()"> Go Back </button>
+        <button type="submit" @click="verified = false"> Log Out </button>
+    </form>
+</dialog>

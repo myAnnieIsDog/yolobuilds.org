@@ -1,4 +1,5 @@
 <dialog id="loginDialog">
+    <p class="closeX" @click="loginDialog.close()"> X </p>
     <h2> Login </h2>
     <form action="" method="dialog">
         <table>
@@ -11,6 +12,7 @@
                 <td> <input type="text"> </td>
             </tr>
         </table>
-        <button type="submit"> Login </button>
+        <button type="button" @click="loginDialog.close()"> Back </button>
+        <button type="submit" @click="verified = true, admin = true"> Login </button>
     </form>
 </dialog>

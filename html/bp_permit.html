@@ -1,15 +1,15 @@
-{% extends base %}
+{% extends "base.html" %}
 
 
 {% block main %}
 <section>
     <h2> Location </h2>
-    {{ include 'partials/location.html' }}
+    {% include 'location.html' %}
 </section>
 
 <section>
     <h2> Contacts </h2>
-    {{ include 'partials/contacts.html' }}
+    {% include 'contacts.html' %}
 </section>
 
 {% block permit_details %}
@@ -17,20 +17,20 @@
 
 <section>
     <h2> Reviews </h2>
-    {{ include 'partials/reviews.html' }}
+    {% include 'reviews.html' %}
 </section>
 
 <section>
     <h2> Inspections </h2>
-    {{ include 'partials/inspections.html' }}
+    {% include 'inspections.html' %}
 </section>
 
 <section> Fiscal </h2>
-    {{ include 'partials/fiscal.html' }}
+    {% include 'fiscal.html' %}
 </section>
 
 <section>
     <h2> Documents </h2>
-    {{ include 'partials/documents.html' }}
+    {% include 'documents.html' %}
 </section>
 {% endblock main %}
