@@ -8,7 +8,7 @@ urlpatterns = [
     path(
         "",
         TemplateView.as_view(
-            template_name="_land.html",
+            template_name="land.html",
             extra_context={
                 "header": "Parcels and Addresses",
                 "headDescription": "This page is for finding information about parcels and addresses.",

@@ -3,43 +3,104 @@
 
 {% block main %}
 <section>
-    <p> Parcel Search: <input type="text"> </p>
+    <p><input type="text"> <button type="button"> Search </button> </p>
 </section>
 
-<section>
-    
+<style>
+    .container {
+        display: grid;
+    }
+    .one {grid-column-start: 1;}
+    .two {grid-column-start: 2;}
+    .three {grid-column-start: 3;}
+    .four {grid-column-start: 4;}
+    .five {grid-column-start: 5;}
+    .six {grid-column-start: 6;}
+    .seven {grid-column-start: 7;}
+    .eight {grid-column-start: 8;}
 
-    <div style="display:flex; flex-wrap:wrap; align-items:start; justify-content: start;">
-        <div style="flex:1 200px">
-            <h3> Parcels </h3>
-            <p> APN 000-000-000 </p>
-            <p> APN 000-000-001 </p>
-            {% for apn in parcels %}
-                <p> {{ apn }} </p>
-            {% endfor %}
+    .one, .two, .three, .four, .five, .six, .seven, .eight {
+        padding-left: 20px;
+    }
+</style>
+
+<section>
+    <h2>000-000-000</h2>
+    <div class="container">
+        <div class="one">
+            <h3> Districts </h3>
+            <p> Fire District: {{ fire_district }} </p>
+            <p> School District: {{ school_district }} </p>
+            <p> Service District: {{ service_district }} </p>
         </div>
-        <div style="flex:1 200px">
-            <h3> Addresses </h3>
-            {% for add in addresses %}
-                <p> {{ add }} </p>
-            {% endfor %}
-        </div>
-        <div style="flex:1 200px">
+        <div class="two">
             <h3> Zones </h3>
             <p> Land Use Zone: {{ zf_zone }} </p>
             <p> Flood Zone: {{ flood_zone }} </p>
             <p> Soils: {{ soils }} </p>
             <p> WUI: {{ wui }} </p>
         </div>
-
-        <div style="flex:1 200px">
-            <h3> Districts </h3>
-            <p> Fire District: {{ fire_district }} </p>
-            <p> School District: {{ school_district }} </p>
-            <p> Service District: {{ service_district }} </p>
-
-        </div>
     </div>
+</section>
+
+<section>             
+    <h2>Related Records</h2>
+        <div class="container">
+            <div class="one">
+                <h3> Land </h3>
+                <p> APN 000-000-000 </p>
+                <p> APN 000-000-001 </p>
+                {% for apn in parcels %}
+                    <ul>
+                        <li> {{ apn.number }} </li>
+                        <ul> 
+                            {% for address in apn.number.addresses %}
+                                <li> {{ address }} </li>
+                            {% endfor %}
+                        </ul>
+                    </ul>
+                    <p>  </p>
+                {% endfor %}
+            </div>
+
+            <div class="two">
+                <h3> Contacts </h3>
+                <p> Joe Schmoe </p>
+                <p> Jimmy Leftwich </p>
+                <p> Cadbury Egg </p>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="one">
+                <h3> Projects </h3>
+                <p> ZF24-004 </p>
+                <p> APN 000-000-001 </p>
+                {% for apn in parcels %}
+                    <ul>
+                        <li> {{ apn.number }} </li>
+                        <ul> 
+                            {% for address in apn.number.addresses %}
+                                <li> {{ address }} </li>
+                            {% endfor %}
+                        </ul>
+                    </ul>
+                    <p>  </p>
+                {% endfor %}
+            </div>
+
+            <div class="two">
+                <h3> Contacts </h3>
+                <p> Joe Schmoe </p>
+                <p> Jimmy Leftwich </p>
+                <p> Cadbury Egg </p>
+            </div>
+        </div>
+</section>
+
+<section> 
+
+    <button type="button">Edit Parcel</button>
 </section>
 
 <section>
