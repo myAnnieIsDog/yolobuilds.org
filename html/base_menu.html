@@ -1,14 +1,15 @@
 <div id="MainDropdown" x-cloak x-show="open" @click.outside="open = false">
-    <a href="/land"> <button id="settings"> Addresses </button></a><br>
-    <a href="/bp"> <button id="settings"> Building </button></a><br>
-    <a href="/profiles"> <button id="settings"> Contacts </button></a><br>
-    <a href="/fiscal"> <button id="settings"> Fiscal </button></a><br>
-    <a href="/inspection"> <button id="settings"> Inspections </button></a><br>
-    <a href="/land"> <button id="settings"> Land </button></a><br>
-    <a href="/bl"> <button id="settings"> Licenses </button></a><br>
-    <a href="/land"> <button id="settings"> Parcels </button></a><br>
-    <a href="/zf"> <button id="settings"> Planning </button></a><br>
-    <a href="/pw/"> <button id="settings"> Public Works </button></a><br>
-    <a href="/reviews"> <button id="settings"> Reviews </button></a><br>
-    <a><button @click="searchDialog.showModal(); open = ! open"> Search </button></a><br>
+    <a href="/bp"> <button id="settings">Building</button></a><br />
+    <span x-cloak x-if="admin * verified">
+        <a href="/admin"><button>Configuration</button></a><br />
+    </span>
+    <a href="/profiles/contacts"> <button id="settings">Contacts</button></a><br />
+    <a href="/fiscal"> <button id="settings">Fiscal</button></a><br />
+    <a href="/inspection"> <button id="settings">Inspections</button></a><br />
+    <a href="/land"> <button id="settings">Land</button></a><br />
+    <a href="/bl"> <button id="settings">Licenses</button></a><br />
+    <a href="/zf"> <button id="settings">Planning</button></a><br />
+    <a href="/pw/"> <button id="settings">Public Works</button></a><br />
+    <a href="/reviews"> <button id="settings">Reviews</button></a><br />
+    <a href="/search"><button>Search</button></a><br />
 </div>

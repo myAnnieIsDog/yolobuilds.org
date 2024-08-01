@@ -79,23 +79,25 @@
         profile: false, 
         configure: false, 
     }">
-        <!-- On this tite the footer is the location of the main menu and similar links/buttons. 
+        <!-- On this site the footer is the location of the main menu and similar links/buttons. 
         It is placed here to promote ease of use for smartpphone users with one hand. -->
 
         <button id="MainMenu" @click="open = ! open" x-show="! open"> Menu </button>
         <button id="MainMenu" @click="open = ! open" x-show="open"> Close Menu </button>
-        <button x-cloak x-show="! verified" @click="loginDialog.showModal()">Login</button>
-        <button x-cloak x-show="! verified" @click="registerDialog.showModal()">Register</button>
-        <button x-cloak x-show="verified" @click="logoutDialog.showModal()">Logout</button>
-        <button x-cloak x-show="verified" @click="profileDialog.showModal()">Profile</button>
-        <button x-cloak x-show="admin * verified" @click="configDialog.showModal()"> Configuration </button></a><br>
+        <span x-cloak x-show="! verified">
+            <button @click="loginDialog.showModal()">Login</button>
+            <button @click="registerDialog.showModal()">Register</button>
+        </span>
+        <span x-cloak x-show="verified">
+            <button @click="logoutDialog.showModal()">Logout</button>
+            <button @click="profileDialog.showModal()">Profile</button>
+        </span>
         <span> {% include 'base_menu.html' %} </span>
         <span> {% include 'base_search.html' %} </span>
         <span> {% include 'base_login.html' %} </span>
         <span> {% include 'base_register.html' %} </span>
         <span> {% include 'base_logout.html' %} </span>
         <span> {% include 'base_profile.html' %} </span>
-        <span> {% include 'base_configure.html' %} </span>
     </footer>
 </body>
 

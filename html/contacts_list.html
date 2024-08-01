@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<section>
+    <table>
+        <tr>
+            <th> First Name </th>
+            <th> Last Name </th>
+            <th> Fee </th>
+            <th> Quantity</th>
+            <th> Units </th>
+            <th> Amount </th>
+            <th> Balance </th>
+            <th> Submittal </th>
+            <th> Account </th>
+            <th> Notes </th>
+        </tr>
+        {% for contact in contacts%}
+        <tr>
+            <td> {{ contact.record }} </td>
+            <td> {{ contact.group }} </td>
+            <td> {{ contact.name }} </td>
+            <td> {{ contact.qty }} </td>
+            <td> {{ contact.units }} </td>
+            <td> {{ contact.amount }} </td>
+            <td> {{ contact.balance }} </td>
+            <td> {{ contact.submittal }} </td>
+            <td> {{ contact.account }}</td>
+            <td> {{ contact.notes }} </td>
+        </tr>
+        {% endfor %}
+    </table>
+</section>
+{% endblock main %}

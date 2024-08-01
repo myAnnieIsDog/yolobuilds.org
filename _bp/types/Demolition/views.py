@@ -5,8 +5,8 @@ from django.http import HttpRequest, HttpResponse
 from django.urls import path
 from django.views.generic import TemplateView, CreateView
 
-from _bp.Demolition.models import Demolition
-from _bp.Demolition.config import subtypes
+from .models import Demolition
+from .config import subtypes
 
 
 class DemoInfo(TemplateView):

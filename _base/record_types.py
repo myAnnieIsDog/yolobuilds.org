@@ -3,7 +3,7 @@ from django.db import models
 from _fiscal.models import FeeType
 from _base.inspection_types import InspectionType
 from _base.review_types import ReviewType
-from _profiles.profile_staff import Division
+from _profiles.models import Division
 
 
 class Type(models.Model):

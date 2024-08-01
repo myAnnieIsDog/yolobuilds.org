@@ -1,19 +1,19 @@
 from django.urls import path
 from django.views.generic import TemplateView
 
-from _bp.Demolition import views as demo
+from _bp.types.Demolition import views as demo
 
-# from _bp.Electrical import views as elc
-# from _bp.Existing import views as exist
-# from _bp.Fire import views as fire
-# from _bp.Flood import views as flood
-# from _bp.Grading import views as grading
-# from _bp.Mechanical import views as mch
-# from _bp.NewResidential import views as res
-# from _bp.NewAccessory import views as accessory
-# from _bp.NewCommercial import views as com
-# from _bp.Plumbing import views as plb
-# from _bp.Pool import views as pool
+# from _bp.types.Electrical import views as elc
+# from _bp.types.Existing import views as exist
+# from _bp.types.Fire import views as fire
+# from _bp.types.Flood import views as flood
+# from _bp.types.Grading import views as grading
+# from _bp.types.Mechanical import views as mch
+# from _bp.types.NewResidential import views as res
+# from _bp.types.NewAccessory import views as accessory
+# from _bp.types.NewCommercial import views as com
+# from _bp.types.Plumbing import views as plb
+# from _bp.types.Pool import views as pool
 
 
 urlpatterns = [

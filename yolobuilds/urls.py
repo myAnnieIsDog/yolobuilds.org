@@ -12,6 +12,7 @@ urlpatterns = [
     path("bl/", include("_bl.urls")),
     path("bp/", include("_bp.urls")),
     path("ce/", include("_ce.urls")),
+    path("profiles/", include("_profiles.urls")),
     path("fiscal/", include("_fiscal.urls")),
     path("land/", include("_land.urls")),
     path("pw/", include("_pw.urls")),
