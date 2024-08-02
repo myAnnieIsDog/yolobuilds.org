@@ -1,16 +1,14 @@
 from django.db import models
 
-from _bp.bp import BP
-from _base.record_types import Type
+from _bp.models import BP
+from _base.models import RecordType
 
 
 class Demolition(BP):
-    record_type = models.ForeignKey(
-        Type, on_delete=models.PROTECT, null=True, blank=True
-    )
+    record_type = models.ForeignKey(RecordType, on_delete=models.PROTECT, blank=True)
 
     suffix = "-Demo"
-    type_of_structure = models.CharField(max_length=55, null=True, blank=True)
+    type_of_structure = models.CharField(max_length=55, blank=True)
     demolition_area = models.CharField(max_length=55)
     options = {
         "accessory": "Accessory",
@@ -19,7 +17,7 @@ class Demolition(BP):
         "partial": "Partial",
         "pool": "Pool",
     }
-    subtype = models.CharField(max_length=55, choices=options)
+    subtype = models.CharField(max_length=55, choices=options, default="")
 
     def __str__(self) -> str:
         return f"{self.number}-Demo"

@@ -12,9 +12,9 @@
         "unit_description": "FSA Davis",
         "cost_center": 110015,
         "gl_account": 401327.0,
-        "cams": NaN,
-        "Infor Activity": NaN,
-        "Infor Account Category": NaN,
+        "cams": "",
+        "Infor Activity": "",
+        "Infor Account Category": "",
         "ledger": "11011000110015401327"
       },
       {
@@ -23,10 +23,10 @@
         "share": 1.0,
         "unit": 1501.0,
         "unit_label": "Survey",
-        "unit_description": NaN,
+        "unit_description": "",
         "cost_center": 120001,
         "gl_account": 440080.0,
-        "cams": NaN,
+        "cams": "",
         "Infor Activity": 2029999.0,
         "Infor Account Category": 10000.0,
         "ledger": "10011501120001440080"
@@ -39,11 +39,11 @@
         "unit_label": "PGE Grant",
         "unit_description": "PGE Grant",
         "cost_center": 120002,
-        "gl_account": NaN,
-        "cams": NaN,
-        "Infor Activity": NaN,
-        "Infor Account Category": NaN,
-        "ledger": NaN
+        "gl_account": "",
+        "cams": "",
+        "Infor Activity": "",
+        "Infor Account Category": "",
+        "ledger": ""
       },
       {
         "fund": 1001,
@@ -55,8 +55,8 @@
         "cost_center": 120003,
         "gl_account": 401330.0,
         "cams": "(proj. specific)",
-        "Infor Activity": NaN,
-        "Infor Account Category": NaN,
+        "Infor Activity": "",
+        "Infor Account Category": "",
         "ledger": "10012971120003401330"
       },
       {
@@ -69,8 +69,8 @@
         "cost_center": 120003,
         "gl_account": 401330.0,
         "cams": "2971-BD5003",
-        "Infor Activity": NaN,
-        "Infor Account Category": NaN,
+        "Infor Activity": "",
+        "Infor Account Category": "",
         "ledger": "10012971120003401330"
       },
       {
@@ -83,8 +83,8 @@
         "cost_center": 120003,
         "gl_account": 401301.0,
         "cams": "2971-PL5001",
-        "Infor Activity": NaN,
-        "Infor Account Category": NaN,
+        "Infor Activity": "",
+        "Infor Account Category": "",
         "ledger": "10012971120003401301"
       },
       {
@@ -96,9 +96,9 @@
         "unit_description": "GF PLANNING",
         "cost_center": 120003,
         "gl_account": 440690.0,
-        "cams": NaN,
-        "Infor Activity": NaN,
-        "Infor Account Category": NaN,
+        "cams": "",
+        "Infor Activity": "",
+        "Infor Account Category": "",
         "ledger": "10012971120003440690"
       },
       {
@@ -109,11 +109,11 @@
         "unit_label": "PACE",
         "unit_description": "DCS PACE PROGRAM OVERSIGHT",
         "cost_center": 120010,
-        "gl_account": NaN,
-        "cams": NaN,
-        "Infor Activity": NaN,
-        "Infor Account Category": NaN,
-        "ledger": NaN
+        "gl_account": "",
+        "cams": "",
+        "Infor Activity": "",
+        "Infor Account Category": "",
+        "ledger": ""
       },
       {
         "fund": 1001,
@@ -123,11 +123,11 @@
         "unit_label": "Resilience",
         "unit_description": "DCS RESILIENCE",
         "cost_center": 120011,
-        "gl_account": NaN,
-        "cams": NaN,
-        "Infor Activity": NaN,
-        "Infor Account Category": NaN,
-        "ledger": NaN
+        "gl_account": "",
+        "cams": "",
+        "Infor Activity": "",
+        "Infor Account Category": "",
+        "ledger": ""
       },
       {
         "fund": 1001,
@@ -139,8 +139,8 @@
         "cost_center": 120013,
         "gl_account": 401329.0,
         "cams": "2971-CE5000",
-        "Infor Activity": NaN,
-        "Infor Account Category": NaN,
+        "Infor Activity": "",
+        "Infor Account Category": "",
         "ledger": "10012971120013401329"
       },
       {
@@ -153,8 +153,8 @@
         "cost_center": 120039,
         "gl_account": 401360.0,
         "cams": "4013-LUSE",
-        "Infor Activity": NaN,
-        "Infor Account Category": NaN,
+        "Infor Activity": "",
+        "Infor Account Category": "",
         "ledger": "10304051120039401360"
       },
       {
@@ -163,12 +163,12 @@
         "share": 1.0,
         "unit": 2971.0,
         "unit_label": "General Plan Cost Recovery",
-        "unit_description": NaN,
+        "unit_description": "",
         "cost_center": 120014,
         "gl_account": 401327.0,
-        "cams": NaN,
-        "Infor Activity": NaN,
-        "Infor Account Category": NaN,
+        "cams": "",
+        "Infor Activity": "",
+        "Infor Account Category": "",
         "ledger": "10612971120014401327"
       },
       {
@@ -179,11 +179,11 @@
         "unit_label": "CE Abatement",
         "unit_description": "CODE ENFORCEMENT ABATEMENT PROG",
         "cost_center": 120015,
-        "gl_account": NaN,
-        "cams": NaN,
-        "Infor Activity": NaN,
-        "Infor Account Category": NaN,
-        "ledger": NaN
+        "gl_account": "",
+        "cams": "",
+        "Infor Activity": "",
+        "Infor Account Category": "",
+        "ledger": ""
       },
       {
         "fund": 2030,
@@ -193,11 +193,11 @@
         "unit_label": "PW Road",
         "unit_description": "ROAD FUND",
         "cost_center": 120026,
-        "gl_account": NaN,
-        "cams": NaN,
-        "Infor Activity": NaN,
-        "Infor Account Category": NaN,
-        "ledger": NaN
+        "gl_account": "",
+        "cams": "",
+        "Infor Activity": "",
+        "Infor Account Category": "",
+        "ledger": ""
       },
       {
         "fund": 2030,
@@ -207,11 +207,11 @@
         "unit_label": "PW Admin",
         "unit_description": "ROAD FUND ADMINISTRATION",
         "cost_center": 120027,
-        "gl_account": NaN,
-        "cams": NaN,
-        "Infor Activity": NaN,
-        "Infor Account Category": NaN,
-        "ledger": NaN
+        "gl_account": "",
+        "cams": "",
+        "Infor Activity": "",
+        "Infor Account Category": "",
+        "ledger": ""
       },
       {
         "fund": 2030,
@@ -236,9 +236,9 @@
         "unit_description": "ROAD FUND ENGINEERING",
         "cost_center": 120028,
         "gl_account": 440081.0,
-        "cams": NaN,
-        "Infor Activity": NaN,
-        "Infor Account Category": NaN,
+        "cams": "",
+        "Infor Activity": "",
+        "Infor Account Category": "",
         "ledger": "20303011120028440081"
       },
       {
@@ -251,8 +251,8 @@
         "cost_center": 120028,
         "gl_account": 440081.0,
         "cams": "3011-RW1001",
-        "Infor Activity": NaN,
-        "Infor Account Category": NaN,
+        "Infor Activity": "",
+        "Infor Account Category": "",
         "ledger": "20303011120028440081"
       },
       {
@@ -264,16 +264,16 @@
         "unit_description": "ROAD FUND ENGINEERING",
         "cost_center": 120028,
         "gl_account": 401315.0,
-        "cams": NaN,
-        "Infor Activity": NaN,
-        "Infor Account Category": NaN,
+        "cams": "",
+        "Infor Activity": "",
+        "Infor Account Category": "",
         "ledger": "20303011120028401315"
       },
       {
         "fund": 2030,
         "fund_label": "Road Fund",
         "share": 1.0,
-        "unit": NaN,
+        "unit": "",
         "unit_label": "PW Engineering - subcategory?",
         "unit_description": "ROAD FUND ENGINEERING",
         "cost_center": 120028,
@@ -293,8 +293,8 @@
         "cost_center": 120028,
         "gl_account": 401320.0,
         "cams": "3011-RW1003",
-        "Infor Activity": NaN,
-        "Infor Account Category": NaN,
+        "Infor Activity": "",
+        "Infor Account Category": "",
         "ledger": "20303011120028401320"
       },
       {
@@ -305,11 +305,11 @@
         "unit_label": "PW Maintenance",
         "unit_description": "ROAD FUND ROAD MAINTENANCE",
         "cost_center": 120029,
-        "gl_account": NaN,
-        "cams": NaN,
-        "Infor Activity": NaN,
-        "Infor Account Category": NaN,
-        "ledger": NaN
+        "gl_account": "",
+        "cams": "",
+        "Infor Activity": "",
+        "Infor Account Category": "",
+        "ledger": ""
       },
       {
         "fund": 2832,
@@ -319,10 +319,10 @@
         "unit_label": "County Service Area",
         "unit_description": "CSA",
         "cost_center": 121032,
-        "gl_account": NaN,
-        "cams": NaN,
-        "Infor Activity": NaN,
-        "Infor Account Category": NaN,
+        "gl_account": "",
+        "cams": "",
+        "Infor Activity": "",
+        "Infor Account Category": "",
         "ledger": "28324999121032440003"
       },
       {
@@ -335,8 +335,8 @@
         "cost_center": 120019,
         "gl_account": 401310.0,
         "cams": "2975-BD5009",
-        "Infor Activity": NaN,
-        "Infor Account Category": NaN,
+        "Infor Activity": "",
+        "Infor Account Category": "",
         "ledger": "60312975120019401310"
       },
       {
@@ -349,8 +349,8 @@
         "cost_center": 120020,
         "gl_account": 401301.0,
         "cams": "2975-BD5008",
-        "Infor Activity": NaN,
-        "Infor Account Category": NaN,
+        "Infor Activity": "",
+        "Infor Account Category": "",
         "ledger": "60312975120020401301"
       },
       {
@@ -363,8 +363,8 @@
         "cost_center": 120021,
         "gl_account": 401310.0,
         "cams": "2975-BD5003",
-        "Infor Activity": NaN,
-        "Infor Account Category": NaN,
+        "Infor Activity": "",
+        "Infor Account Category": "",
         "ledger": "60312975120021401310"
       },
       {
@@ -377,8 +377,8 @@
         "cost_center": 120021,
         "gl_account": 401310.0,
         "cams": "2975-BD5000",
-        "Infor Activity": NaN,
-        "Infor Account Category": NaN,
+        "Infor Activity": "",
+        "Infor Account Category": "",
         "ledger": "60312975120021401310"
       },
       {
@@ -390,9 +390,9 @@
         "unit_description": "INTEGRATED WASTE MANAGEMENT",
         "cost_center": 120050,
         "gl_account": 401310.0,
-        "cams": NaN,
-        "Infor Activity": NaN,
-        "Infor Account Category": NaN,
+        "cams": "",
+        "Infor Activity": "",
+        "Infor Account Category": "",
         "ledger": "60214401120050401310"
       },
       {
@@ -404,9 +404,9 @@
         "unit_description": "BUILDING ENTERPRISE FD TECH COST RECOVERY",
         "cost_center": 120041,
         "gl_account": 401301.0,
-        "cams": NaN,
-        "Infor Activity": NaN,
-        "Infor Account Category": NaN,
+        "cams": "",
+        "Infor Activity": "",
+        "Infor Account Category": "",
         "ledger": "60312975120041401301"
       },
       {
@@ -418,9 +418,9 @@
         "unit_description": "BUILDING ENTERPRISE FD TECH COST RECOVERY",
         "cost_center": 120041,
         "gl_account": 401310.0,
-        "cams": NaN,
-        "Infor Activity": NaN,
-        "Infor Account Category": NaN,
+        "cams": "",
+        "Infor Activity": "",
+        "Infor Account Category": "",
         "ledger": "60312975120041401310"
       },
       {
@@ -432,9 +432,9 @@
         "unit_description": "BUILDING ENTERPRISE FD TECH COST RECOVERY",
         "cost_center": 120041,
         "gl_account": 401320.0,
-        "cams": NaN,
-        "Infor Activity": NaN,
-        "Infor Account Category": NaN,
+        "cams": "",
+        "Infor Activity": "",
+        "Infor Account Category": "",
         "ledger": "60312975120041401320"
       },
       {
@@ -446,9 +446,9 @@
         "unit_description": "BUILDING ENTERPRISE FD TECH COST RECOVERY",
         "cost_center": 120041,
         "gl_account": 401330.0,
-        "cams": NaN,
-        "Infor Activity": NaN,
-        "Infor Account Category": NaN,
+        "cams": "",
+        "Infor Activity": "",
+        "Infor Account Category": "",
         "ledger": "60312975120041401330"
       },
       {
@@ -460,9 +460,9 @@
         "unit_description": "BUILDING ENTERPRISE FD TECH COST RECOVERY",
         "cost_center": 120041,
         "gl_account": 440080.0,
-        "cams": NaN,
-        "Infor Activity": NaN,
-        "Infor Account Category": NaN,
+        "cams": "",
+        "Infor Activity": "",
+        "Infor Account Category": "",
         "ledger": "60312975120041440080"
       },
       {
@@ -474,51 +474,51 @@
         "unit_description": "BUILDING ENTERPRISE FD TECH COST RECOVERY",
         "cost_center": 120041,
         "gl_account": 440081.0,
-        "cams": NaN,
-        "Infor Activity": NaN,
-        "Infor Account Category": NaN,
+        "cams": "",
+        "Infor Activity": "",
+        "Infor Account Category": "",
         "ledger": "60312975120041440081"
       },
       {
         "fund": 6031,
         "fund_label": "Building Enterprise Fund",
         "share": 0.1,
-        "unit": NaN,
+        "unit": "",
         "unit_label": "State Disability Access and Education Fee",
-        "unit_description": NaN,
+        "unit_description": "",
         "cost_center": 213001,
-        "gl_account": NaN,
-        "cams": NaN,
-        "Infor Activity": NaN,
-        "Infor Account Category": NaN,
+        "gl_account": "",
+        "cams": "",
+        "Infor Activity": "",
+        "Infor Account Category": "",
         "ledger": "6031213001"
       },
       {
         "fund": 6031,
         "fund_label": "Building Enterprise Fund",
         "share": 0.95,
-        "unit": NaN,
+        "unit": "",
         "unit_label": "State Strong Motion and Instrumentation",
-        "unit_description": NaN,
+        "unit_description": "",
         "cost_center": 213013,
-        "gl_account": NaN,
-        "cams": NaN,
-        "Infor Activity": NaN,
-        "Infor Account Category": NaN,
+        "gl_account": "",
+        "cams": "",
+        "Infor Activity": "",
+        "Infor Account Category": "",
         "ledger": "6031213013"
       },
       {
         "fund": 6031,
         "fund_label": "Building Enterprise Fund",
         "share": 0.9,
-        "unit": NaN,
+        "unit": "",
         "unit_label": "State Building Standards",
-        "unit_description": NaN,
+        "unit_description": "",
         "cost_center": 213018,
-        "gl_account": NaN,
-        "cams": NaN,
-        "Infor Activity": NaN,
-        "Infor Account Category": NaN,
+        "gl_account": "",
+        "cams": "",
+        "Infor Activity": "",
+        "Infor Account Category": "",
         "ledger": "6031213018"
       }
     ]

@@ -3,12 +3,63 @@ from django.db import models
 from django.utils import timezone
 
 
+class Department(models.Model):
+    code = models.CharField(max_length=25, unique=True)
+    name = models.CharField(max_length=255, unique=True)
+    active = models.BooleanField(default=True)
+
+    def __str__(self) -> str:
+        return self.dept_code
+
+    class Meta:
+        ordering = ["code"]
+        verbose_name = "Yolo Department"
+        verbose_name_plural = "Yolo Department Options"
+
+
+def leading_zeros(seq, L: int) -> str:
+    # call this function to add leading zeros and return a string.
+    while len(str(seq)) < L:
+        seq = f"0{seq}"
+    return seq
+
+
+class Division(models.Model):
+    name = models.CharField(max_length=255, unique=True)
+    dba = models.CharField(max_length=55, unique=True)
+    prefix = models.CharField(max_length=5, unique=True)
+    year = models.CharField(max_length=4, default=timezone.now().strftime("%Y"))
+    sequence = models.CharField(max_length=12, default="0001")
+    active = models.BooleanField(default=True)
+
+    class Meta:
+        ordering = ["name"]
+        verbose_name = "Yolo DCS Division"
+        verbose_name_plural = "Yolo DCS Divisions"
+
+    def __str__(self) -> str:
+        return self.prefix
+
+    def next(record_prefix, record_year):
+        # For the given prefix get last used record year and number
+        n = Division.objects.get(prefix=record_prefix)
+
+        # Annual reset or increment. BL should never reset.
+        if n.year != record_year and n.prefix != "BL":
+            n.year = record_year
+            n.seq = "0000"
+        else:
+            n.seq = leading_zeros(str(int(n.sequence) + 1, 4))
+
+        n.save()
+        return f"{n.prefix}{n.year}-{n.seq}"
+
+
 class Profile(models.Model):
-    """
-    Extends User:
-    https://docs.djangoproject.com/en/5.0/ref/contrib/auth/#django.contrib.auth.models.User
-    """
-    user = models.OneToOneField(User, on_delete=models.PROTECT, null=True, blank=True)
+    user_link = models.OneToOneField(
+        User, on_delete=models.PROTECT, null=True, blank=True
+    )
+    user = models.CharField(max_length=255, blank=True)
     first = models.CharField("First Name", max_length=255, blank=True)
     last = models.CharField("Last Name", max_length=255, blank=True)
     company = models.CharField("Company Name", max_length=255, blank=True)
@@ -18,8 +69,10 @@ class Profile(models.Model):
     city = models.CharField(max_length=255, blank=True)
     state = models.CharField(max_length=2, blank=True)
     zip = models.CharField(max_length=10, blank=True)
-    is_reviewer = models.BooleanField(default=False)
-    is_inspector = models.BooleanField(default=False)
+    reviewer = models.BooleanField(default=False)
+    inspector = models.BooleanField(default=False)
+    active = models.BooleanField(default=True)
+    recent = [""]
 
     class Meta:
         ordering = ["first", "last"]
@@ -37,98 +90,32 @@ class Profile(models.Model):
         a.save()
 
 
-class LicenseAgency(models.Model):
-    agency = models.CharField("Agency Acronym", max_length=15, unique=True)
-    agency_long = models.CharField("Agency Full Name", max_length=255, unique=True)
+class Staff(models.Model):
+    profile_link = models.OneToOneField(Profile, on_delete=models.PROTECT)
+    profile = models.CharField(max_length=255, blank=True)
+    department = models.CharField(max_length=255, blank=True)
+    division = models.CharField(max_length=255, blank=True)
+    supervisor = models.CharField(max_length=255, blank=True)
+    supervisor_email = models.CharField(max_length=255, blank=True)
 
     def __str__(self) -> str:
-        return self.agency
+        return self.profile.user.username
 
     class Meta:
-        ordering = ["agency"]
-        verbose_name = "Certification Agency"
-        verbose_name_plural = "Certification Agencies"
+        ordering = ["department", "division", "profile"]
+        verbose_name = "Yolo DCS Employee"
+        verbose_name_plural = "Yolo DCS Employees"
 
 
-class LicenseType(models.Model):
-    licensing_agency = models.ForeignKey(LicenseAgency, on_delete=models.PROTECT, null=True)
-    license_short = models.CharField("Licens Type", max_length=7, unique=True)
-    license_long = models.CharField("Licens Type", max_length=255, unique=True)
-
-    def __str__(self) -> str:
-        return self.license_long
-
-    class Meta:
-        ordering = ["license_short"]
-        verbose_name = "Certification Type"
-        verbose_name_plural = "Certification Types"
-
-
-class LicenseHolder(models.Model):
-    license_holder = models.ForeignKey(Profile, on_delete=models.PROTECT)
-    license_type = models.ForeignKey(LicenseType, on_delete=models.PROTECT)
-    license_number = models.CharField(max_length=255, unique=True)
-    expiration_date = models.DateField()
-    verified_valid = models.BooleanField()
-    # replace the following with a relationship to business license records.
-    bl_number = models.CharField(
-        "Yolo County Business License Number", max_length=40, blank=True
+class AngencyPartners(models.Model):
+    profile_link = models.OneToOneField(Profile, on_delete=models.PROTECT)
+    profile = models.CharField(max_length=255, null=True, blank=True)
+    agency = models.CharField("Agency Nickname", max_length=25, null=True, blank=True)
+    full_agency = models.CharField(
+        "Agency Full Name", max_length=255, null=True, blank=True
     )
-
-    def __str__(self) -> str:
-        return f"{self.license_holder} {self.license_type}"
-
-    class Meta:
-        ordering = ["license_holder", "license_type"]
-        verbose_name = "Certificate"
-        verbose_name_plural = "Certificates"
-
-
-class ContactType(models.Model):
-    role = models.CharField(max_length=55)
-    description = models.TextField(max_length=255)
-
-    def __str__(self) -> str:
-        return self.role
-
-    class Meta:
-        ordering = ["description"]
-        verbose_name = "Contact Type"
-        verbose_name_plural = "Contacts Types"
-
-
-class Contact(models.Model):
-    contact = models.ForeignKey(Profile, on_delete=models.PROTECT)
-    contact_type = models.ForeignKey(ContactType, on_delete=models.PROTECT)
-
-    def __str__(self) -> str:
-        return f"{self.contact} is the {self.role} on {self.record}."
-
-    class Meta:
-        ordering = ["contact"]
-        verbose_name = "Contact"
-        verbose_name_plural = "Contacts"
-
-
-class Agency(models.Model):
-    agency = models.CharField(max_length=25, unique=True)
-    full_agency = models.CharField(max_length=255, unique=True)
-
-    def __str__(self) -> str:
-        return self.agency
-
-    class Meta:
-        ordering = ["agency"]
-        verbose_name = "Yolo DCS Partner Agency"
-        verbose_name_plural = "Yolo DCS Partner Agencies"
-
-
-class YoloCountyPartners(models.Model):
-    profile = models.OneToOneField(Profile, on_delete=models.PROTECT)
-    agency = models.ForeignKey(Agency, on_delete=models.PROTECT)
     alt_contact_name = models.CharField(max_length=255, null=True, blank=True)
     alt_contact_email = models.CharField(max_length=255, null=True, blank=True)
-    # recent_records = models.ManyToManyField(Record)
 
     def __str__(self) -> str:
         return self.profile.user.username
@@ -139,61 +126,63 @@ class YoloCountyPartners(models.Model):
         verbose_name_plural = "Yolo DCS Partners"
 
 
-class Department(models.Model):
-    dept_code = models.CharField(max_length=25, unique=True)
-    department = models.CharField(max_length=255, unique=True)
+class ContactType(models.Model):
+    role = models.CharField(max_length=55)
+    description = models.TextField(max_length=255)
+    active = models.BooleanField(default=True)
 
     def __str__(self) -> str:
-        return self.dept_code
-    
-    class Meta:
-        ordering = ["dept_code"]
-        verbose_name = "Yolo Department"
-        verbose_name_plural = "Yolo Department Options"
-
-
-class Division(models.Model): 
-    prefix = models.CharField(max_length=5, unique=True) 
-    division = models.CharField(max_length=30, unique=True)
-    full_division = models.CharField(max_length=255, unique=True)
-    year = models.CharField(max_length=55, default = timezone.now().strftime("%Y"))
-    sequence = models.CharField(max_length = 12, default = "0000")
+        return self.role
 
     class Meta:
-        ordering = ["division"]
-        verbose_name = "Yolo DCS Division"
-        verbose_name_plural = "Yolo DCS Divisions"
-    
-    def __str__(self) -> str:
-        return self.prefix
-    
-    def next(record_prefix, record_year):
-        """ This function is mostly side-effects, and returns the next record number. """
-        n = Division.objects.get(prefix=record_prefix)
-        if n.year != record_year and n.prefix != "BL": 
-            """ Annual Reset, except BL """
-            n.year = record_year
-            n.sequence = "0000"
-        n.sequence = str(int(n.sequence) + 1)
-        while len(n.sequence) < 4:
-            """ Add leading zeros to the string. """
-            n.sequence = f"0{n.sequence}"
-        n.save()
-        return {n.sequence}
+        ordering = ["description"]
+        verbose_name = "Contact Type"
+        verbose_name_plural = "Contacts Types"
 
 
-class Staff(models.Model):
-    profile = models.OneToOneField(Profile, on_delete=models.PROTECT, related_name="staff_profile")
-    department = models.ForeignKey(Department, on_delete=models.PROTECT)
-    division = models.ForeignKey(Division, on_delete=models.PROTECT)
-    supervisor = models.CharField(max_length=255, null=True, blank=True)
-    supervisor_email = models.CharField(max_length=255, null=True, blank=True)
-    # recent_records = models.ManyToManyField(Record)
+class Contacts(models.Model):
+    profile_link = models.OneToOneField(Profile, on_delete=models.PROTECT)
+    profile = models.CharField(max_length=255)
+    contact_type = models.CharField(max_length=255)
 
     def __str__(self) -> str:
-        return self.profile.user.username
-    
-    class Meta():
-        ordering = ["department", "division", "profile"]
-        verbose_name = "Yolo DCS Employee"
-        verbose_name_plural = "Yolo DCS Employees"
+        return self.profile
+
+    class Meta:
+        ordering = ["profile"]
+        verbose_name = "Contact"
+        verbose_name_plural = "Contacts"
+
+
+class CertificateType(models.Model):
+    agency = models.CharField("Agency Acronym", max_length=15, unique=True)
+    agency_long = models.CharField("Agency Full Name", max_length=255, unique=True)
+    cert = models.CharField("Cert. Code", max_length=7, unique=True)
+    cert_long = models.CharField("Certification Type", max_length=255, unique=True)
+    active = models.BooleanField(default=True)
+
+    def __str__(self) -> str:
+        return self.license_long
+
+    class Meta:
+        ordering = ["cert"]
+        verbose_name = "Certification Type"
+        verbose_name_plural = "Certification Types"
+
+
+class Certificate(models.Model):
+    cert_holder_link = models.ForeignKey(Profile, on_delete=models.PROTECT)
+    cert_holder = models.CharField(max_length=255)
+    cert_type = models.CharField(max_length=255)
+    cert_number = models.CharField(max_length=255)
+    expiration_date = models.DateField(null=True, blank=True)
+    verified_valid = models.DateField(null=True, blank=True)
+    active = models.BooleanField(default=True)
+
+    def __str__(self) -> str:
+        return f"{self.license_holder} {self.license_type}"
+
+    class Meta:
+        ordering = ["cert_holder", "cert_type"]
+        verbose_name = "Certificate"
+        verbose_name_plural = "Certificates"

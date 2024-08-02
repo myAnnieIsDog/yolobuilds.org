@@ -1,3 +1,9 @@
+from django.contrib.admin import StackedInline
 from django.contrib import admin
 
-# Register your models here.
+from . import models
+
+
+@admin.register(models.FeeType)
+class FeeTypeAdmin(admin.ModelAdmin):
+    pass

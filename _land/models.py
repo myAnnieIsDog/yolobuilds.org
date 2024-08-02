@@ -1,7 +1,32 @@
 from django.db import models
 
+zips = [
+    "95605",
+    "95606",
+    "95607",
+    "95612",
+    "95615",
+    "95616",
+    "95618",
+    "95620",
+    "95627",
+    "95637",
+    "95645",
+    "95653",
+    "95679",
+    "95691",
+    "95694",
+    "95695",
+    "95697",
+    "95698",
+    "95776",
+    "95816",
+    "95937",
+    "95961",
+]
 
-class District(models.Model): 
+
+class District(models.Model):
     dist_type = models.CharField(max_length=100, null=True, blank=True)
     district = models.CharField(max_length=55)
     description = models.CharField(max_length=255, null=True, blank=True)
@@ -11,7 +36,8 @@ class District(models.Model):
     phone = models.CharField(max_length=20, null=True, blank=True)
     email = models.EmailField(null=True, blank=True)
     website = models.URLField(null=True, blank=True)
-    
+    active = models.BooleanField(default=True)
+
     def __str__(self) -> str:
         return f"{self.district} {self.dist_type}"
 
@@ -28,7 +54,7 @@ class FloodZones(models.Model):
 
     def __str__(self) -> str:
         return self.zone_code
-    
+
     def define_flood_zones():
         li = {
             "A": "Approximate A Zone",
@@ -39,21 +65,22 @@ class FloodZones(models.Model):
         for key, value in li:
             zone = FloodZones(zone_code=key, zone_description=value)
             zone.save()
-            
+
     def list():
         list = {}
         zones = FloodZones.objects.all()
         for zone in zones:
             list[zone.zone_code] = zone.zone_description
         return list
-    
+
     class Meta:
         verbose_name = "Flood Zone"
         verbose_name_plural = "Flood Zones"
 
 
-class Jurisdiction(models.Model): 
-    jurisdiction = models.CharField(max_length=55)
+class Jurisdiction(models.Model):
+    jurisdiction = models.CharField(max_length=55, unique=True)
+    active = models.BooleanField(default=True)
 
     def __str__(self) -> str:
         return f"{self.jurisdiction}"
@@ -69,20 +96,19 @@ def apn_string_to_display(input: str) -> str:
     return f"{book}-{page}-{parcel}"
 
 
-class Parcel(models.Model): 
+class Parcel(models.Model):
     book = models.CharField(max_length=3, default="000")
     page = models.CharField(max_length=3, default="000")
     parcel = models.CharField(max_length=3, default="000")
+    full = models.CharField(max_length=15, default="000-000-000")
     active = models.BooleanField(default=True)
-    owner_name = models.CharField(
-        max_length=100, null=True, blank=True)
-    owner_address = models.CharField(
-        max_length=100, null=True, blank=True)
+
+    owner_name = models.CharField(max_length=100, null=True, blank=True)
+    owner_address = models.CharField(max_length=100, null=True, blank=True)
     land_use_zone = models.CharField(max_length=10, default="A-N")
     wui_sra = models.BooleanField()
     wui_lra = models.BooleanField()
-    wui_risk = models.DecimalField(
-        max_digits=1, decimal_places=0, default=0)
+    wui_risk = models.DecimalField(max_digits=1, decimal_places=0, default=0)
     wui_regulations = models.BooleanField()
     flood_a = models.BooleanField()
     flood_ae = models.BooleanField()
@@ -90,20 +116,18 @@ class Parcel(models.Model):
     flood_x = models.BooleanField()
     floodway = models.BooleanField()
 
-    jurisdiction = models.ForeignKey(
-        Jurisdiction, on_delete=models.PROTECT, null=True, blank=True)
-    districts = models.ManyToManyField(District, blank=True)    
-    parcels = models.ManyToManyField("self", blank=True)
-    # addresses = one to many; see foreign key below
-    # bl = models.ManyToManyField(SiteAddress, blank=True)
-    # bp = models.ManyToManyField(BP, blank=True)
-    # ce = models.ManyToManyField(SiteAddress, blank=True)
-    # pw = models.ManyToManyField(SiteAddress, blank=True)
-    # zf = models.ManyToManyField(SiteAddress, blank=True)
+    jurisdictions = models.CharField(max_length=255, blank=True)
+    jurisdiction_link = models.ForeignKey(
+        Jurisdiction, on_delete=models.PROTECT, null=True, blank=True
+    )
+    districts = models.CharField(max_length=255, blank=True)
+    districts_link = models.ManyToManyField(District, blank=True)
+    parcels = models.CharField(max_length=255, blank=True)
+    parcels_link = models.ManyToManyField("self", symmetrical=True)
 
     def __str__(self) -> str:
         return f"{self.book}-{self.page}-{self.parcel}"
-    
+
     class Meta:
         ordering = ["book", "page", "parcel"]
         verbose_name = "Parcel"
@@ -116,27 +140,34 @@ class CityStZip(models.Model):
     zip = models.CharField(max_length=25, blank=True)
 
     def __str__(self) -> str:
-        return f"{self.city}, {self.state} {self.zip}" 
-    
+        return f"{self.city}, {self.state} {self.zip}"
+
     class Meta:
         ordering = ["city", "zip"]
         verbose_name = "City, State Zip"
         verbose_name_plural = "City, State Zip"
 
 
-class SiteAddress(models.Model): 
-    """ Inherits Label, Description, Created, Modified """
-    parcel = models.ForeignKey(
-        Parcel, on_delete=models.PROTECT, null=True, blank=True)
+class SiteAddress(models.Model):
+    parcel = models.CharField(max_length=55, blank=True)
+    parcel_link = models.ForeignKey(
+        Parcel, on_delete=models.PROTECT, null=True, blank=True
+    )
     number = models.CharField(max_length=10, default="12345")
     street = models.CharField(max_length=50, default="County Road 98")
-    city_st_zip = models.ForeignKey(CityStZip, on_delete=models.PROTECT, null=True, blank=True, verbose_name="City, State, Zip")
-    geolocation = models.CharField(max_length=50, null=True, blank=True)
+    city_st_zip = models.ForeignKey(
+        CityStZip,
+        on_delete=models.PROTECT,
+        null=True,
+        blank=True,
+        verbose_name="City, State, Zip",
+    )
+    geolocation = models.CharField(max_length=255, null=True, blank=True)
 
     def __str__(self) -> str:
         return f"{self.number} {self.street} {self.city_st_zip}"
-    
+
     class Meta:
-        ordering = ["number", "street", "city_st_zip"]
+        ordering = ["city_st_zip", "street", "number"]
         verbose_name = "Site Address"
         verbose_name_plural = "Site Addresses"

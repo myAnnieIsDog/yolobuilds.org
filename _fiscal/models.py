@@ -1,7 +1,4 @@
 from django.db import models
-
-from django.contrib.auth.models import User
-from django.db import models
 import requests
 
 
@@ -21,7 +18,6 @@ class Account(models.Model):
     infor_account = models.CharField(max_length=5, blank=True)
     ledger = models.CharField(max_length=20, blank=True)
     active = models.BooleanField(default=True)
-    deleted = models.BooleanField(default=False)
 
     def __str__(self) -> str:
         return self.name
@@ -40,7 +36,6 @@ class FeeGroup(models.Model):
     name = models.CharField(max_length=55, blank=True, null=True, unique=True)
     description = models.CharField(max_length=255, blank=True)
     active = models.BooleanField(default=True)
-    deleted = models.BooleanField(default=False)
 
 
 class FeeType(models.Model):
@@ -63,7 +58,6 @@ class FeeType(models.Model):
     units = models.CharField(max_length=255, default="each")
     submittal = models.BooleanField(default=True)
     active = models.BooleanField(default=True)
-    deleted = models.BooleanField(default=False)
 
     def __str__(self) -> str:
         return self.fee_name
@@ -74,7 +68,7 @@ class FeeType(models.Model):
         verbose_name_plural = "Fee Types"
 
 
-class FeeInstance(models.Model):
+class Fee(models.Model):
     record = models.CharField(max_length=1000, blank=True)
     group = models.CharField(max_length=255, blank=True)
     type = models.ForeignKey(FeeType, on_delete=models.PROTECT)
@@ -92,7 +86,6 @@ class FeeInstance(models.Model):
     notes = models.TextField(max_length=255)
     submittal = models.BooleanField(default=True)
     active = models.BooleanField(default=True)
-    deleted = models.BooleanField(default=False)
 
     def __str__(self) -> str:
         return self.fee_type
@@ -100,7 +93,7 @@ class FeeInstance(models.Model):
 
 class TrakitFee(models.Model):
     trakit_main_fee = models.ForeignKey(
-        FeeInstance, on_delete=models.PROTECT, related_name="trakit_fee"
+        Fee, on_delete=models.PROTECT, related_name="trakit_fee"
     )
     trakit_fee_code = models.CharField(max_length=255, blank=True)
     tech = models.CharField(max_length=255, blank=True)
@@ -119,7 +112,7 @@ class TrakitFee(models.Model):
 
 class ClaritiFee(models.Model):
     clariti_main_fee = models.ForeignKey(
-        FeeInstance, on_delete=models.PROTECT, related_name="clariti_fee"
+        Fee, on_delete=models.PROTECT, related_name="clariti_fee"
     )
     clariti_fee_code = models.CharField(max_length=255, blank=True)
     tech = models.CharField(max_length=255, blank=True)
@@ -139,6 +132,7 @@ class ClaritiFee(models.Model):
 class PaymentMethod(models.Model):
     method = models.CharField(max_length=55, unique=True)
     policy = models.TextField(max_length=255, blank=True)
+    active = models.BooleanField(default=True)
 
     def __str__(self) -> str:
         return self.method
@@ -154,7 +148,7 @@ class Payment(models.Model):
     collected_by = models.CharField(max_length=255, blank=True)
     date = models.DateTimeField(auto_now=True)
     deposit = models.BooleanField(default=False)
-    fees = models.ManyToManyField(FeeInstance)
+    fees = models.ManyToManyField(Fee)
     method = models.ForeignKey(PaymentMethod, on_delete=models.PROTECT)
     notes = models.TextField(max_length=255)
     paid_by = models.CharField(max_length=255, unique=True)

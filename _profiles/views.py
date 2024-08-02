@@ -3,17 +3,6 @@ from django.shortcuts import render
 
 from . import models
 
-models.Agency
-models.Contact
-models.ContactType
-models.Department
-models.Division
-models.LicenseAgency
-models.LicenseHolder
-models.LicenseType
-models.Profile
-models.Staff
-
 
 def contacts(request):
     return render(

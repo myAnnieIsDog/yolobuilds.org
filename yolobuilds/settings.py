@@ -40,9 +40,11 @@ INSTALLED_APPS = [
     "_bp.apps.BuildingPermitsConfig",
     "_ce.apps.EnforcementConfig",
     "_fiscal.apps.FiscalConfig",
+    "_inspections.apps.InspectionsConfig",
     "_land.apps.LandConfig",
     "_profiles.apps.ProfilesConfig",
     "_pw.apps.PublicWorksConfig",
+    "_reviews.apps.ReviewsConfig",
     "_zf.apps.PlanningConfig",
     # '_profiles.apps.LandConfig',
 ]

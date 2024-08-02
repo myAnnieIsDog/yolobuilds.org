@@ -6,7 +6,7 @@ from .models import (
     Account,
     FeeGroup,
     FeeType,
-    FeeInstance,
+    Fee,
     TrakitFee,
     ClaritiFee,
     PaymentMethod,
@@ -70,7 +70,7 @@ def fees(request):
 def payments(request):
     return render(
         request,
-        "fiscal_payment_list.html",
+        "fiscal.html",
         context={
             "payents": models.Payment.objects.all(),
         },
