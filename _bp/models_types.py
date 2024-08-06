@@ -3,7 +3,7 @@ from django.db import models
 
 from _base.models import RecordType
 from _bp.models_bp import UseGroup, TypeOfConstruction, BP_Base
-from _land.models import FloodZones
+from _land.models import FloodZone
 
 
 class Demolition(BP_Base):
@@ -214,7 +214,7 @@ class Flood(BP_Base):
         RecordType, on_delete=models.PROTECT, null=True, blank=True
     )
 
-    zone = models.ForeignKey(FloodZones, on_delete=models.PROTECT)
+    zone = models.ForeignKey(FloodZone, on_delete=models.PROTECT)
     bfe = models.PositiveIntegerField(null=True)
     design_depth = models.PositiveIntegerField(null=True)
 

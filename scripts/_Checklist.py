@@ -3,6 +3,7 @@
 
 apps = {
     "Profiles": {
+        "priority": 1,
         "root": "_profiles",
         "models": "65%",
         "admin": "",
@@ -10,7 +11,8 @@ apps = {
         "templates": "10%",
         "testing": "0%",
     },
-    "Land":{
+    "Land": {
+        "priority": 2,
         "root": "_land",
         "models": "65%",
         "admin": "",
@@ -18,7 +20,8 @@ apps = {
         "templates": "",
         "testing": "0%",
     },
-    "Fiscal":{
+    "Fiscal": {
+        "priority": 3,
         "root": "_fiscal",
         "models": "65%",
         "admin": "",
@@ -26,7 +29,8 @@ apps = {
         "templates": "",
         "testing": "0%",
     },
-    "Reviews":{
+    "Reviews": {
+        "priority": 4,
         "root": "_reviews",
         "models": "65%",
         "admin": "",
@@ -34,7 +38,8 @@ apps = {
         "templates": "",
         "testing": "0%",
     },
-    "Inspections":{
+    "Inspections": {
+        "priority": 5,
         "root": "_inspections",
         "models": "65%",
         "admin": "",
@@ -42,7 +47,8 @@ apps = {
         "templates": "",
         "testing": "0%",
     },
-    "Base":{
+    "Base": {
+        "priority": 10,
         "root": "_base",
         "models": "0%",
         "admin": "",
@@ -50,7 +56,8 @@ apps = {
         "templates": "",
         "testing": "0%",
     },
-    "Licenses":{
+    "Licenses": {
+        "priority": 99,
         "root": "_bl",
         "models": "0%",
         "admin": "",
@@ -58,8 +65,9 @@ apps = {
         "templates": "",
         "testing": "0%",
     },
-    "Building Permits":{
+    "Building Permits": {
         "_base": {
+            "priority": 90,
             "models": "65%",
             "admin": "",
             "views": "",
@@ -67,6 +75,7 @@ apps = {
             "testing": "0%",
         },
         "Demolition": {
+            "priority": 11,
             "models": "65%",
             "admin": "",
             "views": "",
@@ -74,6 +83,7 @@ apps = {
             "testing": "0%",
         },
         "Electrical": {
+            "priority": 90,
             "models": "65%",
             "admin": "",
             "views": "",
@@ -81,6 +91,7 @@ apps = {
             "testing": "0%",
         },
         "Existing": {
+            "priority": 90,
             "models": "65%",
             "admin": "",
             "views": "",
@@ -88,6 +99,7 @@ apps = {
             "testing": "0%",
         },
         "Fire": {
+            "priority": 90,
             "models": "65%",
             "admin": "",
             "views": "",
@@ -95,6 +107,7 @@ apps = {
             "testing": "0%",
         },
         "Flood": {
+            "priority": 90,
             "models": "65%",
             "admin": "",
             "views": "",
@@ -102,6 +115,7 @@ apps = {
             "testing": "0%",
         },
         "Grading": {
+            "priority": 90,
             "models": "65%",
             "admin": "",
             "views": "",
@@ -109,6 +123,7 @@ apps = {
             "testing": "0%",
         },
         "Mechanical": {
+            "priority": 90,
             "models": "65%",
             "admin": "",
             "views": "",
@@ -116,6 +131,7 @@ apps = {
             "testing": "0%",
         },
         "Manufactured_home": {
+            "priority": 90,
             "models": "65%",
             "admin": "",
             "views": "",
@@ -123,6 +139,7 @@ apps = {
             "testing": "0%",
         },
         "New Accessory": {
+            "priority": 90,
             "models": "65%",
             "admin": "",
             "views": "",
@@ -130,6 +147,7 @@ apps = {
             "testing": "0%",
         },
         "New Commercial": {
+            "priority": 90,
             "models": "65%",
             "admin": "",
             "views": "",
@@ -137,6 +155,7 @@ apps = {
             "testing": "0%",
         },
         "New Residential": {
+            "priority": 90,
             "models": "65%",
             "admin": "",
             "views": "",
@@ -144,6 +163,7 @@ apps = {
             "testing": "0%",
         },
         "Plumbing": {
+            "priority": 90,
             "models": "65%",
             "admin": "",
             "views": "",
@@ -151,6 +171,7 @@ apps = {
             "testing": "0%",
         },
         "Pool": {
+            "priority": 90,
             "models": "65%",
             "admin": "",
             "views": "",
@@ -159,6 +180,7 @@ apps = {
         },
     },
     "Code Enforcement": {
+        "priority": 99,
         "root": "_ce",
         "models": "0%",
         "admin": "",
@@ -167,6 +189,7 @@ apps = {
         "testing": "0%",
     },
     "Public Works": {
+        "priority": 99,
         "root": "_pw",
         "models": "0%",
         "admin": "",
@@ -175,6 +198,7 @@ apps = {
         "testing": "0%",
     },
     "Planning": {
+        "priority": 99,
         "root": "_zf",
         "models": "0%",
         "admin": "",

@@ -28,7 +28,7 @@ zips = [
 
 class District(models.Model):
     dist_type = models.CharField(max_length=100, null=True, blank=True)
-    district = models.CharField(max_length=55)
+    name = models.CharField(max_length=55)
     description = models.CharField(max_length=255, null=True, blank=True)
 
     address = models.CharField(max_length=255, null=True, blank=True)
@@ -39,17 +39,17 @@ class District(models.Model):
     active = models.BooleanField(default=True)
 
     def __str__(self) -> str:
-        return f"{self.district} {self.dist_type}"
+        return f"{self.name} {self.type}"
 
     class Meta:
-        ordering = ["district"]
+        ordering = ["name"]
         verbose_name = "District"
         verbose_name_plural = "Districts"
 
 
-class FloodZones(models.Model):
-    zone_code = models.CharField("Flood Zone Code", max_length=7)
-    zone_description = models.CharField("Flood Zone Description", max_length=255)
+class FloodZone(models.Model):
+    name = models.CharField("Flood Zone Code", max_length=7)
+    description = models.CharField("Flood Zone Description", max_length=255)
     active = models.BooleanField(default=True)
 
     def __str__(self) -> str:
@@ -63,12 +63,12 @@ class FloodZones(models.Model):
             "X": "Not Regulated",
         }
         for key, value in li:
-            zone = FloodZones(zone_code=key, zone_description=value)
+            zone = FloodZone(zone_code=key, zone_description=value)
             zone.save()
 
     def list():
         list = {}
-        zones = FloodZones.objects.all()
+        zones = FloodZone.objects.all()
         for zone in zones:
             list[zone.zone_code] = zone.zone_description
         return list
@@ -79,14 +79,14 @@ class FloodZones(models.Model):
 
 
 class Jurisdiction(models.Model):
-    jurisdiction = models.CharField(max_length=55, unique=True)
+    name = models.CharField(max_length=55, unique=True)
     active = models.BooleanField(default=True)
 
     def __str__(self) -> str:
-        return f"{self.jurisdiction}"
+        return f"{self.name}"
 
     class Meta:
-        ordering = ["jurisdiction"]
+        ordering = ["name"]
         verbose_name = "Jurisdiction"
         verbose_name_plural = "Jurisdictions"
 

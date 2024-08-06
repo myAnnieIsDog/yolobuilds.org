@@ -6,6 +6,7 @@ import time
 def main():
     parse()
 
+
 def parse():
     global_parser = argparse.ArgumentParser(
         prog="spd",
@@ -32,13 +33,12 @@ def parse():
     print(args)
 
 
-def prs(p1:dict):
+def prs(p1: dict):
     # p1 = parser.parse_args()
     ai = ai_choices()
 
     print(p1)
     print(ai)
-
 
     def ai_choices():
         ai = {}
@@ -47,8 +47,6 @@ def prs(p1:dict):
         ai["react"] = react(25)
         return ai
 
-
-
     def choice(self):
         return random.choice(["paper", "rock", "scissors"])
 
@@ -56,16 +54,29 @@ def prs(p1:dict):
         if n > random.randrange(1, 100):
             return True
         return False
-    
+
     def win():
-        a = random.choice(["YOU WIN!!!", "you lose :(", "You won, but I think you cheated.","I'm going to cry myself to sleep now. I quit."])
+        a = random.choice(
+            [
+                "YOU WIN!!!",
+                "you lose :(",
+                "You won, but I think you cheated.",
+                "I'm going to cry myself to sleep now. I quit.",
+            ]
+        )
         return a
 
     def lose():
-        a = random.choice(["better luck next time, my friend", "you lose :(", "Haha you lost you little bitch!",])
+        a = random.choice(
+            [
+                "better luck next time, my friend",
+                "you lose :(",
+                "Haha you lost you little goblin!",
+            ]
+        )
         return a
-    
-    def drama(p1:dict, ai:dict):
+
+    def drama(p1: dict, ai: dict):
         # Adding drama...
         print("The computer is anticipating your every move...")
         time.sleep(1)
@@ -74,7 +85,7 @@ def prs(p1:dict):
             print(f"You start to make {p1.juke}...")
             time.sleep(1)
 
-        print(f"The computer is starting to make {ai["juke"]}...")
+        print(f"The computer is starting to make {ai['juke']}...")
         time.sleep(1)
 
         if p1.React:
@@ -88,7 +99,7 @@ def prs(p1:dict):
             time.sleep(1)
 
             ai["go"] = choice()
-            print(f"{str(ai["go"]).capitalize()}!!!")
+            print(f"{str(ai['go']).capitalize()}!!!")
         return "Paper Rock Scissors"
 
 
