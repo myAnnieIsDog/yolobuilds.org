@@ -4,11 +4,6 @@ https://docs.python.org/3/library/index.html
 
 """
 
-
-def main():
-    pass
-
-
 """ Math """
 # from decimal import Decimal
 # import fractions
@@ -25,19 +20,35 @@ def main():
 # from statistics import NormalDist
 
 
-""" Time """
+""" Time, Date, Calendar """
 # from calendar import Calendar, LocaleHTMLCalendar, TextCalendar
 # from calendar import setfirstweekday, leapdays, weekday, monthcalendar, calendar
 # from datetime import date, time, datetime, timedelta, tzinfo, timezone
 # from time import sleep, strftime, strptime
 # import zoneinfo
 
-""" Formatting, Parsing, Serialization, and Collections """
+""" Files, Formatting, Parsing, Serialization, and Collections """
 # import xml
 # from collections import ChainMap, Counter, deque, defaultdict, namedtuple, OrderedDict
 # from csv import reader, writer, DictReader, DictWriter, excel
 # from dataclasses import dataclass, field, asdict
-
+# from difflib import SequenceMatcher, Differ
+# from filecmp import cmp, cmpfiles, dircmp
+# from fileinput import FileInput, input
+# from io import open
+# from json import dump, dumps, load, loads
+# from os import listdir, listdrives, walk, makedirs, rmdir, open, write, link, stat
+# from pathlib import Path, PurePath, PureWindowsPath
+# from pickle import dump, dumps, load, loads, Pickler, Unpickler
+# from shutil import (
+#     copyfileobj,
+#     copytree,
+#     rmtree,
+#     move,
+#     disk_usage,
+#     make_archive,
+#     unpack_archive,
+# )
 
 """ Compression and Archiving """
 # import zlib
@@ -52,7 +63,7 @@ def main():
 """ Encryption """
 # from getpass import getpass, getuser
 # from hashlib import new
-# import hmac
+# from hmac import new, compare_digest, HMAC
 # from secrets import SystemRandom, choice, randbelow
 # from secrets import token_bytes, token_hex, token_urlsafe
 # from secrets import compare_digest
@@ -64,61 +75,14 @@ def main():
 # import sqlalchemy
 # import sqlparse
 
-
-""" Development Environment and Scripting """
-import venv
-from argparse import ArgumentParser
-from atexit import register, unregister
-
-
-from abc import ABCMeta, abstractmethod
-
-
-from difflib import SequenceMatcher, Differ
-
-from enum import Enum, IntEnum, StrEnum
-from filecmp import cmp, cmpfiles, dircmp
-from fileinput import FileInput, input
-
-
-from graphlib import TopologicalSorter
-
-
-# from hmac import new, compare_digest, HMAC
-from io import open
-from json import dump, dumps, load, loads
-
-from os import listdir, listdrives, walk, makedirs, rmdir, open, write, link, stat
-from pathlib import Path, PurePath, PureWindowsPath
-from pickle import dump, dumps, load, loads, Pickler, Unpickler
-from pprint import pprint, pformat
-from profile import run, Profile
-from pstats import Stats
-import pydoc
-
-import re
-
-from runpy import run_module, run_path
-from sched import scheduler
-from selectors import DefaultSelector
-from shelve import open
-from shutil import (
-    copyfileobj,
-    copytree,
-    rmtree,
-    move,
-    disk_usage,
-    make_archive,
-    unpack_archive,
-)
-
 """ GUI and Multimedia """
-import tkinter
-import wave
-import colorsys
-import turtle
-import cmd
-import idlelib
+# import cmd
+# import colorsys
+# from graphlib import TopologicalSorter
+# import idlelib
+# import tkinter
+# import turtle
+# import wave
 
 """ Packaging and Distribution """
 # import ensurepip
@@ -137,6 +101,22 @@ import idlelib
 # import msvcrt
 # import winreg
 # import winsound
+
+""" General """
+# from abc import ABCMeta, abstractmethod
+# from argparse import ArgumentParser
+# from atexit import register, unregister
+# from enum import Enum, IntEnum, StrEnum
+# from pprint import pprint, pformat
+# from profile import run, Profile
+# from pstats import Stats
+# import pydoc
+# import re
+# from runpy import run_module, run_path
+# from sched import scheduler
+# from selectors import DefaultSelector
+# from shelve import open
+# import venv
 
 
 """
@@ -176,25 +156,12 @@ Asynchronous
 # import mailbox
 # from email import message, parser, generator, policy
 # from email import errors, headerregistry, contentmanager
-
-
 # import wsgiref
 
-# import
-# import
-# import
-# import
-# import
-# import
-# import
-# import
-# import
-# import
-# import
-# import
-# import
-# import
+
+def run():
+    pass
 
 
 if __name__ == "__main__":
-    main()
+    run()

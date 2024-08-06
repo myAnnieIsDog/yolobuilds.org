@@ -4,7 +4,6 @@ from django.db import models
 
 class InspectionGroup(models.Model):
     group = models.CharField(max_length=55, blank=True)
-    description = models.CharField(max_length=255, blank=True)
     active = models.BooleanField(default=True)
 
     def __str__(self) -> str:
