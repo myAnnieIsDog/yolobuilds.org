@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block header %} People {% endblock header %}
+
+{% block headDescription %}
+A central collection for all people including staff, customers, and non-user contacts associated with records.
+{% endblock headDescription %}
+
+{% block main %}
+{% block main_profile %}
+{% endblock main_profile %}
+
+<dialog>
+    <section>
+        <h2> Edit </h2>
+        <form action="/profile/update/" method="post">
+            <input type="text">
+        </form>
+    </section>
+</dialog>
+
+<dialog>
+    <section>
+        <h2> Create </h2>
+        <form action="/profile/create/" method="post">
+            <input type="text">
+        </form>
+    </section>
+</dialog>
+{% endblock main %}

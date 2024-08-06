@@ -3,6 +3,4 @@ from django.views.generic import TemplateView
 
 from . import views
 
-urlpatterns = [
-    path("contacts/", views.contacts, name="contacts"),
-]
+urlpatterns = [path("", views.ProfilesView.as_view(), name="profile")]

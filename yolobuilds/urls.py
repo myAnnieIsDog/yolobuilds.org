@@ -15,7 +15,7 @@ urlpatterns = [
     path("fiscal/", include("_fiscal.urls")),
     path("inspections/", include("_inspections.urls")),
     path("land/", include("_land.urls")),
-    path("profiles/", include("_profiles.urls")),
+    path("profile/", include("_profiles.urls")),
     path("pw/", include("_pw.urls")),
     path("reviews/", include("_reviews.urls")),
     path("search/", TemplateView.as_view(template_name="base_search_advanced.html")),
