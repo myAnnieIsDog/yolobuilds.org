@@ -1,134 +1,185 @@
-_profiles = {
-    "models": "65%",
-    "views": "30%",
-    "templates": "10%",
-    "testing": "0%",
-}
-_land = {
-    "models": "65%",
-    "views": "",
-    "templates": "",
-    "testing": "0%",
-}
-_reviews = {
-    "models": "65%",
-    "views": "",
-    "templates": "",
-    "testing": "0%",
-}
-_inspections = {
-    "models": "65%",
-    "views": "",
-    "templates": "",
-    "testing": "0%",
-}
-_bp = {
-    "models": "65%",
-    "views": "",
-    "templates": "",
-    "testing": "0%",
-}
-_bl = {
-    "models": "0%",
-    "views": "",
-    "templates": "",
-    "testing": "0%",
-}
-_bp = {
-    "Demolition": {
+# Listed in order of priority for development based on workflow requirements.
+# Profiles, Land, Fiscal, Reviews, Inspections, Base, BP, BL, CE, PW, ZF
+
+apps = {
+    "Profiles": {
+        "root": "_profiles",
         "models": "65%",
+        "admin": "",
+        "views": "30%",
+        "templates": "10%",
+        "testing": "0%",
+    },
+    "Land":{
+        "root": "_land",
+        "models": "65%",
+        "admin": "",
         "views": "",
         "templates": "",
         "testing": "0%",
     },
-    "Electrical": {
+    "Fiscal":{
+        "root": "_fiscal",
         "models": "65%",
+        "admin": "",
         "views": "",
         "templates": "",
         "testing": "0%",
     },
-    "Existing": {
+    "Reviews":{
+        "root": "_reviews",
         "models": "65%",
+        "admin": "",
         "views": "",
         "templates": "",
         "testing": "0%",
     },
-    "Fire": {
+    "Inspections":{
+        "root": "_inspections",
         "models": "65%",
+        "admin": "",
         "views": "",
         "templates": "",
         "testing": "0%",
     },
-    "Flood": {
-        "models": "65%",
+    "Base":{
+        "root": "_base",
+        "models": "0%",
+        "admin": "",
         "views": "",
         "templates": "",
         "testing": "0%",
     },
-    "Grading": {
-        "models": "65%",
+    "Licenses":{
+        "root": "_bl",
+        "models": "0%",
+        "admin": "",
         "views": "",
         "templates": "",
         "testing": "0%",
     },
-    "Mechanical": {
-        "models": "65%",
+    "Building Permits":{
+        "_base": {
+            "models": "65%",
+            "admin": "",
+            "views": "",
+            "templates": "",
+            "testing": "0%",
+        },
+        "Demolition": {
+            "models": "65%",
+            "admin": "",
+            "views": "",
+            "templates": "",
+            "testing": "0%",
+        },
+        "Electrical": {
+            "models": "65%",
+            "admin": "",
+            "views": "",
+            "templates": "",
+            "testing": "0%",
+        },
+        "Existing": {
+            "models": "65%",
+            "admin": "",
+            "views": "",
+            "templates": "",
+            "testing": "0%",
+        },
+        "Fire": {
+            "models": "65%",
+            "admin": "",
+            "views": "",
+            "templates": "",
+            "testing": "0%",
+        },
+        "Flood": {
+            "models": "65%",
+            "admin": "",
+            "views": "",
+            "templates": "",
+            "testing": "0%",
+        },
+        "Grading": {
+            "models": "65%",
+            "admin": "",
+            "views": "",
+            "templates": "",
+            "testing": "0%",
+        },
+        "Mechanical": {
+            "models": "65%",
+            "admin": "",
+            "views": "",
+            "templates": "",
+            "testing": "0%",
+        },
+        "Manufactured_home": {
+            "models": "65%",
+            "admin": "",
+            "views": "",
+            "templates": "",
+            "testing": "0%",
+        },
+        "New Accessory": {
+            "models": "65%",
+            "admin": "",
+            "views": "",
+            "templates": "",
+            "testing": "0%",
+        },
+        "New Commercial": {
+            "models": "65%",
+            "admin": "",
+            "views": "",
+            "templates": "",
+            "testing": "0%",
+        },
+        "New Residential": {
+            "models": "65%",
+            "admin": "",
+            "views": "",
+            "templates": "",
+            "testing": "0%",
+        },
+        "Plumbing": {
+            "models": "65%",
+            "admin": "",
+            "views": "",
+            "templates": "",
+            "testing": "0%",
+        },
+        "Pool": {
+            "models": "65%",
+            "admin": "",
+            "views": "",
+            "templates": "",
+            "testing": "0%",
+        },
+    },
+    "Code Enforcement": {
+        "root": "_ce",
+        "models": "0%",
+        "admin": "",
         "views": "",
         "templates": "",
         "testing": "0%",
     },
-    "Manufactured_home": {
-        "models": "65%",
+    "Public Works": {
+        "root": "_pw",
+        "models": "0%",
+        "admin": "",
         "views": "",
         "templates": "",
         "testing": "0%",
     },
-    "New Accessory": {
-        "models": "65%",
-        "views": "",
-        "templates": "",
+    "Planning": {
+        "root": "_zf",
+        "models": "0%",
+        "admin": "",
+        "views": "0%",
+        "templates": "0%",
         "testing": "0%",
     },
-    "New Commercial": {
-        "models": "65%",
-        "views": "",
-        "templates": "",
-        "testing": "0%",
-    },
-    "New Residential": {
-        "models": "65%",
-        "views": "",
-        "templates": "",
-        "testing": "0%",
-    },
-    "Plumbing": {
-        "models": "65%",
-        "views": "",
-        "templates": "",
-        "testing": "0%",
-    },
-    "Pool": {
-        "models": "65%",
-        "views": "",
-        "templates": "",
-        "testing": "0%",
-    },
-}
-_ce = {
-    "models": "0%",
-    "views": "",
-    "templates": "",
-    "testing": "0%",
-}
-_pw = {
-    "models": "0%",
-    "views": "",
-    "templates": "",
-    "testing": "0%",
-}
-_zf = {
-    "models": "0%",
-    "views": "0%",
-    "templates": "0%",
-    "testing": "0%",
 }

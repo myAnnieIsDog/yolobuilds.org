@@ -3,10 +3,10 @@ from django.utils import timezone
 
 
 from _fiscal.models import FeeType
-from _inspections.models import InspectionType
+from _inspection.models import InspectionType
 from _land.models import Parcel, SiteAddress
-from _reviews.models import ReviewType
-from _profiles.models import Division, Staff, AngencyPartners, Contacts
+from _review.models import ReviewType
+from _profile.models import Division
 
 
 class RecordStatus(models.Model):
@@ -56,6 +56,20 @@ class Tag(models.Model):
 
     class Meta:
         ordering = ["tag"]
+
+
+class ContactType(models.Model):
+    role = models.CharField(max_length=55)
+    description = models.TextField(max_length=255)
+    active = models.BooleanField(default=True)
+
+    def __str__(self) -> str:
+        return self.role
+
+    class Meta:
+        ordering = ["description"]
+        verbose_name = "Contact Type"
+        verbose_name_plural = "Contact Types"
 
 
 class Record(models.Model):
