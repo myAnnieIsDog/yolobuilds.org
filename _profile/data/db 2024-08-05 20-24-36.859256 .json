@@ -1,0 +1,95 @@
+{
+    "Agencies": [
+        {
+            "id": 1,
+            "name": "Capay Fire",
+            "full": "Capay Fire District",
+            "active": true
+        },
+        {
+            "id": 2,
+            "name": "Davis Fire",
+            "full": "City of Davis Fire Department",
+            "active": true
+        },
+        {
+            "id": 3,
+            "name": "Dunnigan Fire",
+            "full": "Dunnigan Fire District",
+            "active": true
+        },
+        {
+            "id": 4,
+            "name": "Esparto Fire",
+            "full": "Esparto Fire District",
+            "active": true
+        },
+        {
+            "id": 5,
+            "name": "Knights Landing Fire",
+            "full": "Knights Landing Fire District",
+            "active": true
+        },
+        {
+            "id": 6,
+            "name": "Madison Fire",
+            "full": "Madison Fire District",
+            "active": true
+        },
+        {
+            "id": 7,
+            "name": "West Plainfield Fire",
+            "full": "West Plainfield Fire District",
+            "active": true
+        },
+        {
+            "id": 8,
+            "name": "West Sac Fire",
+            "full": "City of West Sacramento Fire Department",
+            "active": true
+        },
+        {
+            "id": 9,
+            "name": "Winters Fire",
+            "full": "City of Winters Fire Department",
+            "active": true
+        },
+        {
+            "id": 10,
+            "name": "Woodland Fire",
+            "full": "City of Woodland Fire Department",
+            "active": true
+        },
+        {
+            "id": 11,
+            "name": "Yolo County",
+            "full": "County of Yolo",
+            "active": true
+        },
+        {
+            "id": 12,
+            "name": "Yolo Fire",
+            "full": "Yolo Fire District",
+            "active": true
+        },
+        {
+            "id": 13,
+            "name": "YSAQMD",
+            "full": "Yolo Solano Air Quality Management District",
+            "active": true
+        }
+    ],
+    "Certifications": [
+        "test cert"
+    ],
+    "Departments": [
+        "test dept"
+    ],
+    "Divisions": [
+        "test div"
+    ],
+    "Profiles": [
+        "test prof"
+    ],
+    "Timestamp": "2024-08-05 20-24-36.859256 "
+}

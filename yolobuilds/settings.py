@@ -33,18 +33,18 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     # "debug_toolbar",
-    # 'django_extensions',
+    "django_extensions",
     # 'django_recaptcha',
     "_base.apps.BaseConfig",
     "_bl.apps.LicenseConfig",
-    "_bp.apps.BuildingPermitsConfig",
+    "_bp.apps.BuildingPermitConfig",
     "_ce.apps.EnforcementConfig",
     "_fiscal.apps.FiscalConfig",
-    "_inspections.apps.InspectionsConfig",
+    "_inspection.apps.InspectionConfig",
     "_land.apps.LandConfig",
-    "_profiles.apps.ProfilesConfig",
+    "_profile.apps.ProfileConfig",
     "_pw.apps.PublicWorksConfig",
-    "_reviews.apps.ReviewsConfig",
+    "_review.apps.ReviewConfig",
     "_zf.apps.PlanningConfig",
     # '_profiles.apps.LandConfig',
 ]
@@ -84,7 +84,7 @@ TEMPLATES = [
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "data/sql/db.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
     }
 }
 
