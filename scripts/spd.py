@@ -7,6 +7,12 @@ def main():
     parse()
 
 
+def py2txt_usingPath(from_dir):
+    for filename in listdir(from_dir):
+        f = Path(from_dir, filename)
+        f.rename(str(f).replace(".py", ".txt"))
+
+
 def parse():
     global_parser = argparse.ArgumentParser(
         prog="spd",

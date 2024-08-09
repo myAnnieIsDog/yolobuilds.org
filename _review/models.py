@@ -59,7 +59,7 @@ class ReviewCycle(models.Model):
     due = models.DateTimeField(null=True)
     sent = models.DateTimeField(null=True)
     notes = models.TextField(max_length=255)
-    staff_time_actual = models.DecimalField(max_digits=7, decimal_places=1)
+    duration = models.DecimalField(max_digits=7, decimal_places=1)
     days_until_due = models.DurationField(null=True)
     age = models.DurationField(null=True)
     days_allotted = models.DurationField(null=True)
@@ -88,15 +88,14 @@ class ReviewStatus(models.Model):
 
 
 class Review(models.Model):
+    record = models.CharField(max_length=55, blank=True)
+    type = models.CharField(max_length=55, blank=True)
     type_link = models.ForeignKey(
         ReviewType, on_delete=models.PROTECT, related_name="review"
     )
-    record = models.CharField(max_length=55, blank=True)
-    type = models.CharField(max_length=55, blank=True)
     status = models.CharField(max_length=55)
     notes = models.TextField(max_length=255)
-    staff_time_allotted = models.DecimalField(max_digits=7, decimal_places=1)
-    staff_time_actual = models.DecimalField(max_digits=7, decimal_places=1)
+    duration = models.DecimalField(max_digits=7, decimal_places=1)
 
     def __str__(self) -> str:
         return f"{self.record.number} {self.type.review_type}"
