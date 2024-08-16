@@ -5,6 +5,13 @@ def run():
     select_table_names()
 
 
+def create_tables():
+    cur.execute(
+        """ CREATE TABLE IF NOT EXISTS 
+    """
+    )
+
+
 def select_table_names():
     for row in cur.execute("SELECT name FROM sqlite_master"):
         print(row)
