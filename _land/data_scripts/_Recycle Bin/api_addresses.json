@@ -1,0 +1,1167 @@
+{
+  "currentVersion": 11.1,
+  "cimVersion": "3.1.0",
+  "id": 0,
+  "name": "Address Points",
+  "type": "Feature Layer",
+  "parentLayer": null,
+  "defaultVisibility": true,
+  "minScale": 0,
+  "maxScale": 0,
+  "canScaleSymbols": false,
+  "geometryType": "esriGeometryPoint",
+  "description": "",
+  "copyrightText": "",
+  "editFieldsInfo": {
+    "creationDateField": "created_date",
+    "creatorField": "created_user",
+    "editDateField": "last_edited_date",
+    "editorField": "last_edited_user"
+  },
+  "ownershipBasedAccessControlForFeatures": null,
+  "syncCanReturnChanges": false,
+  "relationships": [],
+  "isDataVersioned": true,
+  "isDataArchived": false,
+  "infoInEstimates": ["extent"],
+  "isDataBranchVersioned": false,
+  "isDataReplicaTracked": false,
+  "isCoGoEnabled": false,
+  "supportsRollbackOnFailureParameter": false,
+  "archivingInfo": {
+    "supportsQueryWithHistoricMoment": false,
+    "startArchivingMoment": -1
+  },
+  "supportsStatistics": true,
+  "supportsExceedsLimitStatistics": true,
+  "supportsAdvancedQueries": true,
+  "supportsValidateSQL": true,
+  "supportsCoordinatesQuantization": true,
+  "supportsQuantizationEditMode": true,
+  "supportsCalculate": true,
+  "supportsASyncCalculate": true,
+  "supportsDatumTransformation": true,
+  "advancedQueryCapabilities": {
+    "supportsPagination": true,
+    "supportsTrueCurve": true,
+    "supportsQueryWithDistance": true,
+    "supportsReturningQueryExtent": true,
+    "supportsStatistics": true,
+    "supportsPercentileStatistics": true,
+    "supportsHavingClause": true,
+    "supportsOrderBy": true,
+    "supportsDistinct": true,
+    "supportsCountDistinct": true,
+    "supportsQueryWithResultType": true,
+    "supportsReturningGeometryCentroid": false,
+    "supportsSqlExpression": true,
+    "supportsQueryWithDatumTransformation": true,
+    "supportsLod": false,
+    "supportsQueryWithLodSR": false,
+    "supportsQueryAnalytic": true
+  },
+  "advancedQueryAnalyticCapabilities": {
+    "supportsLinearRegression": true,
+    "supportsAsync": false,
+    "supportsPercentileAnalytic": true
+  },
+  "advancedEditingCapabilities": {
+    "supportedSqlFormatsInCalculate": ["standard"],
+    "supportsAsyncApplyEdits": true,
+    "supportsApplyEditsbyUploadID": true,
+    "supportedApplyEditsUploadIDFormats": "JSON"
+  },
+  "hasMetadata": true,
+  "extent": {
+    "xmin": 6453647.08890228,
+    "ymin": 1876343.922825873,
+    "xmax": 6704062.012655452,
+    "ymax": 2098954.713447958,
+    "spatialReference": {
+      "wkid": 102642,
+      "latestWkid": 2226,
+      "xyTolerance": 6.561666666666666e-4,
+      "zTolerance": 0.001,
+      "mTolerance": 0.001,
+      "falseX": -115211800,
+      "falseY": -93821500,
+      "xyUnits": 3048.0060960121928,
+      "falseZ": -100000,
+      "zUnits": 10000,
+      "falseM": -100000,
+      "mUnits": 10000
+    }
+  },
+  "sourceSpatialReference": {
+    "wkid": 102642,
+    "latestWkid": 2226,
+    "xyTolerance": 4.903007751538429e-4,
+    "zTolerance": 0.001,
+    "mTolerance": 0.001,
+    "falseX": -1.15211799999757e8,
+    "falseY": -9.382149999995045e7,
+    "xyUnits": 16316.515097268244,
+    "falseZ": 0,
+    "zUnits": 1,
+    "falseM": 0,
+    "mUnits": 1
+  },
+  "drawingInfo": {
+    "renderer": {
+      "type": "simple",
+      "symbol": {
+        "type": "esriSMS",
+        "style": "esriSMSCircle",
+        "color": [197, 0, 255, 255],
+        "size": 6,
+        "angle": 0,
+        "xoffset": 0,
+        "yoffset": 0,
+        "outline": {
+          "color": [0, 0, 0, 255],
+          "width": 1.05
+        }
+      }
+    },
+    "scaleSymbols": true,
+    "transparency": 0,
+    "labelingInfo": null
+  },
+  "hasM": false,
+  "hasZ": false,
+  "allowGeometryUpdates": false,
+  "allowTrueCurvesUpdates": false,
+  "onlyAllowTrueCurveUpdatesByTrueCurveClients": false,
+  "hasAttachments": false,
+  "supportsApplyEditsWithGlobalIds": false,
+  "htmlPopupType": "esriServerHTMLPopupTypeAsHTMLText",
+  "objectIdField": "OBJECTID",
+  "globalIdField": "",
+  "displayField": "APN",
+  "typeIdField": "",
+  "subtypeField": "",
+  "fields": [
+    {
+      "name": "OBJECTID",
+      "type": "esriFieldTypeOID",
+      "alias": "OBJECTID",
+      "domain": null,
+      "editable": false,
+      "nullable": false,
+      "defaultValue": null,
+      "modelName": "OBJECTID"
+    },
+    {
+      "name": "APN",
+      "type": "esriFieldTypeString",
+      "alias": "APN",
+      "domain": null,
+      "editable": true,
+      "nullable": true,
+      "length": 16,
+      "defaultValue": null,
+      "modelName": "APN"
+    },
+    {
+      "name": "ADDR_HN",
+      "type": "esriFieldTypeString",
+      "alias": "HOUSENUM",
+      "domain": null,
+      "editable": true,
+      "nullable": true,
+      "length": 12,
+      "defaultValue": null,
+      "modelName": "ADDR_HN"
+    },
+    {
+      "name": "ADDR_FR",
+      "type": "esriFieldTypeString",
+      "alias": "ADDRESS_FRACT",
+      "domain": null,
+      "editable": true,
+      "nullable": true,
+      "length": 5,
+      "defaultValue": null,
+      "modelName": "ADDR_FR"
+    },
+    {
+      "name": "ADDR_PD",
+      "type": "esriFieldTypeString",
+      "alias": "PRE_DIR",
+      "domain": {
+        "type": "codedValue",
+        "name": "PREFIXDIR",
+        "description": "Prefix Direction",
+        "codedValues": [
+          {
+            "name": "E",
+            "code": "E"
+          },
+          {
+            "name": "N",
+            "code": "N"
+          },
+          {
+            "name": "NW",
+            "code": "NW"
+          },
+          {
+            "name": "S",
+            "code": "S"
+          },
+          {
+            "name": "W",
+            "code": "W"
+          }
+        ],
+        "mergePolicy": "esriMPTDefaultValue",
+        "splitPolicy": "esriSPTDuplicate"
+      },
+      "editable": true,
+      "nullable": true,
+      "length": 12,
+      "defaultValue": null,
+      "modelName": "ADDR_PD"
+    },
+    {
+      "name": "ADDR_SN",
+      "type": "esriFieldTypeString",
+      "alias": "STREETNAME",
+      "domain": null,
+      "editable": true,
+      "nullable": true,
+      "length": 60,
+      "defaultValue": null,
+      "modelName": "ADDR_SN"
+    },
+    {
+      "name": "ADDR_ST",
+      "type": "esriFieldTypeString",
+      "alias": "STREET_TYPE",
+      "domain": {
+        "type": "codedValue",
+        "name": "STREETTYPE",
+        "description": "Street Type",
+        "codedValues": [
+          {
+            "name": "AVE",
+            "code": "AVE"
+          },
+          {
+            "name": "BKWY",
+            "code": "BKWY"
+          },
+          {
+            "name": "BLVD",
+            "code": "BLVD"
+          },
+          {
+            "name": "CIR",
+            "code": "CIR"
+          },
+          {
+            "name": "CT",
+            "code": "CT"
+          },
+          {
+            "name": "DR",
+            "code": "DR"
+          },
+          {
+            "name": "GTWY",
+            "code": "GTWY"
+          },
+          {
+            "name": "LN",
+            "code": "LN"
+          },
+          {
+            "name": "LOOP",
+            "code": "LOOP"
+          },
+          {
+            "name": "PK",
+            "code": "PK"
+          },
+          {
+            "name": "PKWY",
+            "code": "PKWY"
+          },
+          {
+            "name": "PL",
+            "code": "PL"
+          },
+          {
+            "name": "PLZ",
+            "code": "PLZ"
+          },
+          {
+            "name": "RD",
+            "code": "RD"
+          },
+          {
+            "name": "ST",
+            "code": "ST"
+          },
+          {
+            "name": "TER",
+            "code": "TER"
+          },
+          {
+            "name": "WAY",
+            "code": "WAY"
+          },
+          {
+            "name": "BND",
+            "code": "BND"
+          },
+          {
+            "name": "PARK",
+            "code": "PARK"
+          },
+          {
+            "name": "RAMP",
+            "code": "RAMP"
+          },
+          {
+            "name": "WALK",
+            "code": "WALK"
+          },
+          {
+            "name": "MALL",
+            "code": "MALL"
+          },
+          {
+            "name": "ALY",
+            "code": "ALY"
+          }
+        ],
+        "mergePolicy": "esriMPTDefaultValue",
+        "splitPolicy": "esriSPTDuplicate"
+      },
+      "editable": true,
+      "nullable": true,
+      "length": 40,
+      "defaultValue": null,
+      "modelName": "ADDR_ST"
+    },
+    {
+      "name": "ADDR_SD",
+      "type": "esriFieldTypeString",
+      "alias": "SUFF_DIR",
+      "domain": {
+        "type": "codedValue",
+        "name": "SUFFIXDIR",
+        "description": "Suffix Direction",
+        "codedValues": [
+          {
+            "name": "N",
+            "code": "N"
+          },
+          {
+            "name": "S",
+            "code": "S"
+          },
+          {
+            "name": "E",
+            "code": "E"
+          },
+          {
+            "name": "W",
+            "code": "W"
+          },
+          {
+            "name": "NB",
+            "code": "NB"
+          },
+          {
+            "name": "SB",
+            "code": "SB"
+          },
+          {
+            "name": "EB",
+            "code": "EB"
+          },
+          {
+            "name": "WB",
+            "code": "WB"
+          },
+          {
+            "name": "NW",
+            "code": "NW"
+          }
+        ],
+        "mergePolicy": "esriMPTDefaultValue",
+        "splitPolicy": "esriSPTDuplicate"
+      },
+      "editable": true,
+      "nullable": true,
+      "length": 12,
+      "defaultValue": null,
+      "modelName": "ADDR_SD"
+    },
+    {
+      "name": "UNIT",
+      "type": "esriFieldTypeString",
+      "alias": "UNIT",
+      "domain": null,
+      "editable": true,
+      "nullable": true,
+      "length": 10,
+      "defaultValue": null,
+      "modelName": "UNIT"
+    },
+    {
+      "name": "FULLADDRESS",
+      "type": "esriFieldTypeString",
+      "alias": "FULLADDRESS",
+      "domain": null,
+      "editable": true,
+      "nullable": true,
+      "length": 255,
+      "defaultValue": null,
+      "modelName": "FULLADDRESS"
+    },
+    {
+      "name": "CITY",
+      "type": "esriFieldTypeString",
+      "alias": "CITY",
+      "domain": {
+        "type": "codedValue",
+        "name": "CITIES",
+        "description": "Cities",
+        "codedValues": [
+          {
+            "name": "Brooks",
+            "code": "Brooks"
+          },
+          {
+            "name": "Capay",
+            "code": "Capay"
+          },
+          {
+            "name": "Clarksburg",
+            "code": "Clarksburg"
+          },
+          {
+            "name": "Davis",
+            "code": "Davis"
+          },
+          {
+            "name": "Dixon",
+            "code": "Dixon"
+          },
+          {
+            "name": "Dunnigan",
+            "code": "Dunnigan"
+          },
+          {
+            "name": "El Macero",
+            "code": "El Macero"
+          },
+          {
+            "name": "Esparto",
+            "code": "Esparto"
+          },
+          {
+            "name": "Guinda",
+            "code": "Guinda"
+          },
+          {
+            "name": "Knights Landing",
+            "code": "Knights Landing"
+          },
+          {
+            "name": "Madison",
+            "code": "Madison"
+          },
+          {
+            "name": "Rumsey",
+            "code": "Rumsey"
+          },
+          {
+            "name": "West Sacramento",
+            "code": "West Sacramento"
+          },
+          {
+            "name": "Winters",
+            "code": "Winters"
+          },
+          {
+            "name": "Woodland",
+            "code": "Woodland"
+          },
+          {
+            "name": "Yolo",
+            "code": "Yolo"
+          },
+          {
+            "name": "Zamora",
+            "code": "Zamora"
+          }
+        ],
+        "mergePolicy": "esriMPTDefaultValue",
+        "splitPolicy": "esriSPTDuplicate"
+      },
+      "editable": true,
+      "nullable": true,
+      "length": 20,
+      "defaultValue": null,
+      "modelName": "CITY"
+    },
+    {
+      "name": "ZIPCODE",
+      "type": "esriFieldTypeString",
+      "alias": "ZIPCODE",
+      "domain": {
+        "type": "codedValue",
+        "name": "ZIPCODE",
+        "description": "ZIPCODE",
+        "codedValues": [
+          {
+            "name": "95605",
+            "code": "95605"
+          },
+          {
+            "name": "95606",
+            "code": "95606"
+          },
+          {
+            "name": "95607",
+            "code": "95607"
+          },
+          {
+            "name": "95612",
+            "code": "95612"
+          },
+          {
+            "name": "95615",
+            "code": "95615"
+          },
+          {
+            "name": "95616",
+            "code": "95616"
+          },
+          {
+            "name": "95618",
+            "code": "95618"
+          },
+          {
+            "name": "95620",
+            "code": "95620"
+          },
+          {
+            "name": "95627",
+            "code": "95627"
+          },
+          {
+            "name": "95637",
+            "code": "95637"
+          },
+          {
+            "name": "95645",
+            "code": "95645"
+          },
+          {
+            "name": "95653",
+            "code": "95653"
+          },
+          {
+            "name": "95679",
+            "code": "95679"
+          },
+          {
+            "name": "95691",
+            "code": "95691"
+          },
+          {
+            "name": "95694",
+            "code": "95694"
+          },
+          {
+            "name": "95695",
+            "code": "95695"
+          },
+          {
+            "name": "95697",
+            "code": "95697"
+          },
+          {
+            "name": "95698",
+            "code": "95698"
+          },
+          {
+            "name": "95776",
+            "code": "95776"
+          },
+          {
+            "name": "95937",
+            "code": "95937"
+          }
+        ],
+        "mergePolicy": "esriMPTDefaultValue",
+        "splitPolicy": "esriSPTDuplicate"
+      },
+      "editable": true,
+      "nullable": true,
+      "length": 10,
+      "defaultValue": null,
+      "modelName": "ZIPCODE"
+    },
+    {
+      "name": "UNITTYPE",
+      "type": "esriFieldTypeString",
+      "alias": "UNITTYPE",
+      "domain": {
+        "type": "codedValue",
+        "name": "UNITTYPE",
+        "description": "UNITTYPE",
+        "codedValues": [
+          {
+            "name": "#",
+            "code": "#"
+          },
+          {
+            "name": "APT",
+            "code": "APT"
+          },
+          {
+            "name": "BLDG",
+            "code": "BLDG"
+          },
+          {
+            "name": "BSMT",
+            "code": "BSMT"
+          },
+          {
+            "name": "DEPT",
+            "code": "DEPT"
+          },
+          {
+            "name": "FL",
+            "code": "FL"
+          },
+          {
+            "name": "FRNT",
+            "code": "FRNT"
+          },
+          {
+            "name": "LOT",
+            "code": "LOT"
+          },
+          {
+            "name": "OFC",
+            "code": "OFC"
+          },
+          {
+            "name": "REAR",
+            "code": "REAR"
+          },
+          {
+            "name": "RM",
+            "code": "RM"
+          },
+          {
+            "name": "SPC",
+            "code": "SPC"
+          },
+          {
+            "name": "STE",
+            "code": "STE"
+          },
+          {
+            "name": "TRLR",
+            "code": "TRLR"
+          },
+          {
+            "name": "UNIT",
+            "code": "UNIT"
+          }
+        ],
+        "mergePolicy": "esriMPTDefaultValue",
+        "splitPolicy": "esriSPTDuplicate"
+      },
+      "editable": true,
+      "nullable": true,
+      "length": 10,
+      "defaultValue": null,
+      "modelName": "UNITTYPE"
+    },
+    {
+      "name": "ADDRESSTYPE",
+      "type": "esriFieldTypeString",
+      "alias": "ADDRESSTYPE",
+      "domain": {
+        "type": "codedValue",
+        "name": "ADDRESSTYPE",
+        "description": "ADDRESSTYPE",
+        "codedValues": [
+          {
+            "name": "Building",
+            "code": "Building"
+          },
+          {
+            "name": "Landscape",
+            "code": "Landscape"
+          },
+          {
+            "name": "Parcel",
+            "code": "Parcel"
+          },
+          {
+            "name": "Right of Way",
+            "code": "Right of Way"
+          },
+          {
+            "name": "Trailer",
+            "code": "Trailer"
+          }
+        ],
+        "mergePolicy": "esriMPTDefaultValue",
+        "splitPolicy": "esriSPTDuplicate"
+      },
+      "editable": true,
+      "nullable": true,
+      "length": 25,
+      "defaultValue": null,
+      "modelName": "ADDRESSTYPE"
+    },
+    {
+      "name": "USECODE",
+      "type": "esriFieldTypeString",
+      "alias": "USECODE",
+      "domain": {
+        "type": "codedValue",
+        "name": "USECODE",
+        "description": "USECODE",
+        "codedValues": [
+          {
+            "name": "Animal Enclosure",
+            "code": "AE"
+          },
+          {
+            "name": "Agriculture",
+            "code": "AG"
+          },
+          {
+            "name": "Cemetery",
+            "code": "CE"
+          },
+          {
+            "name": "Church",
+            "code": "CH"
+          },
+          {
+            "name": "Commercial",
+            "code": "CM"
+          },
+          {
+            "name": "Garage",
+            "code": "GA"
+          },
+          {
+            "name": "Greenbelt",
+            "code": "GB"
+          },
+          {
+            "name": "Golf Course",
+            "code": "GC"
+          },
+          {
+            "name": "Government",
+            "code": "GO"
+          },
+          {
+            "name": "Hospital",
+            "code": "HO"
+          },
+          {
+            "name": "Industrial",
+            "code": "IN"
+          },
+          {
+            "name": "Median",
+            "code": "MD"
+          },
+          {
+            "name": "Medical",
+            "code": "ME"
+          },
+          {
+            "name": "Other or Unknown",
+            "code": "OT"
+          },
+          {
+            "name": "Public or Semi-Public",
+            "code": "PB"
+          },
+          {
+            "name": "Public Commons",
+            "code": "PC"
+          },
+          {
+            "name": "Park",
+            "code": "PK"
+          },
+          {
+            "name": "Parking Lot",
+            "code": "PL"
+          },
+          {
+            "name": "Residential",
+            "code": "RE"
+          },
+          {
+            "name": "School",
+            "code": "SC"
+          },
+          {
+            "name": "Streetscape",
+            "code": "SS"
+          },
+          {
+            "name": "University",
+            "code": "UN"
+          },
+          {
+            "name": "Utilities",
+            "code": "UT"
+          },
+          {
+            "name": "Vacant",
+            "code": "VA"
+          },
+          {
+            "name": "Waterbody",
+            "code": "WB"
+          },
+          {
+            "name": "Well Site",
+            "code": "WS"
+          }
+        ],
+        "mergePolicy": "esriMPTDefaultValue",
+        "splitPolicy": "esriSPTDuplicate"
+      },
+      "editable": true,
+      "nullable": true,
+      "length": 2,
+      "defaultValue": null,
+      "modelName": "USECODE"
+    },
+    {
+      "name": "PRIMARYAD",
+      "type": "esriFieldTypeString",
+      "alias": "PRIMARYADDR",
+      "domain": {
+        "type": "codedValue",
+        "name": "PRIMARYAD",
+        "description": "PRIMARY ADDRESS",
+        "codedValues": [
+          {
+            "name": "Yes",
+            "code": "YES"
+          },
+          {
+            "name": "No",
+            "code": "NO"
+          }
+        ],
+        "mergePolicy": "esriMPTDefaultValue",
+        "splitPolicy": "esriSPTDuplicate"
+      },
+      "editable": true,
+      "nullable": true,
+      "length": 5,
+      "defaultValue": null,
+      "modelName": "PRIMARYAD"
+    },
+    {
+      "name": "DESCRIPTION",
+      "type": "esriFieldTypeString",
+      "alias": "DESCRIPTION",
+      "domain": null,
+      "editable": true,
+      "nullable": true,
+      "length": 50,
+      "defaultValue": null,
+      "modelName": "DESCRIPTION"
+    },
+    {
+      "name": "LONGITUDE",
+      "type": "esriFieldTypeDouble",
+      "alias": "LONGITUDE",
+      "domain": null,
+      "editable": true,
+      "nullable": true,
+      "defaultValue": null,
+      "modelName": "LONGITUDE"
+    },
+    {
+      "name": "LATITUDE",
+      "type": "esriFieldTypeDouble",
+      "alias": "LATITUDE",
+      "domain": null,
+      "editable": true,
+      "nullable": true,
+      "defaultValue": null,
+      "modelName": "LATITUDE"
+    },
+    {
+      "name": "Rotation",
+      "type": "esriFieldTypeSmallInteger",
+      "alias": "ROTATION",
+      "domain": null,
+      "editable": true,
+      "nullable": true,
+      "defaultValue": null,
+      "modelName": "Rotation"
+    },
+    {
+      "name": "created_user",
+      "type": "esriFieldTypeString",
+      "alias": "created_user",
+      "domain": null,
+      "editable": false,
+      "nullable": true,
+      "length": 255,
+      "defaultValue": null,
+      "modelName": "created_user"
+    },
+    {
+      "name": "created_date",
+      "type": "esriFieldTypeDate",
+      "alias": "created_date",
+      "domain": null,
+      "editable": false,
+      "nullable": true,
+      "length": 8,
+      "defaultValue": null,
+      "modelName": "created_date"
+    },
+    {
+      "name": "last_edited_user",
+      "type": "esriFieldTypeString",
+      "alias": "last_edited_user",
+      "domain": null,
+      "editable": false,
+      "nullable": true,
+      "length": 255,
+      "defaultValue": null,
+      "modelName": "last_edited_user"
+    },
+    {
+      "name": "last_edited_date",
+      "type": "esriFieldTypeDate",
+      "alias": "last_edited_date",
+      "domain": null,
+      "editable": false,
+      "nullable": true,
+      "length": 8,
+      "defaultValue": null,
+      "modelName": "last_edited_date"
+    },
+    {
+      "name": "AgencyID",
+      "type": "esriFieldTypeString",
+      "alias": "AgencyID",
+      "domain": null,
+      "editable": true,
+      "nullable": true,
+      "length": 50,
+      "defaultValue": null,
+      "modelName": "AgencyID"
+    },
+    {
+      "name": "Floor",
+      "type": "esriFieldTypeString",
+      "alias": "Floor",
+      "domain": null,
+      "editable": true,
+      "nullable": true,
+      "length": 10,
+      "defaultValue": null,
+      "modelName": "Floor"
+    },
+    {
+      "name": "CountyID",
+      "type": "esriFieldTypeInteger",
+      "alias": "CountyID",
+      "domain": null,
+      "editable": true,
+      "nullable": true,
+      "defaultValue": null,
+      "modelName": "CountyID"
+    },
+    {
+      "name": "lSegmentHndl",
+      "type": "esriFieldTypeInteger",
+      "alias": "EIMS lSegmentHndl",
+      "domain": null,
+      "editable": true,
+      "nullable": true,
+      "defaultValue": null,
+      "modelName": "lSegmentHndl"
+    },
+    {
+      "name": "USPS_Zip_Verify",
+      "type": "esriFieldTypeString",
+      "alias": "USPS Zip Code Verified",
+      "domain": {
+        "type": "codedValue",
+        "name": "USPS Zip Code Verification",
+        "description": "",
+        "codedValues": [
+          {
+            "name": "Zip Code Verified in USPS Lookup",
+            "code": "Zip Code Verified in USPS Lookup"
+          },
+          {
+            "name": "Zip Code Not Reviewed",
+            "code": "Zip Code Not Reviewed"
+          },
+          {
+            "name": "Address not in USPS Lookup",
+            "code": "Address not in USPS Lookup"
+          }
+        ],
+        "mergePolicy": "esriMPTDefaultValue",
+        "splitPolicy": "esriSPTDefaultValue"
+      },
+      "editable": true,
+      "nullable": true,
+      "length": 50,
+      "defaultValue": null,
+      "modelName": "USPS_Zip_Verify"
+    },
+    {
+      "name": "Jurisdiction",
+      "type": "esriFieldTypeString",
+      "alias": "Jurisdiction",
+      "domain": {
+        "type": "codedValue",
+        "name": "Jurisdiction_RestrictiveCovenants",
+        "description": "",
+        "codedValues": [
+          {
+            "name": "City of Davis",
+            "code": "City of Davis"
+          },
+          {
+            "name": "City of Winters",
+            "code": "City of Winters"
+          },
+          {
+            "name": "City of West Sacramento",
+            "code": "City of West Sacramento"
+          },
+          {
+            "name": "City of Woodland",
+            "code": "City of Woodland"
+          },
+          {
+            "name": "Unincorporated Yolo County",
+            "code": "Unincorporated Yolo County"
+          }
+        ],
+        "mergePolicy": "esriMPTDefaultValue",
+        "splitPolicy": "esriSPTDefaultValue"
+      },
+      "editable": true,
+      "nullable": true,
+      "length": 100,
+      "defaultValue": null,
+      "modelName": "Jurisdiction"
+    }
+  ],
+  "geometryField": {
+    "name": "Shape",
+    "type": "esriFieldTypeGeometry",
+    "alias": "Shape",
+    "domain": null,
+    "editable": false,
+    "nullable": true,
+    "defaultValue": null,
+    "modelName": "Shape"
+  },
+  "indexes": [
+    {
+      "name": "R4455_pk",
+      "fields": "OBJECTID",
+      "isAscending": true,
+      "isUnique": true,
+      "description": ""
+    },
+    {
+      "name": "S2829_idx",
+      "fields": "Shape",
+      "isAscending": true,
+      "isUnique": true,
+      "description": ""
+    }
+  ],
+  "datesInUnknownTimezone": false,
+  "dateFieldsTimeReference": {
+    "timeZone": "UTC",
+    "respectsDaylightSaving": false
+  },
+  "preferredTimeReference": null,
+  "types": [],
+  "templates": [
+    {
+      "name": "Address Points",
+      "description": "",
+      "prototype": {
+        "attributes": {
+          "USPS_Zip_Verify": null,
+          "Jurisdiction": null,
+          "APN": null,
+          "ADDR_HN": null,
+          "ADDR_FR": null,
+          "ADDR_PD": null,
+          "ADDR_SN": null,
+          "ADDR_ST": null,
+          "ADDR_SD": null,
+          "UNIT": null,
+          "FULLADDRESS": null,
+          "CITY": null,
+          "ZIPCODE": null,
+          "UNITTYPE": null,
+          "ADDRESSTYPE": null,
+          "USECODE": null,
+          "PRIMARYAD": null,
+          "DESCRIPTION": null,
+          "LONGITUDE": null,
+          "LATITUDE": null,
+          "Rotation": null,
+          "lSegmentHndl": null,
+          "CountyID": null,
+          "Floor": null,
+          "AgencyID": null
+        }
+      },
+      "drawingTool": "esriFeatureEditToolPoint"
+    }
+  ],
+  "maxRecordCount": 50000,
+  "supportedQueryFormats": "JSON, geoJSON, PBF",
+  "supportedExportFormats": "sqlite,filegdb,shapefile,csv,geojson",
+  "capabilities": "Query,Extract",
+  "useStandardizedQueries": true,
+  "supportedSpatialRelationships": [
+    "esriSpatialRelIntersects",
+    "esriSpatialRelContains",
+    "esriSpatialRelCrosses",
+    "esriSpatialRelEnvelopeIntersects",
+    "esriSpatialRelIndexIntersects",
+    "esriSpatialRelOverlaps",
+    "esriSpatialRelTouches",
+    "esriSpatialRelWithin",
+    "esriSpatialRelRelation"
+  ],
+  "standardMaxRecordCount": 32000,
+  "tileMaxRecordCount": 8000,
+  "standardMaxRecordCountNoGeometry": 32000,
+  "maxRecordCountFactor": 1,
+  "serviceItemId": "c252df87a8ff4a61b622d6f9adacc623"
+}

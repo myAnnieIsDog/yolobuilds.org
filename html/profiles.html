@@ -1,18 +1,64 @@
-{% extends "layout.html" %}
+{% extends "profile_base.html" %}
 
-{% load crispy_forms_tags %}
+{% block main_profile %}
+<section>
+    <h2> Find a Person </h2>
+    <p>
+        This tool lists active users based on your level of user permissions
+        and your search criteria. Edit your user profile to control if your
+        information is private (default) or public to allow customers to find you.
+    </p>
+    <form action="">
+        <br>
+        <p> Search: <input type="text"> </p>
+        <br>
+        <p> Include: &nbsp;
+            <input type="checkbox" id="staff" value="Staff" checked="checked">
+            <label for="staff"> Staff </label> &nbsp;
 
-{% block heading %}{{ heading }}{% endblock heading %}
+            <input type="checkbox" id="users" value="Users" checked="checked">
+            <label for="staff"> Users </label> &nbsp;
+
+            <input type="checkbox" id="contacts" value="Contacts" checked="checked">
+            <label for="staff"> Other Contacts </label> &nbsp;
+        </p>
+        <br>
+        <p> Sort By: &nbsp;
+            <input type="radio" name="sort" id="recent" value="Staff" checked="checked">
+            <label for="recent"> Recent </label> &nbsp;
+
+            <input type="radio" name="sort" id="first" value="Users">
+            <label for="first"> First Name </label> &nbsp;
+
+            <input type="radio" name="sort" id="last" value="Users">
+            <label for="last"> Last Name </label> &nbsp;
+
+            <input type="radio" name="sort" id="company" value="Contacts">
+            <label for="company"> Company </label> &nbsp;
+        </p>
+        <br>
+    </form>
 
 
-{% block main_content %}
+    </form>
 
-    <section>
-        <form action="profile/create/" method="post">
-            {% csrf_token %}
-            {% crispy form %}
-            <input type="submit">{{ button_text }}</button>
-        </form>
-    </section>
-    
-{% endblock main_content %}
+    <table>
+        <tr>
+            <th class="border" style="min-width: 100px"> First </th>
+            <th class="border" style="min-width: 100px"> Last </th>
+            <th class="border" style="min-width: 300px"> Company </th>
+            <th class="border" style="min-width: 30px"> Role </th>
+        </tr>
+
+        {% for user in users %}
+        <tr>
+            <td class="border"> {{ user.first }} </td>
+            <td class="border"> {{ user.last }} </td>
+            <td class="border"> {{ user.company }} {{ user.department }} {{ user.division }}</td>
+            <td class="border"> {{ user.role }} </td>
+        </tr>
+        {% endfor %}
+
+    </table>
+</section>
+{% endblock main_profile %}

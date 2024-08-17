@@ -1,0 +1,24 @@
+{% extends "profile_base.html" %}
+
+
+{% block main_profile %}
+
+<section>
+    <h2> Profile Details </h2>
+    <table>
+        <tr>
+            <th class="border" style="min-width: 100px"> First </th>
+            <th class="border" style="min-width: 100px"> Last </th>
+            <th class="border" style="min-width: 300px"> Company </th>
+            <th class="border" style="min-width: 30px"> Role </th>
+        </tr>
+
+        {% for key, value in user.field %}
+        <tr>
+            <td class="border" style="min-width: 100px"> {{ key }} </td>
+            <td class="border" style="min-width: 100px"> {{ value }} </td>
+        </tr>
+        {% endfor %}
+    </table>
+</section>
+{% endblock main_profile %}
